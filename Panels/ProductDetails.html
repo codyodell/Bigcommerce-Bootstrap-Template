@@ -1,17 +1,17 @@
 <script>
 
-var ThumbURLs = [],
-    ZoomImageURLs = [],
-    ProductImageDescriptions = [],
-    ProductThumbWidth = %%GLOBAL_ProductThumbWidth%%,
-    ProductThumbHeight =  %%GLOBAL_ProductThumbHeight%%
-    ProductMaxZoomWidth = %%GLOBAL_ProductMaxZoomWidth%%,
-    ProductMaxZoomHeight =  %%GLOBAL_ProductMaxZoomHeight%%,
-    ProductTinyWidth = %%GLOBAL_ProductMaxTinyWidth%%,
-    ProductTinyHeight =  %%GLOBAL_ProductMaxTinyHeight%%,
-    ShowImageZoomer = %%GLOBAL_ShowImageZoomer%%,
-    productId = %%GLOBAL_ProductId%%;
-    
+    var ThumbURLs                = [],
+        ZoomImageURLs            = [],
+        ProductImageDescriptions = [],
+        ProductThumbWidth        = %%GLOBAL_ProductThumbWidth%%,
+        ProductThumbHeight       =  %%GLOBAL_ProductThumbHeight%%
+        ProductMaxZoomWidth      = %%GLOBAL_ProductMaxZoomWidth%%,
+        ProductMaxZoomHeight     =  %%GLOBAL_ProductMaxZoomHeight%%,
+        ProductTinyWidth         = %%GLOBAL_ProductMaxTinyWidth%%,
+        ProductTinyHeight        =  %%GLOBAL_ProductMaxTinyHeight%%,
+        ShowImageZoomer          = %%GLOBAL_ShowImageZoomer%%,
+        productId                = %%GLOBAL_ProductId%%;
+        
     %%GLOBAL_ProdImageJavascript%%
     %%GLOBAL_ProdImageZoomJavascript%%
 </script>
@@ -20,12 +20,18 @@ var ThumbURLs = [],
 <script src="%%ASSET_js/product.attributes.js%%"></script>
 <script src="%%ASSET_js/productimage.js%%"></script>
 
-%%Discount.FreeShippingEligibility%%
-
 <main id="main" class="row">
-    
-    %%GLOBAL_ProductDetailFlashMessages%%
+    <!-- Alerts, Messages etc.. -->
+    <div class="col-md-12">
 
+        %%Discount.FreeShippingEligibility%%
+
+        <div class="alert alert-danger alert-sold-out">
+            %%SNIPPET_SideAddItemSoldOut%%
+        </div>
+
+        %%GLOBAL_ProductDetailFlashMessages%%
+    </div>
     <!-- Product Left Column -->
     <div class="col-md-5" id="product-left-column">
 

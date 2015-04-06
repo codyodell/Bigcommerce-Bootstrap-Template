@@ -305,9 +305,9 @@ li.QuickView:hover .btn-quickview{
 
   position: absolute;
   top: 40%;
-  left: 20%;
+  left: 10%;
+  right: 10%;
 }
-
 
 
 /* Column Item */
@@ -323,21 +323,20 @@ li.QuickView:hover .btn-quickview{
 
   position: relative;
   text-align: center;
-  height: 240px;
-  line-height: 240px;
+/*  height: 240px;
+  line-height: 240px;*/
 }
 .col-item .photo img
 {
   
-    max-width: 99%;
-    max-height: 99%;
+/*    max-width: 99%;
+    max-height: 99%;*/
 }
 
 .col-item .info
 {
     padding: 10px;
     border-radius: 0 0 5px 5px;
-    margin-top: 1px;
 }
 
 .col-item:hover .info {
@@ -718,6 +717,20 @@ body.unresponsive .navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus
         width: 40%;
         float: left;
     }
+}
+
+/* Theme Switcher */
+
+#theme-switcher{
+
+  position: fixed;
+  bottom:0;
+  right:0;
+  width: 300px;
+  background-size: rgba(0,0,0,0.5);
+  border-top-left-radius: 6px;
+  padding: 4px;
+  z-index: 9999;
 }
 
 /* Fix large input groups */

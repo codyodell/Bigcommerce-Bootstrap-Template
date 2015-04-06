@@ -1,4 +1,5 @@
 %%GLOBAL_AddToCartButtonControlScript%%
+
 <form method="post" action="%%GLOBAL_CartLink%%" class="form-inline" onsubmit="return check_add_to_cart(this, %%GLOBAL_ProductOptionRequired%%) %%GLOBAL_FastCartButtonJs%%" enctype="multipart/form-data" id="productDetailsAddToCartForm">
 
     <input type="hidden" name="action" value="add" />
@@ -25,9 +26,9 @@
 
         <div class="col-md-6 col-sm-3 col-xs-12">
 
-            <div class="PriceRow" style="%%GLOBAL_HidePrice%%">
+            <div class="product-price-container text-center" style="%%GLOBAL_HidePrice%%">
 
-                <em class="ProductPrice VariationProductPrice">%%GLOBAL_ProductPrice%%</em>
+                <strong class="lead btn-lg product-price">%%GLOBAL_ProductPrice%%</strong>
 
                 %%GLOBAL_IncludingExcludingTax%%
             </div>
@@ -70,19 +71,9 @@
     </div>
 </form>
 
-<!-- Add to Wishlist -->
-
-
-
-<!-- //Custom Add to Wishlist -->
-
-<div class="OutOfStockMessage">
-    %%SNIPPET_SideAddItemSoldOut%%
-</div>
-
 %%GLOBAL_ProductBulkDiscountThickBox%%
 
-<script>//<![CDATA[
+<script>
 
 lang.OptionMessage           = "%%GLOBAL_OptionMessage%%";
 lang.VariationSoldOutMessage = "%%LNG_VariationSoldOutMessage%%";
@@ -93,6 +84,6 @@ var ShowAddToCartQtyBox      = "%%GLOBAL_ShowAddToCartQtyBox%%";
 
 %%GLOBAL_ProductMinMaxQtyJavascript%%
 
-//]]></script>
+</script>
 
 %%GLOBAL_EventDateJavascript%%

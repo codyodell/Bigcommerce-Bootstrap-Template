@@ -35,7 +35,9 @@
             this.getThemes();
         },
         switchTheme: function (name, cssFile) {
+
             console.log('bootstrapThemeSwitcher.switchTheme: name: "' + name + '", cssFile: "' + cssFile + '"');
+
             var $this = $(this);
             var settings = $.extend({}, $.fn.bootstrapThemeSwitcher.defaults, $this.data('bootstrapThemeSwitcher'));
 
@@ -49,15 +51,20 @@
             }
 
             // Remove any existing bootstrap stylesheet that are not the theme ones
-            $('head link[href*="bootstrap.min.css"][id!="' + id + '"]').remove();
+            $('#bootstrap-stylesheet').remove();
+            $('#bootstrap-theme-stylesheet').remove();
 
             // Replace the theme file
             var selector = '#' + id;
             var cssLink = $(selector);
+
             if (cssLink.length === 0) {
-                alert('test');
-                var cssLinkHtml = "<link rel='stylesheet' id='" + id + "' href='" + cssFile + "' type='text/css' />";
-                var firstCssLink = $('head link[rel="stylesheet"]:first');
+                
+                var cssLinkHtml = "<link rel='stylesheet' id='" + id + "' href='" + cssFile + "' type='text/css' />",
+                    firstCssLink = $('head link[rel="stylesheet"]:first');
+
+                console.log( cssLinkHtml );
+
                 if (firstCssLink.length === 0) {
                     $('head').append(cssLinkHtml);
                 } else {
@@ -228,7 +235,6 @@
             }
         }
     };
-
 
     // Plugin
     $.fn.bootstrapThemeSwitcher = function (option) {

@@ -88,13 +88,7 @@ $().ready(function() {
 
 		interval: 4000
 	});
-
-	$("#top-products-slide-show .carousel-inner > li").chunkList();
 	
-	/*
-	 * Pause button
-	 */
-
 	$(document).on('click', '.btn-pause', function(){
 		
 		if($(this).hasClass('active')){
@@ -107,6 +101,8 @@ $().ready(function() {
 			$('#top-products-slide-show').carousel('cycle');
 		}
 	});
+	
+	$("#top-products-slide-show .carousel-inner > li").chunkList();
 
 	/* 
 	 * Accordion Icons 
@@ -167,15 +163,17 @@ $.fn.formatRating = function(){
 
 	$(this).each( function(){
 
-		$('img', this).remove();
+		
 
-		if($(this).attr('data-rating').length){
+		if(!!$(this).attr('data-rating')){
 
 			var nRating = $(this).attr('data-rating');
 		}else
-		if($(this).removeClass('CompareCenter CompareRating').attr('class') == ''){
+		if($('img', this).length){
 
 			var nRating = $(this).find('img').attr('src').match(/Rating(\d+)/)[1];
+
+			$('img', this).remove();
 		}else{
 			
 			var nRating = this.className.match(/Rating(\d+)/)[1];
@@ -194,7 +192,7 @@ $.fn.formatRating = function(){
 
 $.fn.chunkList = function(){
 
-	var per_slide = 4;
+	var per_slide = 3;
 	
 	for(var i = 0; i < this.length; i += per_slide){
 

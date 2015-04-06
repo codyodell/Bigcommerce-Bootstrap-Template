@@ -1,9 +1,12 @@
-/* @import url(//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700,800); */
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700,800);
+
 /*
 
-@import url(http://fonts.googleapis.com/css?family=Roboto:200,400,700,300,900,400italic,700italic,900italic);
-@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
+Commonly used fonts:
+@import url(//fonts.googleapis.com/css?family=Roboto:200,400,700,300,900,400italic,700italic,900italic);
+@import url(//fonts.googleapis.com/css?family=Roboto:200,400,700,300,900,400italic,700italic,900italic);
+@import url(//fonts.googleapis.com/css?family=EB+Garamond);
+@import url(//fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic);
 
 !!!!!!!!!! WARNING !!!!!!!!!!
 
@@ -37,7 +40,9 @@ Please remember to replicate your changes in init.less, or just make your change
 
  * Style Initialization
 
-   --- Header --- */
+*/
+
+/* --- Header --- */
 
 #TopMenu a{ color: #fff; }
 #header + .container{ background: #fff; }
@@ -53,11 +58,9 @@ Please remember to replicate your changes in init.less, or just make your change
 .Required { color:#FF7800; }
 
 
-
 /* --- Products --- */
 
 .productAttributeList .required { color: #be0303; }
-
 
 
 /* --- Fast Cart --- */
@@ -67,8 +70,8 @@ Please remember to replicate your changes in init.less, or just make your change
 
 .ComparisonTable a { color:#6E6E6E; }
 .ComparisonTable a:hover {
-	color:#6E6E6E;
-	text-decoration:underline;
+   color:#6E6E6E;
+   text-decoration:underline;
 }
 .CompareFieldName a { color:#6E6E6E; }
 td.ProductName a{ color:#6E6E6E; }
@@ -76,7 +79,7 @@ td.ProductName a{ color:#6E6E6E; }
 #footer-bottom{
 
   color: #e1e2e0;
-	background: #5c5c5c;
+   background: #5c5c5c;
 }
 
 blockquote:before { color: #ccc; }
@@ -102,11 +105,9 @@ ul.ShippingAddressList li .UtilityLinks a { color: #464646; }
 .WrappingOptions a { /*color: #FF7800;*/ }
 
 
-
 /* --- Blog --- */
 
 ul.blog-tags li span:hover{ border-color: #aaa; }
-
 
 
 /* --- Faceted Search --- */

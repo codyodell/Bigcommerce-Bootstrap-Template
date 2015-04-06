@@ -75,7 +75,14 @@ function BigCommerceProductCarousel(){
     $(config.carousel.product.selector).carousel({
 
         interval: config.carousel.product.interval
-    });
+    }).on('slide.bs.carousel', function (e) {
+        var nextH = $(e.relatedTarget).height();
+        console.log(nextH)
+        console.log( $(this).find('.active.item').parent() )
+        $(this).find('.active.item').parent().animate({
+            height: nextH
+        }, 500);
+    });;
 
     $('li', config.carousel.product.nav).on('click', function(e){
 

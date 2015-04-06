@@ -488,7 +488,7 @@ a.ChangeLink {
 
 /* --- Product Slider & Product Modal Slider --- */
 
-#product-image-carousel{
+#product-image-carousel, #product-image-carousel-modal{
 
 	position: relative;
 	text-align: center;
@@ -506,8 +506,8 @@ a.ChangeLink {
 #product-image-carousel .carousel-inner .item, 
 #product-image-carousel-modal .carousel-inner .item{
 
-	min-height: 400px;
-	line-height: 400px;
+/*	min-height: 400px;
+	line-height: 400px;*/
 }
 
 .zoomContainer{

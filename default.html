@@ -6,12 +6,12 @@
 
     %%Panel.Header%%
 
-    %%Panel.HomeSlideShow%%
-
-    <div class="banner-top">
+    <div class="top-banner">
 
         %%Banner.TopBanner%%
-	</div>
+    </div>
+
+    %%Panel.HomeSlideShow%%
         
     <main id="main">
         <div class="container">
@@ -27,13 +27,21 @@
                     %%Panel.HomeNewProducts%%
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12" id="best-sellers">
+            <div class="row" id="best-sellers">
 
-                    <h2 class="page-header"><span>Our Best Selling Products</span></h2>
+                <div class="col-md-9">
 
-                    %%Panel.HomeFeaturedProducts%%
+                    <h2><span>Our Best Selling Products</span></h2>
                 </div>
+                <div class="col-md-3">
+                    <div class="controls pull-right hidden-xs">
+                        <a class="left btn btn-success" href="#top-products-slide-show" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                        <a class="left btn btn-success btn-pause" href="#top-products-slide-show" data-toggle="button"><i class="glyphicon glyphicon-pause"></i></a>
+                        <a class="right btn btn-success" href="#top-products-slide-show" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                    </div>
+                </div>
+                
+                %%Panel.HomeFeaturedProducts%%
             </div>
         </div>
     </main>

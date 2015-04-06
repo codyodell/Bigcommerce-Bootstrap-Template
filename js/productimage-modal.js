@@ -77,8 +77,17 @@ function BigCommerceProductModalCarousel(){
     });
 
     $(config.carousel.product_modal.selector).carousel({
+
         pause: true,
         interval: config.carousel.product_modal.interval
+    }).on('slide.bs.carousel', function (e) {
+        
+        var nextH = $(e.relatedTarget).height();
+        console.log(nextH)
+        console.log( $(this).find('.active.item').parent() )
+        $(this).find('.active.item').parent().animate({
+            height: nextH
+        }, 500);
     }).carousel(parentSlideNumber);
 
     $('li', config.carousel.product_modal.nav).on('click', function(e){
