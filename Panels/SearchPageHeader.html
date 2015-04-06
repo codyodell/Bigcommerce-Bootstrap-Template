@@ -1,0 +1,30 @@
+<h2 class="page-header">
+	%%GLOBAL_SearchTitle%%
+	<a id="advanced-search-toggle" class="btn btn-default pull-right" href="#form-advanced-search" data-toggle="collapse" style="display:%%GLOBAL_HideAdvancedLink%%;">Advanced Search</a>
+</h2>
+
+
+
+%%Panel.AdvancedSearch%%
+
+<a name="results"></a>
+
+<p class="alert alert-info" style="display:%%GLOBAL_HideRelatedSearches%%">
+	<strong>%%LNG_RelatedSearches%%:</strong> %%SNIPPET_RelatedSearches%%
+</p>
+
+<p class="SearchSuggest" style="display: %%GLOBAL_ShowSearchSuggestion%%">
+	<strong>%%LNG_DidYouMean%%:</strong> 
+	<a class="nofollow" rel="nofollow" data-params="&amp;correction=%%GLOBAL_SearchId%%" href="%%GLOBAL_ShopPath%%/search.php?search_query=%%GLOBAL_SuggestQueryEscaped%%">%%GLOBAL_SuggestQuery%%</a>
+</p>
+
+<script>
+
+function setProductListHeights(){}
+
+</script>
+<!-- START:Panel.SearchJavaScript -->
+%%Panel.SearchJavaScript%%
+<!-- END:Panel.SearchJavaScript -->
+
+
