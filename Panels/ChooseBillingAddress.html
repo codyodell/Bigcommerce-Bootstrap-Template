@@ -1,16 +1,14 @@
-	<div class="Block Moveable Panel" id="ChooseBillingAddress">
+	<div id="ChooseBillingAddress">
+
 		<h2>%%GLOBAL_CheckoutShippingTitle%%</h2>
+
 		%%Discount.FreeShippingEligibility%%
-		<div class="BlockContent">
-			<p class="InfoMessage Message">
-				%%GLOBAL_CheckoutShippingIntro%%
-			</p>
-			<div class="PL20">
-				<ul class="ShippingAddressList">
-					%%SNIPPET_ShippingAddressList%%
-				</ul>
-			</div>
-		</div>
+
+		<p class="alert alert-info">%%GLOBAL_CheckoutShippingIntro%%</p>
+
+		<ul class="ShippingAddressList">
+			%%SNIPPET_ShippingAddressList%%
+		</ul>
 	</div>
 
 	%%Panel.ChooseShippingAddressJavaScript%%

@@ -1,19 +1,23 @@
-<div id="cookieNotification">
+<div id="cookie-notification">
 	<div class="cookie-inner">
-		<i class="icon-info"></i>
-		<button id="acceptCookie">OK</button>
+		<i class="glyphicon glyphicon-icon-info"></i>
+		<button class="btn btn-default" id="acceptCookie">OK</button>
 		<p>%%GLOBAL_PrivacyCookieNotification%%</p>
 	</div>
 </div>
 
-<script type="text/javascript">
+<script>
 
 var notificationDiv = $('#cookieNotification');
+
 notificationDiv.slideDown('slow');
 
 $('#acceptCookie').delegate('', 'click', function(){
+
 	createCookie('ACCEPT_COOKIE_USAGE', 1, 365);
+
 	notificationDiv.slideUp('slow',function(){
+
 		notificationDiv.remove();
 	});
 });

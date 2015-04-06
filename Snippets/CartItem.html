@@ -1,8 +1,8 @@
 	<tr>
-		<td class="CartThumb" style="%%GLOBAL_HideThumbColumn%%">
+		<td class="cart-thumb" style="%%GLOBAL_HideThumbColumn%%">
 			%%GLOBAL_ProductImage%%
 		</td>
-		<td class="ProductName" colspan="%%GLOBAL_ProductNameSpan%%">
+		<td class="product-name" colspan="%%GLOBAL_ProductNameSpan%%">
 
 			<h4><a href="%%GLOBAL_ProductLink%%">%%GLOBAL_ProductName%%</a></h4>
 
@@ -21,16 +21,16 @@
 				%%LNG_GiftWrapping%%:
 				%%GLOBAL_GiftWrappingName%%
 
-				<a href="#" onclick="Cart.ManageGiftWrapping('%%GLOBAL_CartItemId%%'); return false;" style="%%GLOBAL_HideGiftWrappingAdd%%">%%LNG_Add%%</a>
+				<a href="#" class="btn btn-default" onclick="Cart.ManageGiftWrapping('%%GLOBAL_CartItemId%%'); return false;" style="%%GLOBAL_HideGiftWrappingAdd%%">%%LNG_Add%%</a>
 
 				<span style="%%GLOBAL_HideGiftWrappingEdit%%">
 
-					<a href="#" onclick="Cart.ManageGiftWrapping('%%GLOBAL_CartItemId%%');">
-						<strong>%%LNG_Change%%</strong>
+					<a href="#" class="btn btn-default" onclick="Cart.ManageGiftWrapping('%%GLOBAL_CartItemId%%');">
+						%%LNG_Change%%
 					</a> 
-					%%LNG_Or%% 
-					<a href="cart.php?action=remove_giftwrapping&amp;item_id=%%GLOBAL_CartItemId%%" onclick="return Cart.RemoveGiftWrapping();">
-						<strong>%%LNG_Remove%%</strong>
+					<span class="or">%%LNG_Or%%</span>
+					<a class="btn btn-danger" href="cart.php?action=remove_giftwrapping&amp;item_id=%%GLOBAL_CartItemId%%" onclick="return Cart.RemoveGiftWrapping();">
+						%%LNG_Remove%%
 					</a>
 				</span>
 
@@ -41,15 +41,15 @@
 				</span>
 			</div>
 		</td>
-		<td class="CartItemIndividualPrice">
+		<td class="cart-item-price-single">
 
 			<strong class="btn">%%GLOBAL_ProductPrice%%</strong>
 		</td>
-		<td class="CartItemQuantity">
+		<td class="cart-item-quantity">
 
 			%%GLOBAL_CartItemQty%%
 		</td>
-		<td class="CartItemTotalPrice">
+		<td class="cart-item-price-total">
 
 			<strong class="btn product-price">%%GLOBAL_ProductTotal%%</strong>
 

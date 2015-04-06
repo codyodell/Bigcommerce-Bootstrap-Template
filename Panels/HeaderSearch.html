@@ -11,17 +11,22 @@
     </div>
 </nav>
 -->
+			<div class="navbar-collapse collapse" id="collapse-search">
+				
+				<form class="nav navbar-nav navbar-form" id="form-search" action="%%GLOBAL_ShopPath%%/search.php" method="get" role="search">
 
-			<form class="nav navbar-nav navbar-form" id="form-search" action="%%GLOBAL_ShopPath%%/search.php" method="get" role="search">
-				<div class="input-group">
-					<label for="search_query" class="sr-only">%%LNG_Search%%</label>
-				    <input class="form-control" type="search" name="search_query" id="search_query" placeholder="Search" autofocus="autofocus" autocomplete="off">
-				    <div class="input-group-btn">
-				        <button class="btn btn-default">
-				        	<span class="sr-only">Search</span>
-				        	<i class="glyphicon glyphicon-search"></i>
-				        </button>
-				    </div>
-				</div>
-				<ul id="search_results" class="dropdown-menu" role="menu"></ul>
-	        </form>
+					<div class="input-group">
+						
+					    <input class="form-control" type="search" name="search_query" id="search_query" placeholder="May We Help You find anything?" autofocus="autofocus" autocomplete="off">
+					    <label for="search_query" class="sr-only">%%LNG_Search%%</label>
+					    <div class="input-group-btn">
+					        <button class="btn btn-info">
+					        	<span class="sr-only">Search</span>
+					        	<i class="glyphicon glyphicon-search"></i>
+					        </button>
+					    </div>
+					</div>
+					<ul id="search_results" class="dropdown-menu" role="menu"></ul>
+
+		        </form>
+	        </div>

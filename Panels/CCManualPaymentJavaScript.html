@@ -1,7 +1,8 @@
-<script type="text/javascript">
-//<[CDATA[
+<script>
+
 	/* Make sure all credit card details have been provided and are valid */
 	function check_cc_payment_form() {
+
 		var cc_name = g("cc_name");
 		var cc_cctype = g("cc_cctype");
 		var cc_ccno = g("cc_ccno");
@@ -9,18 +10,21 @@
 		var cc_ccexpy = g("cc_ccexpy");
 
 		if(cc_name.value == "") {
+
 			alert("%%LNG_CCManualEnterName%%");
 			cc_name.focus();
 			return false;
 		}
 
 		if(cc_cctype.selectedIndex == 0) {
+
 			alert("%%LNG_CCManualChooseCardType%%");
 			cc_cctype.focus();
 			return false;
 		}
 
 		if(isNaN(cc_ccno.value) || cc_ccno.value == "" || !validateCreditCard(cc_ccno.value)) {
+
 			alert("%%LNG_CCManualEnterCardNumber%%");
 			cc_ccno.focus();
 			cc_ccno.select();
@@ -28,6 +32,7 @@
 		}
 
 		if(requiresCVV2() && ($('#cc_cvv2').val() == '' || isNaN($('#cc_cvv2').val()) || $('#cc_cvv2').val().length > 4)) {
+
 			alert('%%LNG_CCManualEnterCVV2Number%%');
 			$('#cc_cvv2').focus();
 			$('#cc_cvv2').select();
@@ -35,18 +40,21 @@
 		}
 
 		if(cc_ccexpm.selectedIndex == 0) {
+
 			alert("%%LNG_CCManualEnterCreditCardMonth%%");
 			cc_ccexpm.focus();
 			return false;
 		}
 
 		if(cc_ccexpy.selectedIndex == 0) {
+
 			alert("%%LNG_CCManualEnterCreditCardYear%%");
 			cc_ccexpy.focus();
 			return false;
 		}
 
 		if(hasIssueNo() && ($('#cc_issueno').val() == '' || isNaN($('#cc_issueno').val())) ) {
+			
 			if(hasIssueDate() && (g('cc_issuedatey').selectedIndex == 0  || g('cc_issuedatem').selectedIndex == 0)) {
 				alert("%%LNG_CCManualEnterIssueDetails%%");
 				$('#cc_issueno').focus();
@@ -83,53 +91,67 @@
 
 		// If the total mod 10 equals 0, the number is valid
 		if (total % 10 == 0) {
+
 			return true;
-		} else {
+		}else{
+
 			return false;
 		}
 	}
 
 	function requiresCVV2() {
+
 		var type = $('#cc_cctype').val();
+
 		if(type) {
+
 			if($('#CCType_'+type).hasClass('requiresCVV2')) {
+
 				return true;
-			}
-			else {
+			}else{
+
 				return false;
 			}
-		}
-		else {
+		}else{
+
 			return false;
 		}
 	}
 
 	function hasIssueDate() {
+
 		var type = $('#cc_cctype').val();
+
 		if(type) {
+
 			if($('#CCType_'+type).hasClass('hasIssueDate')) {
+
 				return true;
-			}
-			else {
+			}else{
+
 				return false;
 			}
-		}
-		else {
+		}else{
+
 			return false;
 		}
 	}
 
 	function hasIssueNo() {
+
 		var type = $('#cc_cctype').val();
+
 		if(type) {
+
 			if($('#CCType_'+type).hasClass('hasIssueNo')) {
+
 				return true;
-			}
-			else {
+			}else{
+
 				return false;
 			}
-		}
-		else {
+		}else{
+
 			return false;
 		}
 	}
@@ -158,5 +180,4 @@
 	$(document).ready(function() {
 		updateCreditCardType();
 	});
-//]]>
 </script>

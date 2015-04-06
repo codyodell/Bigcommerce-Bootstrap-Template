@@ -141,7 +141,7 @@ var FormField = {
 			return dd;
 		},
 
-	'GetFieldDefinitionTag':
+	'GetFieldDefinitionTag': // Definition 'Term', not Tag
 		function(field)
 		{
 			var dd = FormField.GetFieldDefinitionData(field);
@@ -168,10 +168,8 @@ var FormField = {
 		{
 			var field = FormField.GetField(fieldId);
 
-			if (!field) {
-				return '';
-			}
-
+			if (!field) return '';
+			
 			switch (FormField.GetFieldType(field).toLowerCase()) {
 				case 'radioselect':
 				case 'checkboxselect':

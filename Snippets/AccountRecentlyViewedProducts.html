@@ -1,13 +1,18 @@
 <li class="item">
-	<div class="ProductImage">
+	<div class="product-image">
 		%%GLOBAL_ProductThumb%%
 	</div>
-	<div class="ProductDetails">
-		<strong><a href="%%GLOBAL_ProductLink%%" class="%%GLOBAL_SearchTrackClass%%">%%GLOBAL_ProductName%%</a></strong>
-		<em>%%GLOBAL_ProductPrice%%</em>
-		<span class="Rating Rating%%GLOBAL_ProductRating%%"><img src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_ProductRating%%.png" alt="" style="%%GLOBAL_HideProductRating%%" /></span>
+	<div class="product-details">
+		<h4><a href="%%GLOBAL_ProductLink%%" class="%%GLOBAL_SearchTrackClass%%">%%GLOBAL_ProductName%%</a></h4>
+		<strong>%%GLOBAL_ProductPrice%%</strong>
+		<span class="product-rating" data-rating="%%GLOBAL_ProductRating%%"></span>
 	</div>
-	<div class="ProductCompareButton" style="display:%%GLOBAL_HideCompareItems%%">
-		<input type="checkbox" class="CheckBox" name="compare_product_ids" id="compare_%%GLOBAL_ProductId%%" value="%%GLOBAL_ProductId%%" onclick="product_comparison_box_changed(this.checked)" /> <label for="compare_%%GLOBAL_ProductId%%">%%LNG_Compare%%</label>
+	<div class="btn btn-default btn-compare" style="display:%%GLOBAL_HideCompareItems%%">
+		<div class="checkbox">
+			<label for="compare_%%GLOBAL_ProductId%%">
+				<input type="checkbox" name="compare_product_ids" id="compare_%%GLOBAL_ProductId%%" value="%%GLOBAL_ProductId%%" onclick="product_comparison_box_changed(this.checked)"> 
+				%%LNG_Compare%%
+			</label>
+		</div>
 	</div>
 </li>

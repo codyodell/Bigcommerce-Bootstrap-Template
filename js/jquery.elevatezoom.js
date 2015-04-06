@@ -36,8 +36,8 @@ if ( typeof Object.create !== 'function' ) {
 (function( $, window, document, undefined ) {
 	var ElevateZoom = {
 			init: function( options, elem ) {
+
 				var self = this;
-				console.log('test');
 				
 				self.elem = elem;
 				self.$elem = $( elem );
@@ -481,7 +481,7 @@ if ( typeof Object.create !== 'function' ) {
 
 				//fix for initial zoom setting
 				if (self.options.zoomLevel != 1){
-					//	self.changeZoomLevel(self.currentZoomLevel);
+					self.changeZoomLevel(self.currentZoomLevel);
 				}
 				//set the min zoomlevel
 				if(self.options.minZoomLevel){

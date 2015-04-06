@@ -1,9 +1,11 @@
-<div class="DetailRow">
-	<div class="Label">
-		%%GLOBAL_ProductFieldRequired%%%%GLOBAL_CheckboxFieldNameLeft%%:
-	</div>
-	<div class="Value">
-		<input type="%%GLOBAL_ProductFieldType%%" name="ProductFields[%%GLOBAL_ProductFieldId%%]" size="%%GLOBAL_ProductFieldInputSize%%" class="CheckBox %%GLOBAL_FieldRequiredClass%%" %%GLOBAL_ProductFieldValue%%  />
-		%%GLOBAL_CheckboxFieldNameRight%%
-	</div>
-</div>
+<dl>
+	<dt>
+		%%GLOBAL_ProductFieldRequired%% %%GLOBAL_CheckboxFieldNameLeft%%:
+	</dt>
+	<dd class="checkbox">
+		<label for="product-fields[%%GLOBAL_ProductFieldId%%]">
+			<input type="%%GLOBAL_ProductFieldType%%" name="product-fields[%%GLOBAL_ProductFieldId%%]" size="%%GLOBAL_ProductFieldInputSize%%" class="%%GLOBAL_FieldRequiredClass%%" %%GLOBAL_ProductFieldValue%%>
+			%%GLOBAL_CheckboxFieldNameRight%%
+		</label>
+	</dd>
+</dl>

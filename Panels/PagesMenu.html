@@ -1,33 +1,19 @@
+<button type="button" class="navbar-toggle navbar-toggle-menu collapsed" data-toggle="collapse" data-target="#navbar-collapse-main-menu">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+</button>
 
-	<!--
-	<h3 class="sr-only">Categories</h3>
-	%%Panel.SideCategoryList%% 
-	-->
-	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main-menu">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	</button>
+<div class="collapse navbar-collapse" id="navbar-collapse-main-menu">
 
-	<div class="collapse navbar-collapse" id="navbar-collapse-main-menu">
+    <h3 class="sr-only">Categories</h3>
+    
+    %%Panel.SideCategoryList%%
 
-		<h3 class="sr-only">Pages</h3>
+    <h3 class="sr-only">Pages</h3>
 
-		<ul class="nav navbar-nav">
-			<li class="link-home">
-				<a href="%%GLOBAL_ShopPathNormal%%/"><span>%%LNG_MainPage%%</span></a>
-			</li>
-
-			%%SNIPPET_PageMenu%%
-
-			<li class="link-cart">
-				<a href="/cart.php"><span><strong>%%GLOBAL_CartItems%%</strong> Checkout</span></a>
-			</li>
-		</ul>
-
-		<div class="pull-right">
-
-			%%Panel.HeaderSearch%%
-		</div>
-	</div>
+    <ul class="nav navbar-right">
+        %%SNIPPET_PageMenu%%
+    </ul>
+</div>

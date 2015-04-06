@@ -10,16 +10,15 @@ function getsearchXML( search_query ){
     $.ajax({
         url: '/search.php',
         type: 'GET',
-        async: false,
         data: { 
             action: 'AjaxSearch', 
             search_query: search_query 
         },
         success: function(data, textStatus, request) {
 
-            clearResults();
-
             response = $('result', data); 
+
+            if (response) return parseResults(response);
         },
         error: function(req, err){ 
 
@@ -27,8 +26,6 @@ function getsearchXML( search_query ){
         },
         dataType: 'xml'
     });
-
-    if (response) return response;
 };
 
 function doSearch( search_query ){
@@ -37,29 +34,59 @@ function doSearch( search_query ){
 
     if (search_query.length){
 
-        var response = getsearchXML( search_query );
+        getsearchXML( search_query );
+    }else{
+
+        $('#form-search').removeClass('has-results').addClass('no-results');
+    }
+}
+
+function parseResults(response){
+
+    clearResults();
+
+    if($(response).length){
+
+        $('#form-search').removeClass('no-results').addClass('has-results');
 
         $(response).each( function( index, value ) {
 
-            var current_result = $(value).text().replace('<![CDATA[', '').replace(']]', ''),
-                current_result = $('<p />').append( current_result ),
-                productData = {
-                    image: $('.QuickSearchResultImage img', current_result).attr('src'),
-                    product: $('.QuickSearchResultMeta .QuickSearchResultName a', current_result).attr('href'),
+            var current_result         = $('<p />').append( $(value).text().replace('<![CDATA[', '').replace(']]', '') ),
+                current_product_image  = $('.QuickSearchResultImage img', current_result).attr('src'),
+                current_product_rating = 0,
+                current_product_price  = 0;
+
+            if( !$('.QuickSearchResultImage img', current_result).length ){
+
+                current_product_image = config.defaultThumbnail;
+            }
+
+            if($('.QuickSearchResultMeta img.RatingIMG', current_result).length){
+
+                var ratingImageSource = $('.QuickSearchResultMeta img.RatingIMG', current_result).attr('src');
+
+                if(ratingImageSource){
+
+                    current_product_rating = ratingImageSource.match(/Rating(\d+)/)[1];
+                }
+            }
+
+            if( $('.QuickSearchResultMeta .Price', current_result).length ){
+
+                current_product_price = parseFloat( $('.QuickSearchResultMeta .Price', current_result).text().replace('$', ''), 2);
+            }
+
+            var productData = {
+                    image: current_product_image,
+                    title: $('.QuickSearchResultMeta .QuickSearchResultName a', current_result).attr('href'),
                     name: $('.QuickSearchResultMeta .QuickSearchResultName a', current_result).text(),
-                    price: parseFloat( $('.QuickSearchResultMeta .Price', current_result).text().replace('$', ''), 2),
-                    rating: parseInt( $('.QuickSearchResultMeta img', current_result).attr('src').match(/Rating(\d+)/)[1] )
+                    price: current_product_price,
+                    rating: parseInt( current_product_rating )
                 };
 
             results.push( productData )
         });
 
-        printResults();
-    }else{
-
-        clearResults();
-
-        results = [];
         printResults();
     }
 }
@@ -84,32 +111,17 @@ function printResults(){
 
     $.each(results, function(index, value) {
 
-        var itemTemplate = $('#template-quicksearch-product').html()
-            .replace(new RegExp('{{product.url}}', 'g'), value.product)
+        var current_product_price = (value.price > 0)?'$' + value.price:'',
+            itemTemplate = $('#template-quicksearch-product').html()
+            .replace(new RegExp('{{product.url}}', 'g'), value.title)
             .replace(new RegExp('{{product.name}}', 'g'), value.name)
-            .replace(new RegExp('{{product.price}}', 'g'), '$' + value.price)
-            .replace(new RegExp('{{product.image}}', 'g'), value.image);
-
-        console.log( itemTemplate );
+            .replace(new RegExp('{{product.image}}', 'g'), value.image)
+            .replace(new RegExp('{{product.price}}', 'g'), current_product_price);
 
         $('#search_results').append( $(itemTemplate).html() );
     });
 }
 
-// Show the dropdown menu as long as there are characters in the text field
-function checkTextField(){
-
-    // If the value of id search_query is not empty show id search_results otherwise hide it
-    if ($('#search_query').val() != ''){
-
-        $('#form-search').removeClass('no-results').addClass('has-results');
-    }else{
-
-        $('#form-search').removeClass('has-results').addClass('no-results');
-    }
-}
-
-// Hide the dropdown menu if there is a left mouse click outside of it
 $(document).mouseup(function (e){
 
     var container = $("#search_results");
@@ -122,13 +134,7 @@ $(document).mouseup(function (e){
 
 $(document).ready(function() {
 
-    
-
-    $('#form-search').css({ position: 'relative'});
-
     $("#search_query").keyup(function() {
-
-        checkTextField();
 
         var search_query = encodeURIComponent( $(this).val().toLowerCase() );
 

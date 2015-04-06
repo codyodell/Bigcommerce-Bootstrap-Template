@@ -1,20 +1,24 @@
 <li>
-    <div class="FloatRight actions">
+    <div class="pull-right actions">
+
         <form action="%%GLOBAL_ShopPath%%/account.php" method="get">
-		<input type="hidden" name="action" value="view_order" />
-		<input type="hidden" name="order_id" value="%%GLOBAL_OrderId%%" />
-		<input type="submit" value="%%LNG_ViewOrder%%" />
-	</form>
+			<input type="hidden" name="action" value="view_order">
+			<input type="hidden" name="order_id" value="%%GLOBAL_OrderId%%">
+			<input type="submit" value="%%LNG_ViewOrder%%">
+		</form>
+
         <span class="separator">|</span>
-	<form action="%%GLOBAL_ShopPath%%/account.php" method="get">
-		<input type="hidden" name="action" value="reorder" />
-		<input type="hidden" name="order_id" value="%%GLOBAL_OrderId%%" />
-		<input type="submit" value="%%LNG_Reorder%%" />
-	</form>
+
+		<form action="%%GLOBAL_ShopPath%%/account.php" method="get">
+			<input type="hidden" name="action" value="reorder" />
+			<input type="hidden" name="order_id" value="%%GLOBAL_OrderId%%" />
+			<input type="submit" value="%%LNG_Reorder%%" />
+		</form>
     </div>
 
 	<h3>%%LNG_Order%% #%%GLOBAL_OrderId%%</h3>
-	<p class="Meta">
+
+	<p class="meta">
 		%%LNG_OrderDate%%: %%GLOBAL_OrderDate%%
 	</p>
 
@@ -31,8 +35,10 @@
 	</div>
 
 	<strong>%%LNG_YourOrderContainsTheFollowingItems2%%</strong>
+
 	<ul class="OrderItemList">
 		%%GLOBAL_AccountOrderItemList%%
 	</ul>
+	
 	<hr />
 </li>

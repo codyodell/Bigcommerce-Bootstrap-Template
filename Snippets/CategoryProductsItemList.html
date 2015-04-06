@@ -1,20 +1,27 @@
-<li class="%%GLOBAL_AlternateClass%% ListView item">
-	<div class="ProductImage QuickView2"  data-product="%%GLOBAL_ProductId%%">
-		%%GLOBAL_ProductThumb%%
-	</div>
-	<div class="ProductDetails">
-		<div class="ProductName">
-			<strong><a href="%%GLOBAL_ProductLink%%" class="%%GLOBAL_SearchTrackClass%%">%%GLOBAL_ProductName%%</a></strong>
-		</div>
-		<div class="ProductPrice">%%GLOBAL_ProductPrice%%</div>
-		<div class="Rating Rating%%GLOBAL_ProductRating%%"><img src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_ProductRating%%.png" alt="" style="%%GLOBAL_HideProductRating%%" /></div>
-		<div class="ProductDescription">%%GLOBAL_ProductDescription%%</div>
-		<div class="ProductCompareButton" style="display:%%GLOBAL_HideCompareItems%%">
-			<input type="checkbox" class="CheckBox" name="compare_product_ids" id="compare_%%GLOBAL_ProductId%%" value="%%GLOBAL_ProductId%%" onclick="product_comparison_box_changed(this.checked)" /> <label for="compare_%%GLOBAL_ProductId%%">%%LNG_Compare%%</label> <br />
-		</div>
-		<div class="ProductActionAdd" style="display:%%GLOBAL_HideActionAdd%%;">
-			<a class="btn btn-secondary" href="%%GLOBAL_ProductURL%%">%%GLOBAL_ProductAddText%%</a>
-		</div>
-	</div>
-    <div class="clear"></div>
+<li class="col-xs-12 col-sm-6 col-md-3 QuickView" data-product="%%GLOBAL_ProductId%%">
+    <div class="col-item">
+        <div class="photo">
+            %%GLOBAL_ProductThumb%%
+        </div>
+        <div class="info">
+            <div class="row text-center">
+                <div class="price col-md-12 text-center">
+
+                    <h5><a href="%%GLOBAL_ProductLink%%">%%GLOBAL_ProductName%%</a></h5>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+
+                    <h5 class="price-text-color">%%GLOBAL_ProductPrice%%</h5>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+
+                    <a href="%%GLOBAL_ProductLink%%" class="btn btn-default btn-block hidden-sm">Learn More</a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+
+                    <a href="%%GLOBAL_ProductURL%%" class="btn btn-success btn-block btn-add-to-cart">%%GLOBAL_ProductAddText%%</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </li>

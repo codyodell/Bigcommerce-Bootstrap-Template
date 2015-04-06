@@ -1,11 +1,12 @@
-<tr class="SubTotal">
+<tr class="sub-total">
 	<td colspan="4">
-		%%LNG_GiftCertificate%% (%%GLOBAL_GiftCertificateCode%%):
-		<br />
-		<small style="color: gray;">
+		
+		<p>%%LNG_GiftCertificate%% (%%GLOBAL_GiftCertificateCode%%):</p>
+
+		<small class="text-muted">
 			%%GLOBAL_GiftCertificateRemaining%% %%LNG_GiftCertificateRemaining%% |
-			<a href="cart.php?action=removegiftcertificate&amp;giftcertificateid=%%GLOBAL_GiftCertificateId%%">%%LNG_Remove%%</a>
+			<a class="btn btn-danger" href="cart.php?action=removegiftcertificate&amp;giftcertificateid=%%GLOBAL_GiftCertificateId%%">%%LNG_Remove%%</a>
 		</small>
 	</td>
-	<td><em class="ProductPrice" style="font-style: italic;">%%GLOBAL_CertificateAmountUsed%%</em></td>
+	<td><strong class="product-price">%%GLOBAL_CertificateAmountUsed%%</strong></td>
 </tr>

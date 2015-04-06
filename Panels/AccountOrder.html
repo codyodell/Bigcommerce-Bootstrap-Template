@@ -1,17 +1,17 @@
-<div class="Block Moveable Panel AccountOrder" id="AccountOrder">
-	<h2>%%GLOBAL_StoreName%% - %%LNG_OrderIdHash%%%%GLOBAL_OrderId%%</h2>
-	<div class="BlockContent">
-		<p class="InfoMessage Message">
-			%%LNG_YourOrderDetailsBelow%%
-		</p>
+<div id="AccountOrder">
 
-		<p class="Meta">
-			<span style="display: %%GLOBAL_HideOrderStatus%%">
-				<strong>%%LNG_OrderStatus%%:</strong> %%GLOBAL_OrderStatus%%<br />
-			</span>
-			<strong>%%LNG_OrderDate%%:</strong> %%GLOBAL_OrderDate%%<br />
-			<strong>%%LNG_OrderTotal%%: %%GLOBAL_OrderTotal%%</strong>
-		</p>
+	<h2 class="page-header">%%GLOBAL_StoreName%% - %%LNG_OrderIdHash%%%%GLOBAL_OrderId%%</h2>
+
+		<p class="alert alert-info">%%LNG_YourOrderDetailsBelow%%</p>
+
+		<dl class="meta">
+			<dt style="display: %%GLOBAL_HideOrderStatus%%">%%LNG_OrderStatus%%:</dt> 
+			<dd>%%GLOBAL_OrderStatus%%</dd>
+			<dt>%%LNG_OrderDate%%:</dt> 
+			<dd>%%GLOBAL_OrderDate%%</dd>
+			<dt>%%LNG_OrderTotal%%</dt> 
+			<dd>%%GLOBAL_OrderTotal%%</dd>
+		</dl>
 
 		<hr />
 
@@ -25,17 +25,19 @@
 			%%GLOBAL_ShippingAddress%%
 		</div>
 
-		<hr class="Clear" />
+		<hr />
+
 		%%GLOBAL_FlassMessage%%
+
 		<form action="cart.php?action=addreorderitems" method="post" onsubmit="return ValidateReorderForm(this);" id="ReorderForm">
 
 			<h3>Order #%%GLOBAL_OrderId%% %%LNG_ContainsTheFollowingItems%%:</h3>
 
-			<table cellspacing="0" cellpadding="0" class="CartContents">
+			<table cellspacing="0" cellpadding="0" class="table table-bordered table-striped cart-contents">
 				<thead style="%%GLOBAL_HideItemDetailsHeader%%">
 					<tr>
 						<th>%%LNG_ItemDetails%%</th>
-						<th style="width: 15%; text-align: right;">%%LNG_Price%%</th>
+						<th>%%LNG_Price%%</th>
 					</tr>
 				</thead>
 				<tfoot>
@@ -46,21 +48,21 @@
 				</tbody>
 			</table>
 
+			<input type="hidden" name = "orderid" value="%%GLOBAL_OrderId%%">
 
-
-			<input type="hidden" name = "orderid" value="%%GLOBAL_OrderId%%" />
-			<input type="submit" class="btn" value="%%LNG_Reorder%%" style="float:right;"/>
+			<input type="submit" class="btn btn-primary" value="%%LNG_Reorder%%">
 		</form>
+
 		<div style="%%GLOBAL_HideOrderComments%%">
-			<hr class="Clear" />
+
+			<hr />
+			
 			<h3>%%LNG_OrderComments%%</h3>
-			<div class="PL20">
-				<p>
-					%%GLOBAL_OrderComments%%
-				</p>
-			</div>
+
+			<p>%%GLOBAL_OrderComments%%</p>
 		</div>
+
 		%%Panel.AccountOrderShipments%%
-	</div>
 </div>
+
 %%Panel.AccountOrderJavaScript%%

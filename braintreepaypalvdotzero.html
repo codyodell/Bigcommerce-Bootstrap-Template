@@ -1,0 +1,44 @@
+<p class="ErrorMessage" style="%%GLOBAL_HideCreditCardError%%">
+    <strong>%%LNG_CreditCardProcessingError%%</strong><br />
+    %%GLOBAL_CreditCardErrorMessage%%
+</p>
+<p class="ErrorMessage" id="braintree-paypal-error-message-container" style="display: none">
+    <strong>%%LNG_CreditCardProcessingError%%</strong><br />
+    <!-- JS based error messages are pre defined here -->
+    <span style="%%GLOBAL_HideExpressCheckout%%">
+        It appears that your browser is not supported by PayPal.
+        <a href="#" onclick="return ExpressCheckout.ChangeStep('Confirmation');">Click here</a>
+        to choose a different payment method.
+        <br />
+    </span>
+    <span style="%%GLOBAL_HideMultiPageCheckout%%">
+        It appears that your browser is not supported by PayPal.
+        <a href="/checkout.php?action=confirm_order">Click here</a>
+        to choose a different payment method.
+        <br />
+    </span>
+</p>
+<p class="InfoMessage Message">
+    %%LNG_CreditCardPaypalPaymentIntro%%
+</p>
+<form id="merchant-form" action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=process_payment" method="post">
+    <div class="FormContainer HorizontalFormContainer">
+        <input type="hidden" name="paymentMethodNonce" id="payment-method-nonce" />
+        <div id="paypal-container"></div>
+    </div>
+</form>
+<script type="text/javascript">
+    braintree.setup("%%GLOBAL_ClientToken%%", "paypal", {
+        container: "paypal-container",
+        singleUse: true,
+        paymentMethodNonceInputField: "payment-method-nonce",
+        onSuccess: function() {
+            $('#merchant-form').submit();
+        },
+        onUnsupported: function() {
+            $('#braintree-paypal-error-message-container').css('display', 'block');
+        }
+    });
+
+    BraintreeData.setup('%%GLOBAL_MerchantId%%', 'merchant-form', BraintreeData.environments['%%GLOBAL_BraintreeEnvironment%%']);
+</script>

@@ -1,28 +1,33 @@
 <tr>
-	<td class="ProductName">
+	<td class="product-name">
+
 		<strong>%%GLOBAL_ProductName%%</strong>
-		%%GLOBAL_ProductOptions%%
-		<br />
-		%%GLOBAL_EventDate%%
-		<span class="Availability">%%GLOBAL_ProductAvailability%%</span>
+
+		<p>%%GLOBAL_ProductOptions%%</p>
+		<p>%%GLOBAL_EventDate%%</p>
+
+		<span class="availability">%%GLOBAL_ProductAvailability%%</span>
+
 		<div class="CartExpectedReleaseDate" style="%%GLOBAL_HideExpectedReleaseDate%%">(%%GLOBAL_ProductExpectedReleaseDate%%)</div>
+
 		<div style="%%GLOBAL_HideGiftWrapping%%" class="WrappingOptions">
-			%%LNG_GiftWrapping%%: %%GLOBAL_GiftWrappingName%%
-			<br />
+
+			<p>%%LNG_GiftWrapping%%: %%GLOBAL_GiftWrappingName%%</p>
+
 			<span style="%%GLOBAL_HideGiftMessagePreview%%">
 				%%LNG_GiftMessage%%:
 				%%GLOBAL_GiftMessagePreview%%
 			</span>
 		</div>
-		<div style="margin-top: 10px;%%GLOBAL_HideCartProductFields%%">
-			<dl class="HorizontalFormContainer">
+		<div style="%%GLOBAL_HideCartProductFields%%">
+			<dl>
 				%%GLOBAL_CartProductFields%%
 			</dl>
 		</div>
 	</td>
-	<td align="center" class="CartItemQuantity">%%GLOBAL_ProductQuantity%%</td>
-	<td align="center" class="CartItemIndividualPrice">
+	<td align="center" class="cart-item-quantity">%%GLOBAL_ProductQuantity%%</td>
+	<td align="center" class="cart-item-price-single">
 		%%GLOBAL_ProductPrice%%
 	</td>
-	<td align="right" class="CartItemTotalPrice"><em class="ProductPrice">%%GLOBAL_ProductTotal%%</em></td>
+	<td align="right" class="cart-item-price-total"><strong class="product-price">%%GLOBAL_ProductTotal%%</strong></td>
 </tr>

@@ -1,16 +1,20 @@
-<div id="CreateAccountForm" class="FloatLeft" style="display: none;">
-	<div class="FormContainer HorizontalFormContainer">
-		<dl>
-			<dt><span class="Required">*</span> %%LNG_EmailAddress%%:</dt>
-			<dd><input type="text" class="Textbox Field200" name="account_email" id="account_email" value="%%GLOBAL_AccountEmail%%" /></dd>
+<div id="form-account-create" class="pull-left" style="display: none;">
 
-			<dt class="CheckoutAccountRequiredFields"><span class="Required">*</span> %%LNG_Password%%:</dt>
-			<dd class="CheckoutAccountRequiredFields"><input type="password" autocomplete="off" class="Textbox Field200" name="account_password" id="account_password" value="" />
+	<dl>
+		<dt class="required">%%LNG_EmailAddress%%:</dt>
+		<dd class="required">
+			<input type="text" class="form-control" name="account_email" id="account_email" value="%%GLOBAL_AccountEmail%%">
+		</dd>
 
-			<dt class="CheckoutAccountRequiredFields"><span class="Required">*</span> %%LNG_PasswordConfirm%%:</dt>
-			<dd class="CheckoutAccountRequiredFields"><input type="password" autocomplete="off" class="Textbox Field200" name="account_password2" id="account_password2" value="" />
+		<dt class="required">%%LNG_Password%%:</dt>
+		<dd class="required">
+			<input type="password" autocomplete="off" class="form-control" name="account_password" id="account_password" value="">
+		</dd>
 
+		<dt class="required">%%LNG_PasswordConfirm%%:</dt>
+		<dd class="required">
+			<input type="password" autocomplete="off" class="form-control" name="account_password2" id="account_password2" value="">
+		</dd>
 
-		</dl>
-	</div>
+	</dl>
 </div>

@@ -34,13 +34,7 @@ lang.EnterZip = '%%LNG_EnterShippingZip%%';
 						<tr class="sub-total">
 							<td colspan="4" class="text-right"><strong>%%LNG_Subtotal%%</strong></td>
 							<td>
-
 								<strong class="btn product-subtotal">%%GLOBAL_CartItemTotal%%</strong>
-
-								<a href="#estimate-shipping-form" class="btn btn-info pull-right" id="estimate-shipping-link" data-toggle="collapse">
-									<i class="glyphicon glyphicon-plus-sign"></i>
-									%%LNG_CalculateShippingHandling%%
-								</a>
 							</td>
 						</tr>
 						<tr class="gift-wrapping" style="%%GLOBAL_HideGiftWrappingTotal%%">
@@ -115,38 +109,43 @@ lang.EnterZip = '%%LNG_EnterShippingZip%%';
 						%%SNIPPET_GiftCertificates%%
 						<tr class="cart-grand-total">
 							<td colspan="4" class="text-right lead"><strong>%%LNG_GrandTotal%%</strong></td>
-							<td><strong class="lead btn cart-grand-total-text">%%GLOBAL_CartTotal%%</strong></td>
+							<td><strong class="lead cart-grand-total-text">%%GLOBAL_CartTotal%%</strong></td>
 						</tr>
 						%%GLOBAL_InclusiveTaxes%%
 					</tfoot>
 				</table>
 
 				<div class="row">
-		            <div class="col-md-4 col-sm-12 cart-keep-shopping"  style="display: %%GLOBAL_HideShoppingCartGrid%%">
+		            <div class="col-md-12 col-sm-12 text-center cart-update">
 
-		                <a  class="btn btn-primary btn-lg btn-keep-shopping" href="%%GLOBAL_KeepShoppingLink%%">
-		                	<i class="glyphicon glyphicon-arrow-left"></i>
-		                	Keep Shopping
-		                </a>
+		            	<div class="btn-group" role="group">
+
+			                <a  class="btn btn-primary btn-lg btn-keep-shopping" href="%%GLOBAL_KeepShoppingLink%%">
+			                	<i class="glyphicon glyphicon-arrow-left"></i>
+			                	Keep Shopping
+			                </a>
+
+							<a href="#" class="btn btn-success btn-lg btn-update-cart" style="display: %%GLOBAL_HideCartQuantityTextBox%%">
+								<i class="glyphicon glyphicon-refresh"></i>
+								%%LNG_Update%%
+							</a>
+
+							<a href="#estimate-shipping-form" class="btn btn-lg btn-success" id="estimate-shipping-link" data-toggle="collapse">
+								<i class="glyphicon glyphicon-plus-sign"></i>
+								%%LNG_CalculateShippingHandling%%
+							</a>
+
+							<a class="btn btn-success btn-lg btn-alternative-checkout" href="%%GLOBAL_ShopPath%%/checkout.php?action=multiple" style="%%GLOBAL_HideMultipleAddressShipping%%">
+								%%LNG_CheckoutWithMultipleAddresses%%
+							</a>
+							<!-- <span style="%%GLOBAL_HideMultipleAddressShippingOr%%" class="or">%%LNG_or%%</span> -->
+							<a class="btn btn-primary btn-lg btn-checkout" href="%%GLOBAL_CheckoutLink%%" title="%%LNG_CheckoutButtonTitle%%" style="%%GLOBAL_HideCheckoutButton%%">
+								Proceed To Checkout 
+								<i class="glyphicon glyphicon-arrow-right"></i>
+							</a>
+
+						</div>
 		            </div>
-		            <div class="col-md-4 col-sm-12 text-center cart-update">
-
-						<button class="btn btn-primary btn-lg btn-update-cart" style="display: %%GLOBAL_HideCartQuantityTextBox%%">
-							%%LNG_Update%%
-							<i class="glyphicon glyphicon-refresh"></i>
-						</button>
-		            </div>
-					<div class="col-md-4 col-sm-12 text-right cart-checkout">
-
-						<a class="btn btn-primary btn-lg btn-checkout" href="%%GLOBAL_CheckoutLink%%" title="%%LNG_CheckoutButtonTitle%%" style="%%GLOBAL_HideCheckoutButton%%">
-							Proceed To Checkout 
-							<i class="glyphicon glyphicon-arrow-right"></i>
-						</a>
-						<!-- <span style="%%GLOBAL_HideMultipleAddressShippingOr%%" class="or">%%LNG_or%%</span> -->
-						<a class="btn btn-primary btn-lg btn-alternative-checkout" href="%%GLOBAL_ShopPath%%/checkout.php?action=multiple" style="%%GLOBAL_HideMultipleAddressShipping%%">
-							%%LNG_CheckoutWithMultipleAddresses%%
-						</a>
-					</div>
 				</div>
 
 				<hr />

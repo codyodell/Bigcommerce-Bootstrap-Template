@@ -1,61 +1,72 @@
+
+
 <footer id="footer" role="contentinfo">
     <div class="container">
 
-        <section class="col-md-3 newsletter">
+        %%Panel.SideNewsletterBox%%
 
-            %%Panel.SideNewsletterBox%%
-        </section>
-
-        <nav class="col-md-3 account-menu">
-
-            <ul class="list-group">
-                <li class="list-group-item"><h4 class="list-group-item-heading">Account Menu</h4></li>
-                <li class="list-group-item"><a href="/account.php">My Account</a></li>
-                <li class="list-group-item"><a href="/orderstatus.php">Order Status</a></li>
-                <li class="list-group-item"><a href="/wishlist.php">Wishlist</a></li>
-                <li class="list-group-item"><a href="/giftcertificates.php">Gift Certificates</a></li>
-                <li class="list-group-item"><a href="/login.php">Sign In</a> or</li>
-                <li class="list-group-item"><a href="/login.php?action=create_account">Create an Account</a></li>
-            </ul>
-        </nav>
-
-        <nav class="col-md-3 popular-categories-menu">
-        
-            %%SNIPPET_SideCategoryList%%
-
-        </nav>
-
-        <nav class="col-md-3 resources-menu">
-
-            <ul class="list-group">
-                <li class="list-group-item"><h4 class="list-group-item-heading">Resources</h4></li>
-                <li class="list-group-item"><a href="/shipping-and-returns/">Shipping &amp; Returns</a></li>
-                <li class="list-group-item"><a href="/terms-and-conditions/">Terms &amp; Conditions</a></li>
-                <li class="list-group-item"><a href="/privacy-policy/">Privacy Policy</a></li>
-                <li class="list-group-item"><a href="/about-us/">About Us</a></li>
-                <li class="list-group-item"><a href="/contact-us/">Contact Us</a></li>
-                <li class="list-group-item"><a href="/testimonials/">Testimonials</a></li>
-            </ul>
-        </nav>
-
-    </div>
-</footer>
-
-<footer id="footer-bottom" role="contentinfo">
-    <div class="container">
         <div class="row">
-            <section class="col-md-12">
 
-                <ul class="list-inline" id="copyright">
-                    <li><i>&copy;</i> Copyright <span>%%GLOBAL_Year%%</span></li>
-                    <li><i>&reg;</i> All Rights Reserved</li> 
-                </ul>
+            <div class="col-md-3">
 
-                <ul class="list-inline" id="more-info">
-                    <li><a href="/sitemap.php">Sitemap</a></li>
-                    <li><a href="http://www.redheadlabs.com/">Redhead Labs</a></li>
+                <h4>Quick Links</h4>
+
+                <ul>
+                    <li><a href="/shipping-and-returns/">Shipping &amp; Returns</a></li>
+                    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="/about-us/">About Us</a></li>
+                    <li><a href="/contact-us/">Contact Us</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                    <li><a href="/blog/">Blog</a></li>
                 </ul>
-            </section>
+            </div>
+
+            <div class="col-md-3">
+
+                <h4>Account Menu</h4>
+
+                <ul>
+                    <li><a href="/account.php">My Account</a></li>
+                    <li><a href="/wishlist.php">Wishlist</a></li>
+                    <li><a href="/giftcertificates.php">Gift Certificates</a></li>
+                    <li><a href="/orderstatus.php">Order Status</a></li>
+                    <li><a href="/login.php">Log In</a> or</li>
+                    <li><a href="/login.php?action=create_account">Create an Account</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+
+                <h4>Categories</h4>
+                
+                %%Panel.FooterCategoryList%%
+            </div>
+
+            <div class="col-md-3">
+
+                <h4>Keep In Touch</h4>
+
+                %%Panel.SocialLinks%%
+                
+                <!--<script src="//smarticon.geotrust.com/si.js"></script>-->
+
+                <i class="sprite badge-authorizenet"></i>
+            </div>
+        </div>
+        <div id="footer-bottom">
+            <div class="col-md-7 col-xs-12">
+                
+                <p id="copyright">
+                    &copy; Copyright %%GLOBAL_Year%% &mdash; %%GLOBAL_StoreName%% &mdash; 
+                    All Rights Reserved &mdash; 
+                    %%SNIPPET_SitemapLink%% | 
+                    Design by <a href="http://www.redheadlabs.com/" class="link-redhead">Redhead Labs</a>
+                </p>
+            </div>
+            <div class="col-md-5 col-xs-12 text-right">
+
+                <i class="sprite icon-payments"></i>
+            </div>
         </div>
     </div>
 </footer>

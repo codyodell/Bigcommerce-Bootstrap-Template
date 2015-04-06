@@ -6,7 +6,7 @@ var Cart = {
 		$('.EstimateShipping').slideToggle(300);
 		$('.EstimateShippingLink').toggle();
 		$('.EstimateShipping select:eq(0)').focus();
-		$('#shippingZoneState').uniform();
+		
 		if ($('#shippingZoneState').is(':hidden')) {
 			$('#uniform-shippingZoneState').hide();
 		}
@@ -89,19 +89,11 @@ var Cart = {
 					$('#shippingZoneState').hide();
 					$('#shippingZoneStateName').show();
 					$('#shippingZoneStateRequired').hide();
-					
-					$('#uniform-shippingZoneState').hide();
 				}
 				else {
 					$('#shippingZoneState').show();
 					$('#shippingZoneStateName').hide();
 					$('#shippingZoneStateRequired').show();
-					
-					$.uniform.update(); 
-					$('#uniform-shippingZoneState').show();
-					
-					
-					
 				}
 				$('#shippingZoneState').val('0');
 			}
@@ -180,10 +172,17 @@ var Cart = {
 
 	ManageGiftWrapping: function(itemId)
 	{
+		/*		
 		$.iModal({
 			type: 'ajax',
 			url: 'remote.php?w=selectGiftWrapping&itemId='+itemId
 		});
+		*/
+
+        $("#general-modal").modal({
+        	
+            remote: config.ShopPath + '/remote.php?w=selectGiftWrapping&itemId='+itemId
+        });
 	},
 
 	ToggleGiftWrappingType: function(option)
@@ -226,18 +225,18 @@ var Cart = {
 		}
 	},
 
-	ShowEditOptionsInCartForm: function(itemId)
-	{
-		var modalOptions = {
-			type: 'ajax',
-			url: 'remote.php?w=editconfigurablefieldsincart&itemid='+itemId
-		};
+	ShowEditOptionsInCartForm: function(itemId){
 
-		if (typeof config == 'object' && config.isMobile) {
-			modalOptions.width = 300;
-		}
+        $("#general-modal").modal({
+        	
+            remote: config.ShopPath + '/remote.php?w=editconfigurablefieldsincart&itemid='+itemId
+        });
 
-		$.iModal(modalOptions);
+        $("#general-modal").on('shown.bs.modal', function(){
+
+			$('.productOptionPickListSwatch').formatProductColorSwatches();
+			$('.productOptionViewRectangle').formatProductOptions();
+        });
 	},
 
 	saveItemCustomizations: function()

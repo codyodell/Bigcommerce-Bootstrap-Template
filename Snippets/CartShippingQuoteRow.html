@@ -1,11 +1,13 @@
 <tr>
 	<td>
-		<label>
-			<input type="radio" name="selectedShippingMethod" value="%%GLOBAL_ShippingQuoteId%%" style="vertical-align: bottom;" />
-			%%GLOBAL_ShipperName%% %%GLOBAL_TransitTime%%
-		</label>
+		<div class="radio">
+			<label for="selectedShippingMethod">
+				<input type="radio" name="selectedShippingMethod" value="%%GLOBAL_ShippingQuoteId%%">
+				%%GLOBAL_ShipperName%% %%GLOBAL_TransitTime%%
+			</label>
+		</div>
 	</td>
-	<td class="Price">
-		<em class="ProductPrice">%%GLOBAL_ShippingPrice%%</em>
+	<td>
+		<strong class="product-price">%%GLOBAL_ShippingPrice%%</strong>
 	</td>
 </tr>

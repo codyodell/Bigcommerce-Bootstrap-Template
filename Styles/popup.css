@@ -1,12 +1,12 @@
 
 /* Gobal Reset */
-/** {
+* {
 	margin: 0;
 	padding: 0;
-}*/
+}
 
 /* General */
-/*body {
+body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 0.8em;
 	text-align: center;
@@ -48,10 +48,10 @@ a.disabled:hover {
 
 img, a img {
 	border:none;
-}*/
+}
 
 /* Page Breadcrumbs */
-/*.Nav {
+.Nav {
 	font-size: 0.9em;
 	padding-bottom: 4px;
 	clear:both;
@@ -82,19 +82,9 @@ img, a img {
 }
 
 .ProductTinyImageList ul li .TinyOuterDiv {
-	border-width: 0 !important;
+	border: 2px solid white;
 	display: block;
 
-}
-
-.ProductTinyImageList ul li .TinyOuterDiv a{
-
-	display: block;
-}
-
-.ProductTinyImageList ul li .TinyOuterDiv img{
-
-	max-width: 100%;
 }
 
 .ProductZoomImageBox {
@@ -133,4 +123,4 @@ img, a img {
 	white-space:nowrap;
 	width: 80%;
 	overflow: hidden;
-}*/
+}

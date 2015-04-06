@@ -1,11 +1,12 @@
-<div class="productAttributeRow">
-	<div class="productAttributeLabel">
-		<label for="ProductFields_%%GLOBAL_ProductFieldId%%">
-			<span class="required" %%GLOBAL_ProductFieldRequired%%>*</span>
-			<span class="name">%%GLOBAL_ProductFieldName%%</span>
+<dl class="product-attribute-row">
+	<dt class="product-attribute-label required %%GLOBAL_ProductFieldRequired%%">
+
+		<label for="ProductFields_%%GLOBAL_ProductFieldId%%" class="control-label">
+			%%GLOBAL_ProductFieldName%%
 		</label>
-	</div>
-	<div class="productAttributeValue">
-		<textarea cols="30" rows="3" id="ProductFields_%%GLOBAL_ProductFieldId%%" name="ProductFields[%%GLOBAL_ProductFieldId%%]" class="%%GLOBAL_FieldRequiredClass%%">%%GLOBAL_ProductFieldValue%%</textarea>
-	</div>
-</div>
+	</dt>
+	<dd class="product-attribute-value">
+
+		<textarea cols="30" rows="3" id="ProductFields_%%GLOBAL_ProductFieldId%%" name="ProductFields[%%GLOBAL_ProductFieldId%%]" class="form-control %%GLOBAL_FieldRequiredClass%%">%%GLOBAL_ProductFieldValue%%</textarea>
+	</dd>
+</dl>

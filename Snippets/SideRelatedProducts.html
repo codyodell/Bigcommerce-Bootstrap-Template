@@ -1,11 +1,15 @@
 <li>
-	<div class="ProductImage">
+	<div class="product-image thumbnail">
 		%%GLOBAL_ProductThumb%%
 	</div>
-	<div class="ProductDetails">
-		<input type="hidden" name="ProductDetailsID" class="ProductDetailsID" value="%%GLOBAL_ProductId%%" />
-		<strong><a href="%%GLOBAL_ProductLink%%">%%GLOBAL_ProductName%%</a></strong>
-		<em>%%GLOBAL_ProductPrice%%</em>
-		<span class="Rating Rating%%GLOBAL_ProductRating%%"><img src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_ProductRating%%.png" alt="" style="%%GLOBAL_HideProductRating%%" /></span>
+	<div class="product-details">
+
+		<input type="hidden" name="ProductDetailsID" class="ProductDetailsID" value="%%GLOBAL_ProductId%%">
+
+		<h4><a href="%%GLOBAL_ProductLink%%">%%GLOBAL_ProductName%%</a></h4>
+
+		<strong>%%GLOBAL_ProductPrice%%</strong>
+
+		<span class="product-rating" data-rating="%%GLOBAL_ProductRating%%"></span>
 	</div>
 </li>

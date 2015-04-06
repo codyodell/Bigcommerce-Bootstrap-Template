@@ -1,17 +1,14 @@
 <li>
-	<div class="UtilityLinks">
-		<a
-			href="%%GLOBAL_ShopPath%%/account.php?action=edit_shipping_address&amp;address_id=%%GLOBAL_ShippingAddressId%%&amp;from=%%GLOBAL_FromURL%%"
-			title="%%LNG_Edit%%"
-		>
-			<i class="icon-edit">&nbsp;</i>
+	<div class="utility-links">
+
+		<a href="%%GLOBAL_ShopPath%%/account.php?action=edit_shipping_address&amp;address_id=%%GLOBAL_ShippingAddressId%%&amp;from=%%GLOBAL_FromURL%%" title="%%LNG_Edit%%">
+			<i class="glyphicon glyphicon-cog"></i>
+			<span class="sr-only">Edit</span>
 		</a>
-		<a
-			href="%%GLOBAL_ShopPath%%/account.php?action=delete_shipping_address&amp;address_id=%%GLOBAL_ShippingAddressId%%&amp;from=%%GLOBAL_FromURL%%"
-			onclick="confirm_delete_shipping_address(%%GLOBAL_ShippingAddressId%%, '%%GLOBAL_FromURL%%'); return false;"
-			title="%%LNG_Delete%%"
-		>
-			<i class="icon-trash">&nbsp;</i>
+		
+		<a href="%%GLOBAL_ShopPath%%/account.php?action=delete_shipping_address&amp;address_id=%%GLOBAL_ShippingAddressId%%&amp;from=%%GLOBAL_FromURL%%" onclick="confirm_delete_shipping_address(%%GLOBAL_ShippingAddressId%%, '%%GLOBAL_FromURL%%'); return false;" title="%%LNG_Delete%%">
+			<i class="glyphicon glyphicon-trash"></i>
+			<span class="sr-only">Delete</span>
 		</a>
 	</div>
 	<h3>%%GLOBAL_ShipFullName%%</h3>
@@ -24,8 +21,8 @@
 		<div>%%GLOBAL_ShipPhone%%</div>
 	</p>
 	<form style="display: %%GLOBAL_HideAddressButton%%" action="%%GLOBAL_ShopPath%%/checkout.php" method="get">
-		<input type="hidden" name="action" value="%%GLOBAL_ShippingFormAction%%" />
-		<input type="hidden" name="address_id" value="%%GLOBAL_ShippingAddressId%%" />
-		<input type="submit" value="%%GLOBAL_ShipAddressButtonText%%" class="MT10" />
+		<input type="hidden" name="action" value="%%GLOBAL_ShippingFormAction%%">
+		<input type="hidden" name="address_id" value="%%GLOBAL_ShippingAddressId%%">
+		<input type="submit" class="btn btn-default" value="%%GLOBAL_ShipAddressButtonText%%">
 	</form>
 </li>

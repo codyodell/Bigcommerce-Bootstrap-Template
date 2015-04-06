@@ -358,7 +358,7 @@ var ExpressCheckout = {
 
 	HideLoadingIndicators: function()
 	{
-		HideLoadingIndicator();
+		//HideLoadingIndicator();
 		$('.ExpressCheckoutBlock input[type=submit]').each(function() {
 			if($(this).attr('oldValue') && $(this).attr('disabled') == true) {
 				$(this).val($(this).attr('oldValue'));

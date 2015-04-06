@@ -1,61 +1,42 @@
-<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/validate/jquery.validate.js?%%GLOBAL_JSCacheToken%%"></script>
-<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/cart.js?%%GLOBAL_JSCacheToken%%"></script>
-<script type="text/javascript" src="%%GLOBAL_jQueryUIPath%%"></script>
-<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jquery.form.js?%%GLOBAL_JSCacheToken%%"></script>
-<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/product.attributes.js?%%GLOBAL_JSCacheToken%%"></script>
 
-<script type="text/javascript">
-$(document).ready(function() {
-    
-    $('input[type=radio], input[type=checkbox], input[type=file]').not('.productOptionPickListSwatch input[type=radio], .productOptionViewRectangle input[type=radio]', "div:parent[class^='uniform-']").uniform();
-    $('select').not("div:parent[class^='uniform-']").uniform();
-    
-   
-   	 var modalExtra = $('#ModalTitle').outerHeight(true) + $('#ModalButtonRow').outerHeight(true) + 60; 
-	 var maxModalHt =  $(window).height() - modalExtra;
-	 $('#ModalContent').css('max-height', maxModalHt);
-    
-});
+<script src="%%GLOBAL_CdnAppPath%%/javascript/cart.js?%%GLOBAL_JSCacheToken%%"></script>
+<script src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jquery.form.js?%%GLOBAL_JSCacheToken%%"></script>
+<script src="%%GLOBAL_CdnAppPath%%/javascript/product.attributes.js?%%GLOBAL_JSCacheToken%%"></script>
 
-$(window).bind( 'orientationchange', function(e){
-     var modalExtra = $('#ModalTitle').outerHeight(true) + $('#ModalButtonRow').outerHeight(true) + 60;
-	  var maxModalHt =  $(window).height() - modalExtra;
-	 $('#ModalContent').css('max-height', maxModalHt);
-});
+<link rel="stylesheet" media="screen" href="%%GLOBAL_MASTER_THEME_PATH%%/Styles/product.attributes.css?%%GLOBAL_JSCacheToken%%" />
 
+<script>
+
+	lang.EnterRequiredField = "%%LNG_EnterRequiredField%%";
+	lang.InvalidFileTypeJS = "%%LNG_InvalidFileTypeJS%%";
+	lang.DeleteProductFieldFileConfirmation = "%%LNG_DeleteProductFieldFileConfirmation%%";
 </script>
 
-<link rel="stylesheet" type="text/css" media="screen" href="%%GLOBAL_CdnAppPath%%/javascript/jquery/themes/cupertino/ui.all.css?%%GLOBAL_JSCacheToken%%" />
-<link rel="stylesheet" type="text/css" media="screen" href="%%GLOBAL_MASTER_THEME_PATH%%/Styles/product.attributes.css?%%GLOBAL_JSCacheToken%%" />
+<form id="form-cart-edit-product-fields" method="post" action="cart.php" onsubmit="return Cart.saveItemCustomizations();"  enctype="multipart/form-data">
 
+	<input type="hidden" name="action" value="EditProductFieldsInCart">
+	<input type="hidden" name="item_id" value="%%GLOBAL_ItemId%%">
+	
+	<div class="modal-header">
 
+		<h4 class="modal-title">%%GLOBAL_CustomizeProductTitle%%</h4>
+	</div>
+	<div class="modal-body">
+		<div class="te">
 
-<div id="ModalTitle">%%GLOBAL_CustomizeProductTitle%%</div>
+			<dl class="ProductFields"></dl>
 
-<form id="CartEditProductFieldsForm" method="post" action="cart.php" onsubmit="return Cart.saveItemCustomizations();"  enctype="multipart/form-data">
-	<input type="hidden" name="action" value="EditProductFieldsInCart" />
-	<input type="hidden" name="item_id" value="%%GLOBAL_ItemId%%" />
+			<div class="productAttributeList">
+				%%SNIPPET_ProductFieldsList%%
 
-	<div id="ModalContent" style="overflow: auto;">
-		<dl class="HorizontalFormContainer ProductFields">
+				%%GLOBAL_ProductAttributeList%%
+			</div>
 
-		</dl>
-
-		<div class="productAttributeList">
-			%%SNIPPET_ProductFieldsList%%
-
-			%%GLOBAL_ProductAttributeList%%
 		</div>
 	</div>
+	<div class="modal-footer">
 
-	<div id="ModalButtonRow">
-		<a href="#" onclick="$.modal.close();" class="btn-secondary">%%LNG_Cancel%%</a>
-		<input class="Submit" type="submit" value="%%LNG_Save%%"  />
+		<input class="btn btn-primary" type="submit" value="%%LNG_Save%%">
 	</div>
 </form>
 
-<script type="text/javascript">
-lang.EnterRequiredField = "%%LNG_EnterRequiredField%%";
-lang.InvalidFileTypeJS = "%%LNG_InvalidFileTypeJS%%";
-lang.DeleteProductFieldFileConfirmation = "%%LNG_DeleteProductFieldFileConfirmation%%";
-</script>

@@ -1,38 +1,27 @@
-<li class="col-xs-4 col-sm-4 col-md-4 QuickView" data-product="%%GLOBAL_ProductId%%">
+<li class="col-xs-12 col-sm-6 col-md-4 QuickView" data-product="%%GLOBAL_ProductId%%">
     <div class="col-item">
         <div class="photo">
             %%GLOBAL_ProductThumb%%
         </div>
         <div class="info">
-            <div class="row">
-                <div class="price col-md-12">
+            <div class="row text-center">
+                <div class="price col-md-12 text-center">
 
                     <h5><a href="%%GLOBAL_ProductLink%%">%%GLOBAL_ProductName%%</a></h5>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
 
                     <h5 class="price-text-color">%%GLOBAL_ProductPrice%%</h5>
                 </div>
-                <div class="product-rating hidden-sm col-md-6" data-rating="%%GLOBAL_ProductRating%%">
-                    <!-- 
-                    <i class="price-text-color fa fa-star"></i>
-                    <i class="price-text-color fa fa-star"></i>
-                    <i class="price-text-color fa fa-star"></i>
-                    <i class="price-text-color fa fa-star"></i>
-                    <i class="fa fa-star"></i> 
-                    -->
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+
+                    <a href="%%GLOBAL_ProductLink%%" class="btn btn-default btn-block hidden-sm">Learn More</a>
                 </div>
-            </div>
-            <div class="separator cf">
-                <p class="btn-add" style="display:%%GLOBAL_HideActionAdd%%;">
-                    <i class="glyphicon glyphicon-shopping-cart"></i>
-                    <a href="%%GLOBAL_ProductURL%%" class="hidden-sm">%%GLOBAL_ProductAddText%%</a>
-                </p>
-                <p class="btn-details">
-                    <i class="glyphicon glyphicon-list"></i>
-                    <a href="%%GLOBAL_ProductLink%%" class="hidden-sm">More details</a>
-                </p>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+
+                    <a href="%%GLOBAL_ProductURL%%" class="btn btn-success btn-block btn-add-to-cart">%%GLOBAL_ProductAddText%%</a>
+                </div>
             </div>
         </div>
     </div>
-</li>
+</li>       

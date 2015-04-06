@@ -1,0 +1,114 @@
+/* this file provides theme-specific styles that affect the carousel
+ *
+ * these changes have been placed in a separate file because they are included
+ * in the control panel when the carousel is being previewed
+ *
+ * they cannot be included in slide-show.css because that is compiled
+ * automatically from slide-show.scss */
+
+/* fixes incorrect width created by the `slide' transition in the admin preview
+ * modal */
+#slide-show-preview .slide-show-render.slide-show {
+	width: 942px;
+
+}
+
+.slide-show-render.slide-show {
+	position: relative;
+	padding-bottom: 0;
+	margin: 0 0 0 320px;
+    border-bottom: 0px solid #e5e5e5;
+    overflow: visible;
+	width: 320px;
+}
+.slide-show-render.slide-show .flex-prev, 
+.slide-show-render.slide-show .flex-next {
+display: none !important;
+}
+.slide-show-render.slide-show .flex-prev, 
+.slide-show-render.slide-show .flex-next, 
+.flex-prev-trigger, 
+.flex-next-trigger {
+width:35px; 
+height:35px;
+margin-top: 0px;
+display: block;
+position: absolute;
+bottom: 2px;
+z-index: 10;
+text-align: left;
+text-indent: -99999px;
+overflow: hidden;
+opacity: 1;
+ filter: alpha(opacity = 100);
+-webkit-border-radius: 18px;
+-moz-border-radius: 18px;
+border-radius: 18px;
+-webkit-box-shadow: #ddd 0px 0px 3px;
+-moz-box-shadow: #ddd 0px 0px 3px;
+box-shadow: #ddd 0px 0px 3px;
+}
+
+
+.homeSlideWrap {
+position: relative;
+margin-bottom: 20px;
+padding-bottom: 57px;
+overflow: hidden;
+}
+.homeSlideBox {
+overflow: visible;
+}
+.slide-show-render.slide-show .flex-prev, 
+.flex-prev-trigger {
+	background: url(%%GLOBAL_TPL_PATH%%/images/bg_direction_nav.png) no-repeat -6px -5px;
+	left:2px !important;
+}
+
+.slide-show-render.slide-show .flex-next, 
+.flex-next-trigger {
+	background: url(%%GLOBAL_TPL_PATH%%/images/bg_direction_nav.png) no-repeat -55px -5px;
+	right: 2px !important;
+}
+
+.slide-show-render.slide-show .flex-control-nav.flex-control-paging {
+	position: absolute;
+	left: 0;
+	width: 100% !important;
+	bottom: -42px;
+	width: auto;
+    display:block;
+    text-align: center;
+}
+.slide-show-render.slide-show .flex-control-nav.flex-control-paging li {
+	margin: 0 8px;
+	padding: 0;
+}
+.slide-show-render.slide-show .flex-control-nav.flex-control-paging li a {
+	width: 13px;
+	height: 13px;
+	border: 0px solid rgb(26, 26, 26);
+	background-color: #464646;
+	-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+.slide-show-render.slide-show .flex-control-nav.flex-control-paging li a.flex-active {
+    background-color: #fe9837;
+}
+
+h2.slide-heading {
+    
+}
+.slide-show-render.slide-show .flex-viewport {
+overflow: visible !important;
+width: 300px !important;
+}
+.slide-show-render .slides li {
+width: 300px !important;
+overflow: hidden;
+}
+
+.slide-show-render.slide-show .flex-direction-nav {
+display: none;  
+}

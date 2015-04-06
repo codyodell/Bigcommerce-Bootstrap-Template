@@ -1,6 +1,13 @@
-<h3><span>%%LNG_YourOrderNumber%%</span> <a href="%%GLOBAL_ShopPath%%/account.php?action=view_order&order_id=%%GLOBAL_OrderId%%">%%GLOBAL_OrderId%%</a></h3>
+<h3>
+	<span>%%LNG_YourOrderNumber%%</span> 
+	<a href="%%GLOBAL_ShopPath%%/account.php?action=view_order&amp;order_id=%%GLOBAL_OrderId%%">%%GLOBAL_OrderId%%</a>
+</h3>
+
 <p>%%LNG_HeresHowtoPayforYourOrder%% %%LNG_InstructionsForPaymentBelow%%</p>
-<div class="NotifyMessage">
-	<p class="Bold">%%LNG_HeresHowtoPayforYourOrderThanks%% <em class="ProductPrice">(%%GLOBAL_OrderTotal%% %%LNG_Outstanding%%)</em></p>
+
+<div class="aler alert-info">
+
+	<p class="lead">%%LNG_HeresHowtoPayforYourOrderThanks%% <strong class="product-price">(%%GLOBAL_OrderTotal%% %%LNG_Outstanding%%)</strong></p>
+	
 	<p>%%GLOBAL_PaymentMessage%%</p>
 </div>

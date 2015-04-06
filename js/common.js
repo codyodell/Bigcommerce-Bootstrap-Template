@@ -470,22 +470,20 @@ function fastCartAction(event) {
 		// strip protocol from url to fix cross protocol ajax access denied problem
 		url = url.replace(/^http[s]{0,1}:\/\/[^\/]*\/?/, '/');
 		url += '&fastcart=1';
-		
-		// $('#general-modal').modal({
 
-		// 	remote: url
-		// });
+
 
 		$.ajax({
 			url: url,
 			dataType: 'json',
 			success: function(data)	{
 				if (data.success) {
-					modalOptions = {
-						data: data
-					};
-					_showFastCart(modalOptions);
 
+					console.log(data.imodal);
+
+					$('#general-modal .modal-content').html( data.imodal );
+
+					$('#general-modal').modal();
 
 				}else 
 				if (data.redirect) {
@@ -523,6 +521,7 @@ function fastCartAction(event) {
 
 function _showFastCart(modalOptions) {
 
+
 	modalOptions = $.extend({
 		closeTxt: true,
 		onShow: function() {
@@ -533,7 +532,7 @@ function _showFastCart(modalOptions) {
 				// update the view cart item count on top menu
 				$('.CartLink span').html('(' + itemTxt + ')');
 			}
-			setProductListHeights(null, '.fastCartContent');
+			//setProductListHeights(null, '.fastCartContent');
 			//$('.fastCartContent .ProductList:not(.List) li').width(ThumbImageWidth);
 		},
 		onClose: function() {
@@ -546,7 +545,9 @@ function _showFastCart(modalOptions) {
 			}
 		}
 	}, modalOptions);
-	
+
+
+
 	$.iModal.close();
 	$.iModal(modalOptions);
 }
@@ -573,97 +574,17 @@ function isc_TrackSearchClick (searchId) {
 
 function hideLoadingIndicator(){
 
-	$('#loading').css({height:0});
+	$('#loading').css({top:'-400px'});
+
+	//$('body').addClass('loaded');
 }
 
 function showLoadingIndicator(){
 
-	$('#loading').css({height:'auto'});
+	$('#loading').css({top: '0px'});
+
+	//$('body').removeClass('loaded');
 }
-
-
-$(document).ready(function() {
-	
-	$('.InitialFocus').focus();
-	
-	$('.TabContainer .TabNav li').click(function() {
-
-		$(this).parent('.TabNav').find('li').removeClass('Active');
-		$(this).parents('.TabContainer').find('.TabContent').hide();
-		$(this).addClass('Active');
-		$(this).parents('.TabContainer').find('#TabContent'+this.id).show();
-		$(this).find('a').blur();
-
-		return false;
-	});
-	
-	$('html').ajaxStart(function() {
-
-		showLoadingIndicator();
-	});
-	
-	$('html').ajaxComplete(function() {
-
-		hideLoadingIndicator();
-	});
-	
-	// generic checkbox => element visibility toggle based on id of checkbox and class names of other elements
-	$('.CheckboxTogglesOtherElements').on('change', function(event){
-
-		if (!this.id) {
-			return;
-		}
-		
-		var className = 'ShowIf_' + this.id + '_Checked',
-			elements = $('.' + className);
-		
-		if (this.checked) {
-			// easy, show matching elements
-			elements.show();
-			return;
-		}
-		
-		// if not checked it's a little more tricky -- only hide elements if they are not showing for multiple check boxes
-		var classExpression = /^ShowIf_(.+)_Checked$/;
-
-		elements.each(function(){
-			var $$ = $(this);
-			
-			// before hiding this element, check its classes to see if it has another ShowIf_?_Checked - if it does, see if that class points to a checked box
-			var classes = $$.attr('class').split(/\s+/),
-				checked = false;
-
-			$.each(classes, function(key,value){
-
-				if (value === className) {
-					// we're processing this class already so we know it's unchecked - ignore it
-					return;
-				}
-				
-				var result = classExpression.exec(value);
-
-				if (result === null) {
-					// not a ShowIf_?_Class
-					return;
-				}
-				
-				var id = result[1];
-
-				if ($('#' + id ).attr('checked')) {
-					// found a checked box
-					checked = true;
-					return false;
-				}
-			});
-			
-			if (!checked) {
-				// found no checkbox that should be keeping this element visible
-				$$.hide();
-			}
-		});
-		
-	}).change();
-});
 
 /**
 	* Add a method to the Date object prototype to set the full
@@ -1041,8 +962,137 @@ function triggerStorefrontEvent(name, data, complete) {
 	});
 }
 
-(function($) {
-	if ('undefined' !== typeof $) {
-		$.ajaxSetup({ cache: true });
+$.fn.hideIfEmpty = function(){
+	
+	if(!$(this).text().trim().length)
+	$(this).hide();
+	
+	return this;
+}
+
+$.fn.hideIfChildrenInvisible = function(){
+	
+	if(!$('> *:visible', this).length)
+	$(this).hide();
+	
+	return this;
+}
+
+$.fn.highlightActiveLinks = function(){
+	
+	$(this).each( function(){
+		
+		var relativeLink = $('a', this).attr('href').replace(window.location.protocol + '//' + window.location.host, '');
+		
+		if(relativeLink == window.location.pathname)
+		$(this).addClass('active');
+		
+	});
+	
+	return this;
+}
+
+$.fn.formatRating = function(){
+	
+	$(this).each( function(){
+		
+		
+		
+		if(!!$(this).attr('data-rating')){
+			
+			var nRating = $(this).attr('data-rating');
+		}else
+		if($('img', this).length){
+			
+			var nRating = $(this).find('img').attr('src').match(/Rating(\d+)/)[1];
+			
+			$('img', this).remove();
+			}else{
+			
+			var nRating = this.className.match(/Rating(\d+)/)[1];
+		}
+		
+		for( var i = 0; i < 5; i++ ){
+			
+			var classDisabled = (i >= nRating)?'glyphicon-disabled ':'';
+			
+			$(this).append( $('<i class="' + classDisabled + 'glyphicon glyphicon-star"></i>') );
+		}
+	});
+	
+	return this;
+}
+
+$.fn.formatProductColorSwatches = function(){
+
+	$(this).each( function(){
+
+		$('ul', this).attr({
+			'data-toggle': 'buttons',
+			'class': 'btn-group'
+		});
+
+		$('ul > li', this).each( function(){
+
+			var bgColor = $('.swatchColour', this).css('backgroundColor');
+
+			$('.swatchColour', this).remove();
+
+			$(this).addClass('btn').css('backgroundColor', bgColor);
+
+			$('input', this).attr('autocomplete', 'off');
+
+			$(this).append( $('<span />').addClass('glyphicon glyphicon-ok') );
+
+			// var channels = bgColor.match(/\d+/g), 
+			//     inverted_channels = channels.map(function(ch) {
+			//         return 255 - ch;
+			//     }), 
+			//     inverted = 'rgb(' + inverted_channels.join(', ') + ')';
+
+
+			$('.glyphicon', this).css('color', '#fff');
+
+		});
+
+		$('ul > li input:checked', this).parents('li').trigger('click');
+	});
+}
+
+$.fn.formatProductOptions = function(){
+
+	$(this).each( function(){
+
+		$('ul', this).attr({
+			'data-toggle': 'buttons',
+			'class': 'btn-group'
+		});
+
+		$('ul > li', this).each( function(){
+
+			$(this).addClass('btn btn-info').append( $('<span />').addClass('glyphicon glyphicon-ok') );
+		});
+
+		$('ul > li input:checked', this).parents('li').trigger('click');
+	});
+}
+
+
+$.fn.chunkList = function(){
+	
+	var per_slide = 4;
+	
+	for(var i = 0; i < this.length; i += per_slide){
+		
+		var current = (i == per_slide)?' active':'';
+		
+		this.slice(i, (i + per_slide)).wrapAll('<li class="item' + current + '"><ul class="ProductList"></ul></li>');
 	}
-})($);
+	
+	return this;
+}
+
+$.fn.draggable = function(){
+
+	return this;
+}

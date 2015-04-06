@@ -1,19 +1,27 @@
 <tr>
 	<td>
-		<input type="checkbox" name="deletewishlist[]" value="%%GLOBAL_WishListID%%" />
+		<input type="checkbox" name="deletewishlist[]" value="%%GLOBAL_WishListID%%">
 	</td>
 	<td>
 		<a href="wishlist.php?action=viewwishlistitems&amp;wishlistid=%%GLOBAL_WishListID%%">%%GLOBAL_WishListName%%</a>
 	</td>
-	<td style="text-align:center;" class="wishTableItem">
+	<td class="wishTableItem">
 		%%GLOBAL_NumOfItems%%
 	</td>
-	<td style="text-align:center;" class="wishTableShared">
+	<td class="wishTableShared">
 		%%GLOBAL_WishListShared%%
 	</td>
-	<td class="action" style="text-align:center;">
-		<div class="edit"><a href="wishlist.php?action=editwishlist&amp;wishlistid=%%GLOBAL_WishListID%%">%%LNG_Edit%%</a></div>
-		<div class="delete"><a href="#" onclick = "ValidateDeleteWishlist(false, %%GLOBAL_WishListID%%); return false;">%%LNG_Delete%%</a></div>
+	<td class="action">
+		<div class="edit">
+			<a class="btn btn-primary" href="wishlist.php?action=editwishlist&amp;wishlistid=%%GLOBAL_WishListID%%">
+				%%LNG_Edit%%
+			</a>
+		</div>
+		<div class="delete">
+			<a class="btn btn-default" href="#" onclick="ValidateDeleteWishlist(false, %%GLOBAL_WishListID%%); return false;">
+				%%LNG_Delete%%
+			</a>
+		</div>
 		<div class="share">%%GLOBAL_ShareWishListLink%%</div>
 	</td>
 </tr>

@@ -1,46 +1,31 @@
-<script type="text/javascript">
-$(document).ready(function() {
-    
-  
-   	$('select').not("div:parent[class^='uniform-']").uniform();
-    $('input[type=radio], input[type=checkbox], input[type=file]').not("div:parent[class^='uniform-']").uniform();
-   
-   	var modalExtra = $('#ModalTitle').outerHeight(true) + $('#ModalButtonRow').outerHeight(true) + 60; 
-	 var maxModalHt =  $(window).height() - modalExtra;
-	 $('#ModalContent').css('max-height', maxModalHt);
-    
-});
-$('#giftwrapping_all, #ModalContentContainer input').change(function() {	
+<div class="modal-header">
 	
-	 var modalExtra = $('#ModalTitle').outerHeight(true) + $('#ModalButtonRow').outerHeight(true) + 60;
-	 var maxModalHt =  $(window).height() - modalExtra;
-	 $('#ModalContent').css('max-height', maxModalHt);
-});
-$(window).bind( 'orientationchange', function(e){
-    var modalExtra = $('#ModalTitle').outerHeight(true) + $('#ModalButtonRow').outerHeight(true) + 60;
-	 var maxModalHt =  $(window).height() - modalExtra;
-	 $('#ModalContent').css('max-height', maxModalHt);
-});
-</script>
+	<h4 class="modal-title text-center">%%LNG_Item%%: 1 x %%GLOBAL_ProductName%%</h4>
+</div>
+<div class="modal-body">
 
-<div style="margin-top: 10px;">
-	<div style=" margin-bottom: 6px; %%GLOBAL_HideWrappingTitle%%"><strong>%%LNG_Item%%: 1 x %%GLOBAL_ProductName%%</strong></div>
-	<div class="HorizontalFormContainer %%GLOBAL_ExtraClass%% WrappingOption">
-		<dl>
-			<dt>%%LNG_GiftWrapping%%:</dt>
-			<dd>
-				<select class="Field300" name="giftwrapping[%%GLOBAL_GiftWrappingId%%]" id="giftwrapping_%%GLOBAL_GiftWrappingId%%" onchange="Cart.ToggleGiftWrappingType(this.options[this.selectedIndex])">
-					<option value="">%%LNG_ChooseGiftWrappingOption%%</option>
-					%%GLOBAL_WrappingOptions%%
-				</select>
-				%%GLOBAL_GiftWrapPreviewLinks%%
-			</dd>
+	<div class="te">
 
-			<dt class="WrapComments" style="%%GLOBAL_HideGiftWrapMessage%%">%%LNG_GiftMessage%%:</dt>
-			<dd class="WrapComments" style="%%GLOBAL_HideGiftWrapMessage%%">
-				<textarea class="Field300" rows="5" name="giftmessage[%%GLOBAL_GiftWrappingId%%]" id="giftmessage_%%GLOBAL_GiftWrappingId%%">%%GLOBAL_GiftWrapMessage%%</textarea>
-			</dd>
-		</dl>
-		<hr style="%%GLOBAL_HideWrappingSeparator%%"/>
+		<div class="%%GLOBAL_ExtraClass%% wrapping-options">
+			<dl>
+				<dt>%%LNG_GiftWrapping%%:</dt>
+				<dd>
+					<select class="form-control" name="giftwrapping[%%GLOBAL_GiftWrappingId%%]" id="gift-wrapping-%%GLOBAL_GiftWrappingId%%" onchange="Cart.ToggleGiftWrappingType(this.options[this.selectedIndex])">
+						<option value="">%%LNG_ChooseGiftWrappingOption%%</option>
+						%%GLOBAL_WrappingOptions%%
+					</select>
+					%%GLOBAL_GiftWrapPreviewLinks%%
+				</dd>
+
+				<dt class="comment-wrap" style="%%GLOBAL_HideGiftWrapMessage%%">%%LNG_GiftMessage%%:</dt>
+				<dd class="comment-wrap" style="%%GLOBAL_HideGiftWrapMessage%%">
+					<textarea rows="5" class="form-control" name="giftmessage[%%GLOBAL_GiftWrappingId%%]" id="giftmessage_%%GLOBAL_GiftWrappingId%%">%%GLOBAL_GiftWrapMessage%%</textarea>
+				</dd>
+			</dl>
+		</div>
+
 	</div>
+</div>
+<div class="modal-footer">
+
 </div>

@@ -1,37 +1,44 @@
-<div id="ModalTitle">%%GLOBAL_GiftWrappingTitle%%</div>
-<script type="text/javascript">
-$(document).ready(function() {
-  $('input[type=radio], input[type=checkbox], input[type=file]').not("div:parent[class^='uniform-']").uniform();
-
-});
-</script>
-
 <form method="post" action="cart.php">
-	<input type="hidden" name="action" value="save_giftwrapping" />
-	<input type="hidden" name="item_id" value="%%GLOBAL_ItemId%%" />
-	<div id="ModalContent" style="overflow: auto;" class="%%GLOBAL_GiftWrapModalClass%%">
-		<p class="InfoMessage Message">%%LNG_ChooseHowToWrapItems%%</p>
 
-		<div style="%%GLOBAL_HideSplitWrappingOptions%%">
-			<label style="margin-bottom: 10px;">
-			<input type="radio" name="giftwraptype" value="same" onclick="Cart.ToggleMultiWrapping(this.value)" checked="checked" /> %%LNG_WrapItemsTheSame%%
-		</label>
-		</div>
-		<div class="WrappingOptionsSingle">
-			%%SNIPPET_GiftWrappingOptionsSingle%%
-		</div>
+	<input type="hidden" name="action" value="save_giftwrapping">
+	<input type="hidden" name="item_id" value="%%GLOBAL_ItemId%%">
 
-		<div style="margin-bottom: 10px; margin-top: 10px; %%GLOBAL_HideSplitWrappingOptions%%">
-			<label style='margin-bottom: 10px;'>
-				<input type="radio" name="giftwraptype" value="different" onclick="Cart.ToggleMultiWrapping(this.value)" /> %%LNG_WrapItemsDifferently%%
-			</label>
-			<div class="WrappingOptionsMultiple" style="display: none;">
-				%%SNIPPET_GiftWrappingOptions%%
+	<div class="modal-header">
+
+		<h4 class="modal-title">%%GLOBAL_GiftWrappingTitle%%</h4>
+	</div>
+	<div class="modal-body">
+		<div class="te">
+
+			<p class="alert alert-info">%%LNG_ChooseHowToWrapItems%%</p>
+
+			<div class="radio" style="%%GLOBAL_HideSplitWrappingOptions%%">
+				<label for="giftwraptype">
+					<input type="radio" name="giftwraptype" value="same" onclick="Cart.ToggleMultiWrapping(this.value)" checked="checked">
+					%%LNG_WrapItemsTheSame%%
+				</label>
+			</div>
+			
+			<div class="WrappingOptionsSingle">
+				%%SNIPPET_GiftWrappingOptionsSingle%%
+			</div>
+
+			<div class="radio" style="%%GLOBAL_HideSplitWrappingOptions%%">
+
+				<label for="giftwraptype">
+					<input type="radio" name="giftwraptype" value="different" onclick="Cart.ToggleMultiWrapping(this.value)"> 
+					%%LNG_WrapItemsDifferently%%
+				</label>
+
+				<div class="WrappingOptionsMultiple" style="display: none;">
+					%%SNIPPET_GiftWrappingOptions%%
+				</div>
 			</div>
 		</div>
 	</div>
-	<div id="ModalButtonRow">
-		<input type="button" class="Button btn-secondary" value="%%LNG_Cancel%%"  onclick="$.modal.close();" />
-		<input class="Submit"  type="submit" value="%%LNG_Save%%" />
+	<div class="modal-footer">
+
+		<input type="button" class="btn btn-link" value="%%LNG_Cancel%%"  onclick="$.modal.close();">
+		<input class="btn btn-primary" type="submit" value="%%LNG_Save%%">
 	</div>
 </form>

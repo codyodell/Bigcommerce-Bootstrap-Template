@@ -1,26 +1,35 @@
-<script type="text/javascript">
-	var shareProductId = %%GLOBAL_FirstProductId%%;
-	var sharingData = %%GLOBAL_SharingData%%;
+<script>
+
+	var shareProductId = %%GLOBAL_FirstProductId%%,
+		sharingData    = %%GLOBAL_SharingData%%;
+
 	lang.ChooseAnotherProduct = "%%LNG_ChooseAnotherProduct%%";
+
 	$(document).ready(function() {
+
         if (shareProductId != null) {
+
 			initSocialSharingPanel(shareProductId);
         } else {
+
 			$('#share-product').hide();
         }
 	});
 </script>
 <div id="share-product">
+
 	%%Panel.SocialSharingTabs%%
+
 	<div id="tabcontent">
+
 		<div class="photo"></div>
-		<div>
-			<strong id='shareText'></strong>
-			<div id="url">%%GLOBAL_ShopPath%%</div>
-			<p id="shareDescription"></p>
-			<span class="sharebutton"><a href="#" target="_blank">Share This</a></span>
-			<span class="chooseAnotherToShare" style="display:%%GLOBAL_HideChooseAnotherToShare%%">or <a title="Choose Another Product" href="javascript:showProductChoices()">choose another product</a></span>
-		</div>
+
+		<strong id="shareText"></strong>
+		<div id="url">%%GLOBAL_ShopPath%%</div>
+		<p id="shareDescription"></p>
+		<a class="btn btn-primary sharebutton" href="#" target="_blank">Share This</a>
+		<span class="or">or</span>
+		<a class="btn btn-default chooseAnotherToShare" style="display:%%GLOBAL_HideChooseAnotherToShare%%" href="javascript:showProductChoices()">choose another product</a>
 	</div>
 
 	%%Panel.ShareProductChoices%%

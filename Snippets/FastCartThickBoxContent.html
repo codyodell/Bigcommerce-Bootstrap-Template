@@ -1,68 +1,77 @@
-
 <script>
-$().ready( function(){
+// $().ready( function(){
 
-	$("#fastCartSuggestive li").removeClass('col-md-3 col-sm-4 col-xs-12').addClass('col-md-6 col-sm-6 col-xs-12');
-});
+// 	$("#fastCartSuggestive li").removeClass('col-md-3 col-sm-4 col-xs-12').addClass('col-md-6 col-sm-6 col-xs-12');
+// });
 </script>
-<div id="fastCartContainer">
 
-	<div id="fastCartWrapper">
+<div class="modal-header text-center">
 
-		<div class="fastCartContent container-fluid">
-			<div class="row">
+	<button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	<h4 class="modal-title">%%GLOBAL_fastCartQuantityTxt%%</h4>
+</div>
+<div class="modal-body">
 
-				<div class="col-md-12 fastCartTop">
+	<div class="te row">
 
-					<h2 class="fcartTitle col-md-12">%%GLOBAL_fastCartQuantityTxt%%</h2>
+		<div class="fastcart-thumbnail text-center col-md-6 col-sm-12 col-xs-12" style="%%GLOBAL_HideThumbColumn%%">
+			%%GLOBAL_fastCartProdImg%%
+		</div>
+
+		<div class="col-md-6 col-sm-12 col-xs-12">
+			
+			<div class="fastCartItemBox">
+
+				<h3 class="fastCartProd">%%GLOBAL_fastCartProdLink%%</h3>
+
+				<p class="ProductPrice">%%GLOBAL_fastCartProdTotal%%</p>
+
+				<p class="Quantity">%%LNG_QuantityAdded%%: %%GLOBAL_fastCartQuantity%%</p>
+			</div>
+
+			<div class="fastCartSummaryBox">
+
+				<div class="ProceedToCheckout">
+
+					<a href="%%GLOBAL_CheckoutLink%%" title="%%LNG_CheckoutButtonTitle%%" class="btn btn-primary btn-checkout" style="%%GLOBAL_HideCheckoutButton%%">Proceed to Checkout</a>
+
+					%%GLOBAL_AdditionalCheckoutButtons%%
 				</div>
 
-				<div class="fastCartThumb col-md-6 col-sm-12 col-xs-12" style="%%GLOBAL_HideThumbColumn%%">
-					%%GLOBAL_fastCartProdImg%%
+				<p class="sub-total lead">%%LNG_OrderSubtotal%%: <strong class="product-price">%%GLOBAL_fastCartSubtotal%%</strong></p>
+
+				<p id="fastCartNumItemsTxt">%%LNG_YourCartContains%% <strong>%%GLOBAL_fastCartNumItemsTxt%%</strong></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-footer text-center">
+
+	<div class="row">
+		<div class="col-md-12">
+
+			<a href="#" class="btn btn-default pull-left" data-dismiss="modal" aria-hidden="true">
+				<i class="glyphicon glyphicon-arrow-left"></i>
+				%%LNG_ContinueShopping%%
+			</a>
+			<a href="%%GLOBAL_ShopPath%%/cart.php" class="btn btn-primary pull-right">
+				<i class="glyphicon glyphicon-shopping-cart"></i>
+				%%LNG_ViewEditCart%%
+			</a>
+		</div>
+		<div class="col-md-12">
+
+			<section class="panel panel-info clearfix" style="%%GLOBAL_HideSuggestiveCartContent%%">
+
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">%%LNG_YouMayAlsoLike%%</h3>
 				</div>
-
-				<div class="col-md-6 col-sm-12 col-xs-12">
-					
-					<div class="fastCartItemBox">
-
-						<h3 class="fastCartProd">%%GLOBAL_fastCartProdLink%%</h3>
-
-						<p class="ProductPrice">%%GLOBAL_fastCartProdTotal%%</p>
-
-						<p class="Quantity">%%LNG_QuantityAdded%%: %%GLOBAL_fastCartQuantity%%</p>
-					</div>
-
-					<div class="fastCartSummaryBox">
-
-						<div class="ProceedToCheckout">
-
-							<a href="%%GLOBAL_CheckoutLink%%" title="%%LNG_CheckoutButtonTitle%%" class="btn btn-primary CheckoutButton" style="%%GLOBAL_HideCheckoutButton%%">Proceed to Checkout</a>
-
-							%%GLOBAL_AdditionalCheckoutButtons%%
-						</div>
-
-						<p class="subtotal">%%LNG_OrderSubtotal%%: <em class="ProductPrice">%%GLOBAL_fastCartSubtotal%%</em></p>
-
-						<p id="fastCartNumItemsTxt">%%LNG_YourCartContains%% <strong>%%GLOBAL_fastCartNumItemsTxt%%</strong></p>
-					</div>
-				</div>
-				<div class="col-md-12 CartActions text-center">
-
-					<div class="actionLink">
-						<a href="#" class="btn btn-primary" onclick="$('.modalClose').trigger('click');">%%LNG_ContinueShopping%%</a>
-						<span class="or">%%LNG_Or%%</span>
-						<a href="%%GLOBAL_ShopPath%%/cart.php" class="btn btn-primary">%%LNG_ViewEditCart%%</a>
-					</div>
-				</div>
-				<footer class="col-md-12 fastCartBottom" style="%%GLOBAL_HideSuggestiveCartContent%%">
-
-					<h3 class="text-center">%%LNG_YouMayAlsoLike%%</h3>
-
+				<div class="panel-body">
 					<ul class="ProductList" id="fastCartSuggestive">
 						%%GLOBAL_SuggestedProductListing%%
 					</ul>
-				</footer>
-			</div>
+				</div>
+			</section>
 		</div>
 	</div>
 </div>

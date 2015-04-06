@@ -1,14 +1,17 @@
-<div id="ProductDetailsBulkDiscountThickBox" style="display: none">
-	<div class="ModalTitle">
-		%%GLOBAL_BulkDiscountThickBoxTitle%%
-	</div>
-	<div class="ModalContent">
-		<p>%%LNG_BulkDiscountThickBoxIntro%%</p>
-		<ul>%%GLOBAL_BulkDiscountThickBoxRates%%</ul>
-	</div>
-	<div class="ModalButtonRow"> 
-		<input type="button" class="Submit" value="%%LNG_CloseWindow%%" onclick="$.modal.close()" />
-	</div>
-</div>
+	<div class="modal-header">
 
-<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/imodal/imodal.js?%%GLOBAL_JSCacheToken%%"></script>
+		<h4 class="modal-title">%%GLOBAL_BulkDiscountThickBoxTitle%%</h4>
+	</div>
+
+	<div class="modal-body">
+		<div class="te">
+		
+			<p>%%LNG_BulkDiscountThickBoxIntro%%</p>
+			<ul>%%GLOBAL_BulkDiscountThickBoxRates%%</ul>
+		</div>
+	</div>
+
+	<div class="modal-footer"> 
+
+		<input type="button" class="btn btn-primary" value="%%LNG_CloseWindow%%">
+	</div>

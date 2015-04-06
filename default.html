@@ -6,42 +6,49 @@
 
     %%Panel.Header%%
 
-    <div class="top-banner">
-
-        %%Banner.TopBanner%%
-    </div>
-
-    %%Panel.HomeSlideShow%%
-        
     <main id="main">
         <div class="container">
             <div class="row">
-                <div class="col-md-3" id="featured-categories">
 
-                    %%Panel.SideCategoryList%%
+                <div class="col-md-12">
+
+                    %%Panel.HomeSlideShow%%
                 </div>
-                <div class="col-md-9" id="best-sellers">
-                    
-                    <h2 class="page-header"><span>New Products</span></h2>
+                <div class="col-md-12">
 
-                    %%Panel.HomeNewProducts%%
-                </div>
-            </div>
-            <div class="row" id="best-sellers">
+                    <div class="top-banner">
 
-                <div class="col-md-9">
-
-                    <h2><span>Our Best Selling Products</span></h2>
-                </div>
-                <div class="col-md-3">
-                    <div class="controls pull-right hidden-xs">
-                        <a class="left btn btn-success" href="#top-products-slide-show" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                        <a class="left btn btn-success btn-pause" href="#top-products-slide-show" data-toggle="button"><i class="glyphicon glyphicon-pause"></i></a>
-                        <a class="right btn btn-success" href="#top-products-slide-show" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                        %%Banner.TopBanner%%
                     </div>
                 </div>
-                
-                %%Panel.HomeFeaturedProducts%%
+            </div>
+            <!--             
+            <div class="row">
+
+                <div id="categories-featured">
+
+                    <section class="col-md-4">
+                        <img src="%%ASSET_images/allure/the-black-dress.jpg%%" alt="Outfits We Love" />
+                        <h3>Outfits We Love</h3>
+                    </section>
+                    <section class="col-md-4">
+                        <img src="%%ASSET_images/allure/love-shoes.jpg%%" alt="Love Shoes" />
+                        <h3>Love <i class="sprite icon-heart"></i> Shoes</h3>
+                    </section>
+                    <section class="col-md-4">
+                        <img src="%%ASSET_images/allure/the-perfect-accessories.jpg%%" alt="The Perfect Accessories" />
+                        <h3>The Perfect Accessories</h3>
+                    </section>
+                </div>
+            </div> 
+            -->
+            <div class="row">
+                <div class="col-md-12" id="featured-products">
+
+                    <h3 class="page-header"><span>Featured Products</span></h3>
+
+                    %%Panel.HomeFeaturedProducts%%
+                </div>
             </div>
         </div>
     </main>

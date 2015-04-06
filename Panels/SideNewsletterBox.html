@@ -1,33 +1,34 @@
 					%%GLOBAL_NewsletterBoxControlScript%%
 
-                    <h4 class="sr-only">Newsletter</h4>
+                    <form action="%%GLOBAL_ShopPath%%/subscribe.php" method="post" id="subscribe_form" name="subscribe_form" class="form-inline">
+                        
+                        <div class="row">
+                            <header class="col-md-4">
+                                
+                                <div class="wrapper">
 
-                    <form action="%%GLOBAL_ShopPath%%/subscribe.php" method="post" id="subscribe_form" name="subscribe_form" class="form">
+                                    <strong>Join our Newsletter</strong>
+                                    <p>For Exclusive Offers and Discounts</p>
 
-                        <fieldset class="panel panel-default">
-
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Become an Opt-in Member</h4>
-                            </div>
-                            <div class="panel-body">
-
-                                <p>to receive Special Offers, Exclusive Discounts, and information on our latests products.</p>
-
-                                <div class="form-group form-group-stacked">
-
-                                    <!-- <label for="nl_first_name" class="sr-only">Name</label> -->
-                                    <input type="text" class="form-control" name="nl_first_name" id="nl_first_name" placeholder="Name">
-
-                                    <!-- <label for="nl_email" class="sr-only">Email</label> -->
-                                    <input type="email" class="form-control" name="nl_email" id="nl_email" placeholder="Email">
+                                    <i class="sprite newsletter-arrow-right"></i>
                                 </div>
-                            </div>
-                            <div class="panel-footer">
+                            </header>
+                            <fieldset class="col-md-8 text-right">
 
-                                <input type="submit" class="btn btn-primary btn-block" value="Join Now">
+                                <label for="nl_first_name" class="sr-only">Name</label>
+                                <input type="text" class="form-control" name="nl_first_name" id="nl_first_name" placeholder="Name">
+
+                                <label for="nl_email" class="sr-only">Email</label>
+                                <input type="email" class="form-control" name="nl_email" id="nl_email" placeholder="Email">
+
+                                <button class="btn btn-primary">
+                                    <i class="sprite icon-newsletter"></i>
+                                    <span>Subscribe Me!</span>
+                                </button>
+
                                 <input type="hidden" name="action" value="subscribe">
-                            </div>
-                        </fieldset>
+                            </fieldset>
+                        </div>
                     </form>
 
 				    %%Panel.NewsletterJavaScript%%

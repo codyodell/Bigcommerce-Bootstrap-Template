@@ -1,15 +1,18 @@
 <li class="col-md-3 col-sm-4 col-xs-12 %%GLOBAL_AlternateClass%%">
-	<div class="ProductImage">
+
+	<div class="product-image thumbnail">
+
 		%%GLOBAL_ProductThumb%%
 	</div>
-	<div class="ProductDetails">
-		<strong><a href="%%GLOBAL_ProductLink%%" class="%%GLOBAL_SearchTrackClass%%">%%GLOBAL_ProductName%%</a></strong>
-		<em>%%GLOBAL_ProductPrice%%</em>
-		<span class="Rating %%GLOBAL_ProductRating%%">
-			<img src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_ProductRating%%.png" alt="" style="%%GLOBAL_HideProductRating%%" />
-		</span>
+
+	<div class="product-details">
+
+		<h4><a href="%%GLOBAL_ProductLink%%" class="%%GLOBAL_SearchTrackClass%%">%%GLOBAL_ProductName%%</a></h4>
+
+		<strong class="product-price">%%GLOBAL_ProductPrice%%</strong>
+
+		<span class="product-rating" data-rating="%%GLOBAL_ProductRating%%" style="%%GLOBAL_HideProductRating%%"></span>
 	</div>
-	<div class="ProductActionAdd" style="display:%%GLOBAL_HideActionAdd%%;">
-		<a href="%%GLOBAL_ProductURL%%">%%GLOBAL_ProductAddText%%</a>
-	</div>
+
+	<a href="%%GLOBAL_ProductURL%%" class="btn btn-primary" style="display:%%GLOBAL_HideActionAdd%%;">%%GLOBAL_ProductAddText%%</a>
 </li>

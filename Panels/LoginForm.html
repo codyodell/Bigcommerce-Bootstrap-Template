@@ -1,4 +1,4 @@
-<div class="row LoginForm" id="login-form">
+
 
 	<div class="col-md-6 col-sm-12 col-xs-12" id="account-create">
 
@@ -23,37 +23,37 @@
 		<div style="display: %%GLOBAL_HideLoginNewAccountIntro%%">
 			
 			%%LNG_CreateAccountLoginIntro%%
-			 
+			
 			<a href="%%GLOBAL_ShopPath%%/login.php?action=create_account" class="btn btn-success btn-lg">%%LNG_CreateAccount%%</a>
 		</div>
 	</div>
 
-	<div class="col-md-6 col-sm-12 col-xs-12" id="account-login">
+	<div class="col-md-6 col-sm-12 col-xs-12 pull-right" id="account-login">
 
-	<form action="%%GLOBAL_ShopPath%%/login.php?action=check_login" method="post" class="panel panel-default" onsubmit="return check_login_form()" id="login-form">
+		<form action="%%GLOBAL_ShopPath%%/login.php?action=check_login" method="post" class="panel panel-default" onsubmit="return check_login_form()" id="login-form">
 
-		<div class="panel-heading">
-			<h3 class="panel-title">%%GLOBAL_ExistingUserHeading%%</h3>
-		</div>
-		<div class="panel-body">
-
-			<p class="alert alert-info" style="display: %%GLOBAL_HideLoginMessage%%">%%GLOBAL_LoginMessage%%</p>
-
-			<div class="form-group form-group-lg form-group-stacked">
-
-				<label for="login_email" class="sr-only">%%LNG_EmailAddress%%</label>
-				<input class="form-control" type="email" name="login_email" id="login_email" placeholder="%%LNG_EmailAddress%%">
-				<label form="login_pass" class="sr-only">%%LNG_Password%%</label>
-				<input class="form-control" type="password" autocomplete="off" name="login_pass" id="login_pass" placeholder="%%LNG_Password%%">
+			<div class="panel-heading">
+				<h3 class="panel-title">%%GLOBAL_ExistingUserHeading%%</h3>
 			</div>
-		</div>
-		<div class="panel-footer text-right">
+			<div class="panel-body">
 
-			<a href="%%GLOBAL_ShopPath%%/login.php?action=reset_password" class="btn btn-link btn-lg">%%LNG_ForgotYourPassword%%</a>
-			<input type="submit" class="btn btn-primary btn-lg" value="%%LNG_LoginWord%%">
-		</div>
-	</form>
+				<p class="alert alert-info" style="display: %%GLOBAL_HideLoginMessage%%">%%GLOBAL_LoginMessage%%</p>
+
+				<div class="form-group form-group-lg form-group-stacked">
+
+					<label for="login_email" class="sr-only">%%LNG_EmailAddress%%</label>
+					<input class="form-control" type="email" name="login_email" id="login_email" placeholder="%%LNG_EmailAddress%%">
+					<label form="login_pass" class="sr-only">%%LNG_Password%%</label>
+					<input class="form-control" type="password" autocomplete="off" name="login_pass" id="login_pass" placeholder="%%LNG_Password%%">
+				</div>
+			</div>
+			<div class="panel-footer text-right">
+
+				<a href="%%GLOBAL_ShopPath%%/login.php?action=reset_password" class="btn btn-link btn-lg">%%LNG_ForgotYourPassword%%</a>
+				<input type="submit" class="btn btn-primary btn-lg" value="%%LNG_LoginWord%%">
+			</div>
+		</form>
 	</div>
 
-</div>
+
 %%Panel.LoginJavaScript%%

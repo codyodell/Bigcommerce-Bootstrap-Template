@@ -1,19 +1,18 @@
 	<tr>
-		<td class="CartThumb" style="%%GLOBAL_HideThumbColumn%%">&nbsp;
-			
+		<td class="cart-thumb" style="%%GLOBAL_HideThumbColumn%%"></td>
+		<td class="product-name" colspan="%%GLOBAL_ProductNameSpan%%">
+
+			<p>%%GLOBAL_GiftCertificateName%%</p>
+			<a href="giftcertificates.php?action=purchase&amp;itemid=%%GLOBAL_CartItemId%%" class="btn btn-default link-customize-item">%%LNG_Edit%%</a>
+			<p>%%LNG_CapitalFor%%: %%GLOBAL_GiftCertificateTo%%</p>
 		</td>
-		<td class="ProductName" colspan="%%GLOBAL_ProductNameSpan%%">
-			%%GLOBAL_GiftCertificateName%%<br /><a href="giftcertificates.php?action=purchase&amp;itemid=%%GLOBAL_CartItemId%%" class="CustomizeItemLink">%%LNG_Edit%%</a>
-			<br />%%LNG_CapitalFor%%: %%GLOBAL_GiftCertificateTo%%
-		</td>
-		<td align="center" class="CartItemQuantity">
-			1
-			
-	</td>
-	<td align="center" class="CartItemIndividualPrice">%%GLOBAL_ProductPrice%%</td>
-	<td align="right" class="CartItemTotalPrice"><em class="ProductPrice">%%GLOBAL_ProductTotal%%</em>
-     <a href="javascript:void(0)" onclick="Cart.RemoveItem('%%GLOBAL_CartItemId%%')" class="CartRemoveLink"><i class="icon-remove-sign"></i></a>
-     
-     
-    </td>
-</tr>
+		<td align="center" class="cart-item-quantity">1</td>
+		<td class="text-center cart-item-price-single">%%GLOBAL_ProductPrice%%</td>
+		<td class="text-right cart-item-price-total">
+
+			<strong class="product-price">%%GLOBAL_ProductTotal%%</strong>
+			<a href="javascript:void(0)" onclick="Cart.RemoveItem('%%GLOBAL_CartItemId%%')" class="CartRemoveLink">
+				<i class="glyphicon glyphicon-remove"></i>
+			</a>
+	    </td>
+	</tr>

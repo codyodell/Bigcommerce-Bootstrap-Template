@@ -1,16 +1,14 @@
+	<form name="product-form-wishlist" id="form-wishlist" class="text-center" style="display:%%GLOBAL_HideWishlist%%" action="%%GLOBAL_ShopPath%%/wishlist.php" method="get">
 
+		<input type="hidden" name="action" value="add">
+		<input type="hidden" name="product_id" value="%%GLOBAL_ProductId%%">
+		<input type="hidden" name="variation_id" value="" class="WishListVariationId">
 
-<div class="Block Panel AddToWishlist" id="SideProductAddToWishList" style="display:%%GLOBAL_HideWishlist%%">
-	
-	<div class="BlockContent">
-		<form name="frmWishList" id="frmWishList" action="%%GLOBAL_ShopPath%%/wishlist.php" method="get">
-			<input type="hidden" name="action" value="add" />
-			<input type="hidden" name="product_id" value="%%GLOBAL_ProductId%%" />
-			<input type="hidden" name="variation_id" value="" class="WishListVariationId"/>
-			<p>%%LNG_AddToCart1%% %%GLOBAL_ProductName%% %%LNG_ToYourWishList%%</p>
-			<p>%%GLOBAL_WishLists%%</p>
-			<input class="btn" value="Add to Wishlist" type="submit" title="%%LNG_AddToWishList%%" />
-		</form>
-	</div>
-</div>
+		<!-- <p>%%LNG_AddToCart1%% %%GLOBAL_ProductName%% %%LNG_ToYourWishList%%</p>
+		<p>%%GLOBAL_WishLists%%</p> -->
 
+        <button class="btn btn-link btn-sm btn-wishlist">
+            <i class="glyphicon glyphicon-heart"></i>
+			%%LNG_AddToWishList%%
+        </button>
+	</form>

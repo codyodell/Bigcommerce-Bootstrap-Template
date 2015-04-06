@@ -8,13 +8,6 @@
 	<span class="sr-only">Top of Page</span>
 </a>
 
-<div id="theme-switcher">
-	<ul class="dropdown-menu" id="ThemeList"></ul>
-    <select id="ThemeSelect" class="form-control">
-        <option>Default</option>
-    </select>
-</div>
-
 <div id="loading">
 	<div class="container">
 		<div class="row">
@@ -30,17 +23,33 @@
 
 <header id="header">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-5 col-sm-6 col-xs-12 logo">
-				%%GLOBAL_HeaderLogo%%
+		<div class="row" id="header-top">
+			<div class="col-md-5">
+
+				<button type="button" class="navbar-toggle navbar-toggle-search collapsed" data-toggle="collapse" data-target="#collapse-search" aria-expanded="false">
+					<span class="sr-only">Toggle Search</span>
+					<i class="glyphicon glyphicon-search"></i>
+				</button>
+
+				<a href="%%GLOBAL_ShopPathNormal%%" class="logo">
+					<img src="%%GLOBAL_CdnStorePath%%/%%GLOBAL_ImageDirectory%%/%%GLOBAL_StoreLogo%%" alt="%%GLOBAL_StoreName%%" />
+				</a>
 			</div>
+
 			<div class="col-md-7 text-right">
-				%%Panel.TopMenu%%
-				%%Panel.SocialLinks%%
+
+				<div id="navigation-top-container">
+					%%Panel.TopMenu%%
+				</div>
+
+				%%Panel.HeaderSearch%%
 			</div>
 		</div>
 		<nav class="nav navbar-inverse" role="navigation">
+			
 			%%Panel.PagesMenu%%
 		</nav>
 	</div>
+
 </header>
+
