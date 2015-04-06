@@ -1,0 +1,68 @@
+
+<script>
+$().ready( function(){
+
+	$("#fastCartSuggestive li").removeClass('col-md-3 col-sm-4 col-xs-12').addClass('col-md-6 col-sm-6 col-xs-12');
+});
+</script>
+<div id="fastCartContainer">
+
+	<div id="fastCartWrapper">
+
+		<div class="fastCartContent container-fluid">
+			<div class="row">
+
+				<div class="col-md-12 fastCartTop">
+
+					<h2 class="fcartTitle col-md-12">%%GLOBAL_fastCartQuantityTxt%%</h2>
+				</div>
+
+				<div class="fastCartThumb col-md-6 col-sm-12 col-xs-12" style="%%GLOBAL_HideThumbColumn%%">
+					%%GLOBAL_fastCartProdImg%%
+				</div>
+
+				<div class="col-md-6 col-sm-12 col-xs-12">
+					
+					<div class="fastCartItemBox">
+
+						<h3 class="fastCartProd">%%GLOBAL_fastCartProdLink%%</h3>
+
+						<p class="ProductPrice">%%GLOBAL_fastCartProdTotal%%</p>
+
+						<p class="Quantity">%%LNG_QuantityAdded%%: %%GLOBAL_fastCartQuantity%%</p>
+					</div>
+
+					<div class="fastCartSummaryBox">
+
+						<div class="ProceedToCheckout">
+
+							<a href="%%GLOBAL_CheckoutLink%%" title="%%LNG_CheckoutButtonTitle%%" class="btn btn-primary CheckoutButton" style="%%GLOBAL_HideCheckoutButton%%">Proceed to Checkout</a>
+
+							%%GLOBAL_AdditionalCheckoutButtons%%
+						</div>
+
+						<p class="subtotal">%%LNG_OrderSubtotal%%: <em class="ProductPrice">%%GLOBAL_fastCartSubtotal%%</em></p>
+
+						<p id="fastCartNumItemsTxt">%%LNG_YourCartContains%% <strong>%%GLOBAL_fastCartNumItemsTxt%%</strong></p>
+					</div>
+				</div>
+				<div class="col-md-12 CartActions text-center">
+
+					<div class="actionLink">
+						<a href="#" class="btn btn-primary" onclick="$('.modalClose').trigger('click');">%%LNG_ContinueShopping%%</a>
+						<span class="or">%%LNG_Or%%</span>
+						<a href="%%GLOBAL_ShopPath%%/cart.php" class="btn btn-primary">%%LNG_ViewEditCart%%</a>
+					</div>
+				</div>
+				<footer class="col-md-12 fastCartBottom" style="%%GLOBAL_HideSuggestiveCartContent%%">
+
+					<h3 class="text-center">%%LNG_YouMayAlsoLike%%</h3>
+
+					<ul class="ProductList" id="fastCartSuggestive">
+						%%GLOBAL_SuggestedProductListing%%
+					</ul>
+				</footer>
+			</div>
+		</div>
+	</div>
+</div>

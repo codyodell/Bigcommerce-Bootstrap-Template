@@ -1,0 +1,174 @@
+<script>
+
+var ThumbURLs = [],
+    ZoomImageURLs = [],
+    ProductImageDescriptions = [],
+    ProductThumbWidth = %%GLOBAL_ProductThumbWidth%%,
+    ProductThumbHeight =  %%GLOBAL_ProductThumbHeight%%
+    ProductMaxZoomWidth = %%GLOBAL_ProductMaxZoomWidth%%,
+    ProductMaxZoomHeight =  %%GLOBAL_ProductMaxZoomHeight%%,
+    ProductTinyWidth = %%GLOBAL_ProductMaxTinyWidth%%,
+    ProductTinyHeight =  %%GLOBAL_ProductMaxTinyHeight%%,
+    ShowImageZoomer = %%GLOBAL_ShowImageZoomer%%,
+    productId = %%GLOBAL_ProductId%%;
+    
+    %%GLOBAL_ProdImageJavascript%%
+    %%GLOBAL_ProdImageZoomJavascript%%
+</script>
+
+<script src="%%ASSET_js/jquery.elevatezoom.js%%"></script>
+<script src="%%ASSET_js/product.attributes.js%%"></script>
+<script src="%%ASSET_js/productimage.js%%"></script>
+
+%%Discount.FreeShippingEligibility%%
+
+<main class="row cf">
+    
+    %%GLOBAL_ProductDetailFlashMessages%%
+
+    <!-- Product Left Column -->
+    <div class="col-md-5" id="product-left-column">
+
+        <div id="product-image-carousel" class="carousel slide" data-ride="carousel" data-indicators="true">
+
+            <ul class="carousel-inner" role="listbox" id="product-image-gallery"></ul>
+
+            <nav class="text-center">
+                <ul class="pagination" aria-label="Go to Slide...">
+                    <li>
+                        <a href="#product-image-carousel" role="button" data-slide="prev">
+                            <i class="glyphicon glyphicon-arrow-left"></i>
+                            <span>Previous</span>
+                        </a>
+                    </li>
+                    <li class="image-count">
+                        <span><!-- %%LNG_Image%% --><strong class="current-image-index">1</strong> %%LNG_Of%% <strong class="total-images"></strong></span>
+                    </li>
+                    <li>
+                        <a href="#product-image-carousel" role="button" data-slide="next">
+                            <span>Next</span>
+                            <i class="glyphicon glyphicon-arrow-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="controls">
+            <ul id="carousel-thumbnails" class="product-image-thumbnails">
+                %%SNIPPET_ProductTinyImages%%
+            </ul>
+        </div>
+
+        <a href="%%GLOBAL_ShopPath%%/productimage.php?product_id=%%GLOBAL_ProductId%%" data-toggle="modal" data-target="#product-image-modal" style="%%GLOBAL_HideMorePicturesLink%%" id="product-image-modal-link">%%GLOBAL_SeeMorePictures%%</a>
+
+    </div>
+    
+    <!-- Product Right Column -->
+    <div class="col-md-7" id="product-right-column">
+        
+        <h1 class="title">%%GLOBAL_ProductName%%</h1>
+        
+        %%GLOBAL_FacebookLikeButtonAbove%% 
+        
+        %%Panel.ProductWarranty%%
+        
+        <div class="col-md-12 well" id="product-attributes">
+            
+            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideSKU%%" id="product-attribute-sku">
+                <dt>%%LNG_SKU%%</dt>
+                <dd><span class="VariationProductSKU">%%GLOBAL_SKU%%</span></dd>
+            </dl>
+            
+            <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideVendorDetails%%" id="product-attribute-vendor">
+                <dt>%%LNG_Vendor%%</dt>
+                <dd>%%GLOBAL_VendorName%%</dd>
+            </dl>
+            
+            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideBrandLink%%" id="product-attribute-brand">
+                <dt>%%LNG_Brand%%</dt>
+                <dd><a href="%%GLOBAL_BrandLink%%">%%GLOBAL_BrandName%%</a></dd>
+            </dl>
+            
+            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideCondition%%" id="product-attribute-condition">
+                <dt>%%LNG_Condition%%</dt>
+                <dd>%%GLOBAL_ProductCondition%%</dd>
+            </dl>
+            
+            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideRating%%" id="product-attribute-rating">
+                <dt>%%LNG_Rating%%</dt>
+                <dd><img src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_Rating%%.png" alt="" /></dd>
+            </dl>
+            
+            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideAvailability%%" id="product-attribute-availability">
+                <dt>%%LNG_Availability%%</dt>
+                <dd>%%GLOBAL_Availability%%</dd>
+            </dl>
+            
+            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideShipping%%" id="product-attribute-shipping">
+                <dt>%%LNG_Shipping%%</dt>
+                <dd>%%GLOBAL_ShippingPrice%%</dd>
+            </dl>
+            
+            <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideMinQty%%" id="product-attribute-minimum-quantity">
+                <dt>%%LNG_ProductMinQty%%</dt>
+                <dd>%%GLOBAL_MinQty%% %%LNG_units%%</dd>
+            </dl>
+            
+            <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideMaxQty%%" id="product-attribute-max-quantity">
+                <dt>%%LNG_ProductMaxQty%%</dt>
+                <dd>%%GLOBAL_MaxQty%% %%LNG_units%%</dd>
+            </dl>
+            
+            <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideCurrentStock%%" id="product-attribute-inventory">
+                <dt>%%GLOBAL_CurrentStockLabel%%</dt>
+                <dd>%%GLOBAL_InventoryList%%</dd>
+            </dl>
+            
+            <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideGiftWrapMessage%%" id="product-attribute-gift-wrap-message">
+                <dt>%%LNG_GiftWrapping%%</dt>
+                <dd>%%GLOBAL_GiftWrappingAvailable%%</dd>
+            </dl>
+
+            <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideWeight%%" id="product-attribute-weight">
+                <dt>%%LNG_Weight%%</dt>
+                <dd>%%GLOBAL_ProductWeight%%</dd>
+            </dl>
+        </div>
+        
+        %%SNIPPET_ProductAddToCart%%
+        
+        <div class="row share-buttons">
+
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                
+                <h2 class="ribbon-title"><span>Be nice and share</span></h2>
+
+                <div class="social-buttons cf">
+                    
+                    <span class='st_facebook_large' displayText='Facebook'></span>
+                    <span class='st_twitter_large' displayText='Tweet'></span>
+                    <span class='st_googleplus_large' displayText='Google +'></span>
+                    <span class='st_pinterest_large' displayText='Pinterest'></span>
+                </div>
+            </div>
+        </div>
+        
+        %%SNIPPET_ProductExpectedReleaseDate%%
+        
+    </div>
+    
+    %%SNIPPET_ProductAddToCartBelow%%
+    
+</main>
+
+%%Panel.ProductDescription%%
+
+<!-- Modal -->
+<div class="modal fade" id="product-image-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"></div>
+    </div>
+</div>
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+%%Panel.HTMLHead%%
+<body>
+	<div id="site">
+
+	%%Panel.Header%%
+
+	<div class="container">
+		<div class="row">
+			<header class="col-md-12">
+				<h1 class="title">%%LNG_YourAccount%%</h1>
+				%%Panel.WrapperBanner%%
+			</header>
+			<aside class="col-md-3">
+
+				%%Panel.SideAccountMenu%%
+			</aside>
+			<main class="col-md-9">
+
+				<form action="%%GLOBAL_ShopPath%%/account.php?action=save_new_return" method="post" onsubmit="return check_return_form()">
+					<input type="hidden" name="order_id" value="%%GLOBAL_OrderId%%" />
+
+					<h2>%%LNG_SubmitNewReturn%%</h2>
+					
+					<p class="alert alert-danger" style="display:%%GLOBAL_HideErrorMessage%%">%%GLOBAL_ErrorMessage%%</p>
+					%%Panel.AccountNewReturnProducts%%
+					%%Panel.AccountNewReturnInfo%%
+				</form>
+				<script type="text/javascript">
+				function check_return_form() {
+					var sel = false;
+					$('.ReturnQty').each(function() {
+						if($(this).val() > 0) {
+							sel = true;
+						}
+					});
+
+					if(sel == false) {
+						alert('%%LNG_SelectOneMoreItemsReturn%%');
+						return false;
+					}
+
+					if($('#return_reason').val() == '') {
+						alert('%%LNG_SelectReturnReason%%');
+						$('#return_reason').focus();
+						return false;
+					}
+				}
+				</script>
+			</main>
+		</div>
+	</div>
+
+	%%Panel.Footer%%
+</div>
+</body>
+</html>

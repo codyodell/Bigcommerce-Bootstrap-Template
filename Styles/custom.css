@@ -1,0 +1,305 @@
+
+
+/* Omit heading styles from: */
+
+img{
+
+	max-width: 100%;
+}
+
+ul{
+
+	list-style: none;
+	padding: 0;
+}
+
+ul ul{
+
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+}
+
+li:hover ul{
+
+	display: block;
+	height: auto;
+	opacity: 1;
+}
+
+ul.carousel-inner ul{
+
+	height: auto;
+	display: block;
+	opacity: 1;
+}
+
+
+/* Header */
+
+
+#header h1{
+
+	margin: 0;
+}
+/* Search Form */
+
+/* Pages Menu */
+
+#PagesMenu > ul > li:hover > ul{
+
+    display: block;
+}
+
+#PagesMenu > ul ul a{
+
+    font-size: 13px;
+    line-height: 30px;
+    padding: 0 10px;
+    display: block;
+	white-space: nowrap;
+}
+
+/* Top Menu*/
+
+#TopMenu ul{
+
+	display: inline-block;
+	background: #333;
+	border-radius: 0 0 4px 4px;
+}
+
+#TopMenu ul li a:hover{
+
+	background: transparent;
+	text-decoration: underline;
+}
+
+/* Homepage Accordion */
+
+.panel-heading .caret-down, .panel-heading .caret-right{
+
+	margin-right: 10px;
+}
+
+/* Best Sellers */
+
+#best-sellers{
+
+	margin-bottom: 15px;
+}
+
+#add-to-cart-box .col-md-6{
+
+	margin-bottom: 20px;
+}
+
+#add-to-cart-box .input-group{
+
+	width: 100%;
+}
+
+.PriceRow{
+
+	line-height: 34px;
+	font-size: 24px;
+	text-align: center;
+}
+
+.PriceRow em{
+
+	font-style: normal;
+	font-weight: 200;
+}
+
+.share-buttons > div{
+
+	padding: 0;
+}
+
+/* Footer */
+
+#footer{
+
+    background: #e1e2e0;
+    padding-bottom: 25px;
+}
+
+#footer ul{
+
+	margin-top: 15px;
+}
+
+#footer form input[type=submit]{
+
+	margin-top: 10px;
+}
+
+#footer legend{
+
+	font-size: 18px;
+	padding: 10px 0;
+	margin: 0;
+	line-height: 1.1;
+}
+
+#footer form h3{ /* match to other strong tags in footer */
+
+	font-weight: bold;
+	margin-bottom: 20px;
+	line-height: 20px;
+}
+
+#footer-bottom{
+
+	font-size: 12px;
+	padding: 15px 0;
+	text-align: center;
+}
+
+
+
+/* Product List */
+/*
+.ProductList li{
+
+	text-align: center;
+	position: relative;
+	margin-bottom: 25px;
+	display: flex;
+	text-align: center;
+}
+
+.ProductList li .spacer{
+
+	background: #fff;
+	flex: 1;
+	position: relative;
+	padding-bottom: 22px;
+}
+
+.ProductList li .ProductPriceRating{
+
+	text-align: left;
+	margin: 0 10px;
+}
+
+.ProductList li .ProductPriceRating em{
+
+	line-height: 2em;
+	font-weight: bold;
+}
+
+.ProductList li .SalePrice{
+
+	font-weight: bold;
+}
+
+.ProductList li .Rating{
+
+	text-align: right;
+	float: right;
+	line-height: 1.75em;
+	margin-right: -7px;
+}
+
+.ProductList li .ProductPriceRating{
+
+	display: none;
+}
+
+.ProductList li .ProductPriceRating em strike{
+
+	font-weight: normal;
+}
+
+.ProductList li .ProductName{
+
+	min-height: 3em;
+	font-size: 12px;
+	line-height: 15px;
+	margin: 0 10px;
+}
+
+.ProductList li .ProductImage {
+
+	min-height: 240px;
+	line-height: 240px;
+	height: 240px;
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+
+.ProductList .ProductCompareButton, .CompareButton{
+
+	display: none;
+}
+
+.ProductList .ProductActionAdd{
+
+	position: absolute;
+	bottom: 10px;
+	left:0;
+	width: 100%;
+	display: none;
+}
+*/
+
+
+
+/* Category & Search page Shared Styles */
+
+#category-paging-top ul, #search-paging-top ul{
+
+    margin: 0;
+}
+
+#SearchContainer .ProductList{
+
+    margin-top: 4em;
+}
+
+#search-toolbar{
+
+    margin-top: 1em;
+}
+
+.social-buttons > div{
+
+    margin: 0;
+    float: left;
+}
+
+.AddThisButtonBox{
+
+    margin: 0 !important;
+}
+
+#maintenance_notice{
+
+    display: none !important;
+}
+
+
+/* Bootstrap Alterations */
+
+.well dl{
+
+	margin: 0;
+}
+
+
+
+
+
+
+.row-eq-height .alert{
+
+    margin: 0 15px;
+}
+
+.btn-lg .glyphicon{ /* For checkout page */
+
+    top: 2px;
+    padding: 0 7px;
+}

@@ -1,0 +1,403 @@
+/* === QuickView Styles Start === */
+
+/* QuickView start */
+.QuickViewBtn a, .QuickViewBtn a:hover {
+	text-decoration: none !important;
+}
+.QuickViewBtn {
+
+	font-family: 'Droid Sans', sans-serif; font-size: 12px !important; text-transform: uppercase !important; height:35px; width:100px; margin:0;
+        color: #fff !important; font-weight: bold !important; background: #fcfcfc !important; letter-spacing:normal !important;
+        padding:0 10px !important; line-height: 35px !important;
+        background-color:#ff7900 !important;
+        position: absolute;
+	cursor: pointer;
+	display:inline-block;
+        text-align: center;
+		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+width: 110px !important;	
+-webkit-border-radius: 17px;
+-moz-border-radius: 17px;
+border-radius: 17px;
+opacity: 0.9;
+  filter: alpha(opacity = 90); 
+}
+.QuickViewBtn:hover{background: #555 !important; color:#fff !important;}
+/* QuickView end */
+
+/* QuickView modal window start */
+#ModalContainer.QuickViewModal .modalData {
+	height: 100%;
+}
+
+#ModalContentContainer {
+	height: 100%;
+}
+
+#ModalContainer.QuickViewModal .ModalTitle {
+	background-color: #fff;
+	color: #fff;
+	border-top: solid 1px #555;
+	border-left: solid 1px #555;
+	border-right: solid 1px #555;
+	border-bottom: 0;
+	height: 39px;
+	line-height: 39px;
+	padding: 0px 15px;
+	
+}
+
+#ModalContainer.QuickViewModal .ModalContent {
+	
+	border-left: solid 1px #555;
+	border-right: solid 1px #555;
+	border-bottom: solid 1px #555;
+	height: 359px;
+	margin: 0;
+	padding: 0;
+        border:0;
+	
+}
+
+#QuickViewContent .ProductPriceWrap,
+#QuickViewContent .productOptionViewRadio input {
+	position: static;
+}
+
+#QuickViewContent .productOptionPickListSwatch label,
+#QuickViewContent .productOptionPickListSwatch .swatchColours,
+#QuickViewContent .validation {
+	
+}
+
+
+#QuickViewContent .productOptionViewRadio input {
+	margin-top: 0 !important;
+}
+
+#QuickViewContent .productOptionPickListSwatch .validation {
+	position: absolute !important;
+}
+
+/* QuickView modal window end */
+
+/* QuickView top nav panel start */
+
+#QuickViewTopNav {
+	line-height: 20px;
+}
+
+#QuickViewFacebookContainer, #QuickViewShareLabel, #QuickViewShareLinksContainer {
+	height: 20px;
+	float: left;
+}
+
+#QuickViewTopNav .facebookLikeBtn {
+	width: 80px;
+	height:22px;
+}
+
+#QuickViewTopNav .facebookRecommendBtn {
+	width: 125px;
+	height:22px;
+}
+
+#QuickViewTopNavReviews, #QuickViewTopNavRating {
+	margin-left: 7px;
+	float: right;
+}
+
+#QuickViewTopNavRating img {
+	width: 13px;
+	height: 13px;
+	margin-top: 3px;
+}
+
+#QuickViewShareLinksContainer {
+	padding-top: 3px;
+}
+
+/* QuickView top nav panel end */
+
+/* QuickView content start */
+
+#QuickViewContent {
+	clear: both;
+	padding: 0px 0px 0px 9px;
+}
+#QuickViewContent:before,
+#QuickViewContent:after {
+	content: "";
+	display: table;
+}
+
+#QuickViewContent:after {
+	clear: both;
+}
+
+#QuickViewContent{
+	*zoom: 1;
+}
+.ModalContent.Content {
+	float: none;
+	min-height: 359px;
+	width: auto;
+	overflow: auto;
+}
+
+#QuickViewImage {
+	
+}
+
+#QuickViewImage {
+	border: 1px solid;
+	margin-bottom: 5px;
+}
+
+.QuickViewSide {
+	float:left;
+	width: 255px;
+	overflow: hidden;
+	text-align: center;
+}
+
+/* QuickView content end */
+
+/* QuickView product details start */
+
+#QuickViewProductDetails {
+	float: right;
+	padding: 0 0 0 47px;
+	width: 340px;
+	border-top: 0;
+	font-size: 13px;
+	color: #6e6e6e;
+}
+#QuickViewProductDetails .productAttributeValue {
+font-size: 14px;	
+}
+.custom-quickview #QuickViewProductDetails {
+font-family: 'Trebuchet MS', Helvetica,Arial,Sans-Serif;	
+}
+.custom-quickview #QuickViewProductDetails{width: 360px;}
+#QuickViewProductDetails h1{
+    color: #464646;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 34px;
+    margin: 0;
+    padding: 0 40px 0 0 ;
+}
+#QuickViewProductDetails h1 a {
+    color: #464646 !important;
+}
+#QuickViewProductDetails .PriceRow{
+    border-top: medium none;
+    color: #464646;
+    font-size: 16px;
+    padding-bottom: 30px;
+    font-weight: bold;
+}
+#QuickViewProductDetails h3 {
+	font-size: 29px;
+	line-height: 1.1;
+}
+
+#QuickViewProductDetails div.productAttributeFluidWidth {
+	width: auto !important;
+}
+
+#QuickViewProductDetails table.productDetails {
+	text-align: left;
+	vertical-align: top;
+	border: none;
+	padding: 0;
+	margin: 0;
+	width: 99%;
+}
+
+/*#QuickViewProductDetails .ProductPriceWrap {
+	margin: 22px 0;
+	font-size: 23px;
+	border-style: dotted;
+	border-width: 1px 0;
+}
+*/
+#QuickViewProductDetails tr.detailRow {
+}
+#QuickViewProductDetails .PriceRow {
+padding: 0 !important;
+vertical-align: middle !important;
+line-height: 30px !important;
+
+}
+#QuickViewProductDetails td, #QuickViewProductDetails .productAttributeRow, .DetailRow {
+	padding: 5px 0 15px;
+	vertical-align: top;
+	clear: both;
+	border-bottom-width: 0;
+	border-bottom-style: dotted;
+}
+
+#QuickViewProductDetails .Label, #QuickViewProductDetails .productAttributeLabel {
+	font-weight: bold;
+	padding-bottom: 5px;
+	text-align: left;
+	color: #6e6e6e;
+	font-size: 14px;
+}
+
+#QuickViewProductDetails .ProductAddToCart ul,
+#QuickViewProductDetails .ProductAddToCart ul li {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#QuickViewProductDetails .required,
+#QuickViewProductDetails .Required {
+	color: #FF7800;
+	display: block;
+	float: left;
+	margin-right: 3px;
+}
+
+/* QuickView product details start */
+
+/* QuickView buttons start */
+
+#QuickViewProductDetails button {
+	
+	text-decoration: none;
+	text-shadow: 0 1px 0 #fff;
+	line-height: 18px;
+	font-size: 11px;
+
+	color: #444;
+	display: inline-block;
+
+	padding: 3px 8px;
+
+	background: #F3F3F3;
+	border: solid 1px #D9D9D9;
+
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+
+	-webkit-transition: border-color .20s;
+	-moz-transition: border-color .20s;
+	-o-transition: border-color .20s;
+	transition: border-color .20s;
+	
+	vertical-align: middle;
+	cursor: pointer;
+	
+}
+
+#QuickViewProductDetails button:hover {
+	background: #F4F4F4;
+	border-color: #C0C0C0;
+	color: #333;
+}
+
+#QuickViewProductDetails button:active {
+	border-color: #4D90FE;
+	color: #4D90FE;
+
+	-moz-box-shadow:inset 0 0 10px #D4D4D4;
+	-webkit-box-shadow:inset 0 0 10px #D4D4D4;
+	box-shadow:inset 0 0 10px #D4D4D4;
+}
+
+#QuickViewProductDetails button.blue {
+	
+	color: #fff;
+	border: 1px solid #3079ED !important;
+
+	background: #4B8DF8;
+	background: -webkit-linear-gradient(top, #4C8FFD, #4787ED);
+	background: -moz-linear-gradient(top, #4C8FFD, #4787ED);
+	background: -ms-linear-gradient(top, #4C8FFD, #4787ED);
+	background: -o-linear-gradient(top, #4C8FFD, #4787ED);
+
+	-webkit-transition: border .20s;
+	-moz-transition: border .20s;
+	-ms-transition: border .20s;
+	-o-transition: border .20s;
+	transition: border .20s;
+}
+
+#QuickViewProductDetails button.blue:hover {
+	border: 1px solid #2F5BB7 !important;
+
+	background: #3F83F1;
+	background: -webkit-linear-gradient(top, #4D90FE, #357AE8);
+	background: -moz-linear-gradient(top, #4D90FE, #357AE8);
+	background: -ms-linear-gradient(top, #4D90FE, #357AE8);
+	background: -o-linear-gradient(top, #4D90FE, #357AE8);
+}
+
+#QuickViewProductDetails button.addToCart {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#QuickViewProductDetails .addToCart {
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+/* QuickView buttons end */
+
+#ProductDetails div.dateselector {
+	display: inline;
+}
+
+#ProductDetails select.month, #ProductDetails select.year,
+#EventDateMonth, #EventDateYear {
+	width: 78px;
+}
+
+#ProductDetails select.day, #EventDateDay {
+	width: 70px;
+}
+
+#QuickViewProductDetails .ProductPrice {
+	font-weight: bold;
+        position: static;
+}
+#QuickViewProductDetails select {
+    width: 360px
+}
+
+#QuickViewProductDetails .productAttributeValue .productAttributeFluidWidth {
+    width: 340px !important;
+}
+
+#QuickViewProductDetails .selector {
+    font-style: italic
+}
+
+
+.home-products .ProductInfo #QuickViewContent select {
+max-width: 260px;
+} 
+
+.home-products .ProductInfo #QuickViewContent .selector {
+max-width: 240px;
+}
+.home-products .ProductInfo #QuickViewContent .productOptionViewRectangle label .name {
+color: #9C9C9C;
+}
+
+.home-products .ProductInfo #QuickViewContent .ui-datepicker-trigger {
+display: none;
+}
+
+.home-products .ProductInfo #QuickViewContent #QuickViewProductDetails .productAttributeValue .productAttributeFluidWidth {
+width: 240px !important;
+}
+
+
+/* === QuickView Styles End === */

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+%%Panel.HTMLHead%%
+    <body>
+        <div id="Container">
+        %%Panel.Header%%
+            <div id="Wrapper">
+                %%Panel.WrapperBanner%%
+                <div class="Center">%%Banner.TopBanner%%</div>
+
+                <div class="ContentHead CatHead Center">
+                    %%SNIPPET_CategorySortBox%%
+                    <h1 class="title">%%GLOBAL_CatName%%</h1>
+
+                    %%Panel.CategoryHeading%%
+                    %%Panel.CategoryBreadcrumb%%
+                    <div class="clear"></div>
+                </div>
+
+                <button class="js-faceted-search-action btn">%%LNG_FilterBy%%</button>
+                <div class="Left js-faceted-search-column">
+                    %%Panel.FacetedSearch%%
+                </div>
+                <div class="Content WideWithLeft %%GLOBAL_ExtraCategoryClass%%" id="LayoutColumn1">
+                    %%Panel.CategoryPagingTop%%
+                    %%Panel.CategoryContent%%
+                    %%Panel.CategoryPagingBottom%%
+                    <div class="Center">%%Banner.BottomBanner%%</div>
+                </div>
+                <div  class="clear"></div>
+            </div>
+        %%Panel.Footer%%
+        </div>
+    </body>
+</html>

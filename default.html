@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    %%Panel.HTMLHead%%
+    <body class="page-home">
+        
+        <div id="site">
+            
+            %%Panel.Header%%
+            
+            <div class="top-banner">
+
+                %%Banner.TopBanner%%
+			</div>
+
+            %%Panel.HomeSlideShow%%
+            
+            <div id="main-content">
+
+                <div class="container">
+                    <div class="row">
+                    	
+                        <aside class="col-md-3">
+                        	
+                            <div class="panel-group" id="accordion2">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" style="display:%%GLOBAL_HideSideShopByBrandFullPanel%%">
+                                      	<a class="panel-title" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" aria-expanded="false">
+                                        	<i class="caret-right"></i> Manufacturers
+                                      	</a>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse" style="display:%%GLOBAL_HideSideShopByBrandFullPanel%%">
+                                    	<div class="panel-body">
+                                        	%%Panel.SideShopByBrandFull%%
+                                    	</div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                      	<a class="panel-title" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo" aria-expanded="true">
+                                        	<i class="caret-down"></i> Products
+                                      	</a>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse in">
+                                    	<div class="panel-body">
+                                        	%%Panel.SideCategoryList%%
+                                    	</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <section class="col-md-9">
+
+                            <h2>Welcome</h2>
+                        </section>
+                    </div>
+
+                    <div class="col-md-12">
+
+                        <div class="row" id="best-sellers">
+
+                            <div class="col-md-9">
+
+                                <h2><span>Our Best Selling Products</span></h2>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="controls pull-right hidden-xs">
+                                    <a class="left btn btn-success" href="#top-products-slide-show" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                                    <a class="left btn btn-success btn-pause" href="#top-products-slide-show" data-toggle="button"><i class="glyphicon glyphicon-pause"></i></a>
+                                    <a class="right btn btn-success" href="#top-products-slide-show" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                                </div>
+                            </div>
+                            
+                            %%Panel.HomeFeaturedProducts%%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-banner">
+
+                %%Banner.BottomBanner%%
+            </div>
+
+            %%Panel.Footer%%
+            
+		</div>
+        
+	</body>
+</html>

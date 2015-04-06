@@ -1,0 +1,30 @@
+					%%GLOBAL_NewsletterBoxControlScript%%
+
+                    <h4 class="sr-only">Newsletter</h4>
+
+                    <form action="%%GLOBAL_ShopPath%%/subscribe.php" method="post" id="subscribe_form" name="subscribe_form">
+
+                        <fieldset>
+
+                            <legend>Become an Opt-in Member</legend>
+
+                            <p>to receive Special Offers, Exclusive Discounts, and information on our latests products.</p>
+
+                            <div class="input-group">
+
+                                <label for="nl_first_name" class="sr-only">Name</label>
+                                <input type="text" class="form-control" name="nl_first_name" id="nl_first_name" placeholder="Name">
+
+                                <label for="nl_email" class="sr-only">Email</label>
+                                <input type="text" class="form-control" name="nl_email" id="nl_email" placeholder="Email">
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+
+                            <input type="submit" class="btn btn-primary btn-block" value="Join Now">
+                            <input type="hidden" name="action" value="subscribe">
+                        </fieldset>
+                    </form>
+
+				    %%Panel.NewsletterJavaScript%%

@@ -1,0 +1,22 @@
+<div id="SearchPage" style="display:%%GLOBAL_HideSearchPage%%">
+	
+	<ul class="nav nav-tabs">
+		<li id="SearchProduct_Tab" class="%%GLOBAL_ProductTabActive%%"><a href="%%GLOBAL_ProductTabUrl%%" onclick="showSearchTabs('product'); return false;">%%LNG_SearchResultsTabProduct%%</a></li>
+		<li id="SearchContent_Tab" class="%%GLOBAL_ContentTabActive%%"><a href="%%GLOBAL_ContentTabUrl%%" onclick="showSearchTabs('content'); return false;">%%LNG_SearchResultsTabContent%%</a></li>
+	</ul>
+
+	<div id="SearchProduct_Container" style="%%GLOBAL_ProductContainerDisplay%%">
+		%%Panel.SearchTabProducts%%
+	</div>
+
+	<div id="SearchContent_Container" style="%%GLOBAL_ContentContainerDisplay%%">
+		%%Panel.SearchTabContents%%
+	</div>
+</div>
+
+<script>//<![CDATA[
+$(document).ready( function(){
+	
+	showSearchTabs("%%GLOBAL_SelectedSearchTab%%");
+});
+//]]></script>

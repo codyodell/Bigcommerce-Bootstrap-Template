@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+%%Panel.HTMLHead%%
+<body>
+
+<script src="%%GLOBAL_TPL_PATH%%/js/express.checkout.js?%%GLOBAL_JSCacheToken%%"></script>
+<script src="%%GLOBAL_TPL_PATH%%/js/formfield.js?%%GLOBAL_JSCacheToken%%"></script>
+<script>
+lang.LoginEnterValidEmail = "%%LNG_LoginEnterValidEmail%%";
+lang.LoginEnterPassword = "%%LNG_LoginEnterPassword%%";
+lang.AccountEnterPassword = "%%LNG_AccountEnterPassword%%";
+lang.AccountPasswordsDontMatch = "%%LNG_AccountPasswordsDontMatch%%";
+lang.AccountEnterFirstName = "%%LNG_AccountEnterFirstName%%";
+lang.AccountEnterLastName = "%%LNG_AccountEnterLastName%%";
+lang.EnterShippingFirstName = '%%LNG_EnterShippingFirstName%%';
+lang.EnterShippingLastName = '%%LNG_EnterShippingLastName%%';
+lang.EnterShippingAddress = "%%LNG_EnterShippingAddress%%";
+lang.EnterShippingCity = "%%LNG_EnterShippingCity%%";
+lang.ChooseShippingCountry = "%%LNG_ChooseShippingCountry%%";
+lang.ChooseShippingState = "%%LNG_ChooseShippingState%%";
+lang.EnterShippingZip = "%%LNG_EnterShippingZip%%";
+lang.ExpressCheckoutStepBillingAddress = "%%LNG_ExpressCheckoutStepBillingAddress%%";
+lang.ExpressCheckoutStepBillingAccountDetails = "%%LNG_ExpressCheckoutStepBillingAccountDetails%%";
+lang.ExpressCheckoutLoadError = "%%LNG_ExpressCheckoutLoadError%%";
+lang.ExpressCheckoutCheckingOutAsGuest = "%%LNG_ExpressCheckoutCheckingOutAsGuest%%";
+lang.ExpressCheckoutCreatingAnAccount = "%%LNG_ExpressCheckoutCreatingAnAccount%%";
+lang.ExpressCheckoutChooseBilling = "%%LNG_ExpressCheckoutChooseBilling%%";
+lang.ExpressCheckoutChooseShipping = "%%LNG_ExpressCheckoutChooseShipping%%";
+lang.ExpressCheckoutChooseShipper = "%%LNG_ExpressCheckoutChooseShipper%%";
+lang.ExpressCheckoutFor = "%%LNG_ExpressCheckoutFor%%";
+lang.ExpressCheckoutLoading = "%%LNG_ExpressCheckoutLoading%%";
+lang.ShippingMethodCombined = "%%LNG_ShippingMethodCombined%%";
+lang.EnterShippingPhone = "%%LNG_EnterShippingPhone%%"
+lang.EnterCouponCode = "%%LNG_EnterCouponCode%%";
+lang.BillAndShipToAddress = "%%LNG_BillAndShipToAddress%%";
+lang.BillToThisAddress = "%%LNG_BillToThisAddress%%";
+lang.ShipToThisAddress = "%%LNG_ShipToThisAddress%%";
+lang.CheckingOutAs = "%%LNG_CheckingOutAs%%";
+
+var CustomCheckoutFormNewAccount = %%GLOBAL_CustomCheckoutFormNewAccount%%;
+var CustomCheckoutFormBillingAddress = %%GLOBAL_CustomCheckoutFormBillingAddress%%;
+var CustomCheckoutFormShippingAddress = %%GLOBAL_CustomCheckoutFormShippingAddress%%;
+
+$(document).ready(function() {
+	ExpressCheckout.signedIn = %%GLOBAL_ExpressCheckoutSignedIn%%;
+	ExpressCheckout.digitalOrder = %%GLOBAL_ExpressCheckoutDigitalOrder%%;
+	ExpressCheckout.init();
+	%%GLOBAL_GoToStep%%
+});
+
+%%GLOBAL_FormFieldRequiredJS%%
+
+</script>
+
+
+<div id="site">
+
+	%%Panel.Header%%
+
+	<div class="container">
+		<div class="row">
+			<header class="col-md-12">
+
+				<h1 class="title">%%LNG_SecureCheckout%%</h1>
+
+				%%Panel.WrapperBanner%%
+			</header>
+
+			<main class="col-md-12">
+
+				<div class="ExpressCheckout">
+
+					%%Discount.FreeShippingEligibility%%
+
+					<div class="ExpressCheckoutBlock %%GLOBAL_CollapsedStepClassAccountDetails%%" id="CheckoutStepAccountDetails" style="%%GLOBAL_ExpressCheckoutHideAccountDetails%%">
+						<h3 class="well ExpressCheckoutTitle">
+							<a class="ChangeLink" href="#" onclick="return ExpressCheckout.ChangeStep('AccountDetails');">%%LNG_Modify%% &raquo;</a>
+							%%LNG_ExpressCheckoutStep%% %%GLOBAL_ExpressCheckoutStepAccountDetails%%: %%LNG_ExpressCheckoutStepAccountDetails%%
+							<span class="label label-default ExpressCheckoutCompletedContent"></span>
+                        	<span class="icon"></span>
+						</h3>
+						<div class="row ExpressCheckoutContent">
+							<div class="col-md-6 CreateAccount">
+
+								<form action="#" method="post" onsubmit="ExpressCheckout.GuestCheckout(); return false;">
+									<div id="CheckoutGuestForm" style="%%GLOBAL_HideGuestCheckoutOptions%%">
+
+										<h2>%%LNG_NotAnExistingCustomer%%</h2>
+										<p>%%LNG_CheckoutGuestIntro%%</p>
+
+										<dl>
+											<dd>
+												<label>
+													<input name="checkout_type" id="checkout_type_guest" value="guest" type="radio" onclick="$('#BillingDetailsLabel').html('%%LNG_ExpressCheckoutStepBillingAddress%%');" /> %%LNG_CheckoutAsAGuest%%
+												</label>
+											</dd>
+											<dd>
+												<label>
+													<input name="checkout_type" id="checkout_type_register" value="register" checked="checked" type="radio" onclick="$('#BillingDetailsLabel').html('%%LNG_ExpressCheckoutStepBillingAccountDetails%%');" /> %%LNG_RegisterAnAccount%%
+												</label>
+											</dd>
+											<dd class="Submit">
+
+												<button type="submit" class="btn btn-primary" id="CreateAccountButton">
+													%%LNG_Continue%%
+													<i class="glyphicon glyphicon-arrow-right"></i>
+												</button>
+
+												<span class="LoadingIndicator" style="display: none"><img src="%%GLOBAL_IMG_PATH%%/Loading.gif" alt="" /></span>
+											</dd>
+										</dl>
+									</div>
+									<div style="%%GLOBAL_HideRegisteredCheckoutOptions%%">
+
+										<h4>%%LNG_NotAnExistingCustomer%%</h4>
+
+										<p>%%LNG_CreateAccountIntroTitle%%</p>
+
+										<ul>
+											<li>%%LNG_CreateAccountIntro1%%</li>
+											<li>%%LNG_CreateAccountIntro2%%</li>
+											<li>%%LNG_CreateAccountIntro3%%</li>
+										</ul>
+
+										<button type="submit" class="btn btn-primary">
+											%%LNG_Continue%%
+											<i class="glyphicon glyphicon-arrow-right"></i>
+										</button>
+
+										<span class="LoadingIndicator" style="display: none">
+											<img src="%%GLOBAL_IMG_PATH%%/Loading.gif" alt="" />
+										</span>
+									</div>
+								</form>
+							</div>
+
+							<div class="col-md-6 AccountLogin">
+
+								<header>
+									<h2>%%LNG_AlreadyHaveAnAccount%%</h2>
+									<p id="LoginIntro">%%LNG_AlreadyHaveAnAccountIntro%%</p>
+								</header>
+								<form action="#" id="LoginForm" method="post" onsubmit="ExpressCheckout.Login(); return false;">
+
+										<p style="display: none" class="alert alert-danger" id="CheckoutLoginError">
+											%%GLOBAL_LoginMessage%%
+										</p>
+
+										<dl class="form-group">
+											<dt><label for="login_email" class="control-label">%%LNG_EmailAddress%%</label></dt>
+											<dd><input type="text" class="InitialFocus form-control" name="login_email" id="login_email" /></dd>
+
+											<dt><label for="login_pass" class="control-label">%%LNG_Password%%</label></dt>
+											<dd><input type="password" class="form-control" autocomplete="off" name="login_pass" id="login_pass" /></dd>
+										</dl>
+
+										<footer class="Submit">
+
+											<button id="LoginButton" class="btn btn-primary" type="submit">
+												%%LNG_Continue%%
+												<i class="glyphicon glyphicon-arrow-right"></i>
+											</button> 
+
+											<span class="LoadingIndicator" style="display: none">
+												<img src="%%GLOBAL_IMG_PATH%%/Loading.gif" alt="" />
+											</span>
+											
+											<a href="%%GLOBAL_ShopPath%%/login.php?action=reset_password" class="btn btn-link">%%LNG_ForgotYourPassword%%</a>
+										</footer>
+
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="ExpressCheckoutBlock %%GLOBAL_CollapsedStepClassBillingAddress%%" id="CheckoutStepBillingAddress">
+						<h3 class="well ExpressCheckoutTitle">
+							<a class="ChangeLink" href="#" onclick="return ExpressCheckout.ChangeStep('BillingAddress');">%%LNG_Modify%% &raquo;</a>
+							%%LNG_ExpressCheckoutStep%% %%GLOBAL_ExpressCheckoutStepBillingAddress%%:
+							<span id="BillingDetailsLabel">%%LNG_ExpressCheckoutStepBillingAddress%%</span>
+							<span class="label label-default ExpressCheckoutCompletedContent"></span>
+                            <span class="icon"></span>
+						</h3>
+						<div class="ExpressCheckoutContent">
+							%%SNIPPET_BillingAddressStepContents%%
+						</div>
+					</div>
+
+					<div class="ExpressCheckoutBlock %%GLOBAL_CollapsedStepClassShippingAddress%%" id="CheckoutStepShippingAddress" style="%%GLOBAL_ExpressCheckoutHideShippingAddress%%">
+						<h3 class="well ExpressCheckoutTitle">
+							<a class="ChangeLink" href="#" onclick="return ExpressCheckout.ChangeStep('ShippingAddress');">%%LNG_Modify%% &raquo;</a>
+							%%LNG_ExpressCheckoutStep%% %%GLOBAL_ExpressCheckoutStepShippingAddress%%: %%LNG_ExpressCheckoutStepShippingAddress%%
+							<span class="label label-default ExpressCheckoutCompletedContent"></span>
+                            <span class="icon"></span>
+						</h3>
+						<div class="ExpressCheckoutContent">
+							%%SNIPPET_ShippingAddressStepContents%%
+						</div>
+					</div>
+
+					<div class="ExpressCheckoutBlock %%GLOBAL_CollapsedStepClassShippingProvider%%" id="CheckoutStepShippingProvider" style="%%GLOBAL_ExpressCheckoutHideShippingProviders%%">
+						<h3 class="well ExpressCheckoutTitle">
+							<a class="ChangeLink" href="#" onclick="return ExpressCheckout.ChangeStep('ShippingProvider');">%%LNG_Modify%% &raquo;</a>
+							%%LNG_ExpressCheckoutStep%% %%GLOBAL_ExpressCheckoutStepShippingProvider%%: %%LNG_ExpressCheckoutStepShippingMethod%%
+							<span class="label label-default ExpressCheckoutCompletedContent"></span>
+                            <span class="icon"></span>
+						</h3>
+						<div class="ExpressCheckoutContent">
+						</div>
+					</div>
+
+					<div class="ExpressCheckoutBlock %%GLOBAL_CollapsedStepClassConfirmation%%" id="CheckoutStepConfirmation">
+						<h3 class="well ExpressCheckoutTitle">
+							<a class="ChangeLink" href="#" onclick="return ExpressCheckout.ChangeStep('Confirmation');">%%LNG_Modify%% &raquo;</a>
+							%%LNG_ExpressCheckoutStep%% %%GLOBAL_ExpressCheckoutStepConfirmation%%: %%LNG_ExpressCheckoutStepOrderConfirmation%%
+							<span class="label label-default ExpressCheckoutCompletedContent"></span>
+                            <span class="icon"></span>
+						</h3>
+						<div class="ExpressCheckoutContent">
+						</div>
+					</div>
+
+					<div class="ExpressCheckoutBlock %%GLOBAL_CollapsedStepClassPaymentDetails%%" id="CheckoutStepPaymentDetails" style="%%GLOBAL_ExpressCheckoutHidePaymentDetails%%">
+						<h3 class="well ExpressCheckoutTitle">
+							%%LNG_ExpressCheckoutStep%% %%GLOBAL_ExpressCheckoutStepPaymentDetails%%: %%LNG_ExpressCheckoutStepPaymentDetails%%
+                            <span class="icon"></span>
+						</h3>
+						<div class="ExpressCheckoutContent">
+						</div>
+					</div>
+				</div>
+
+			</main>
+		</div>
+	</div>
+	
+	%%Panel.Footer%%
+</div>
+</body>
+</html>

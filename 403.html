@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+%%Panel.HTMLHead%%
+<body>
+<div id="site">
+
+	%%Panel.Header%%
+
+	<div id="breadcrumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">		
+					<ul class="breadcrumb">
+						<li><a href="%%GLOBAL_ShopPathNormal%%/">%%LNG_Home%%</a></li>
+						<li><a href="javascript:history.go(-1)">... %%LNG_PreviousPage%%</a></li>
+						<li>%%LNG_ForbiddenAccessPage%%</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<header class="col-md-12">
+				
+				<h1 class="title">%%LNG_ForbiddenAccessPage%%</h1>
+				%%Panel.WrapperBanner%%
+			</header>
+			<main class="col-md-12">
+				<p class="alert alert-danger">%%LNG_NoPermissionToAccessThisPage%%</p>
+				<p>%%GLOBAL_Contact%%</p>
+				<a href="%%GLOBAL_ShopPath%%/">%%LNG_ReturnToHomepage%%</a>
+			</main>
+			<footer class="col-md-12">
+				%%Banner.BottomBanner%%
+			</footer>
+		</div>
+	</div>
+    
+	%%Panel.Footer%%
+</div>
+</body>
+</html>

@@ -1,0 +1,622 @@
+/*
+
+Uniform Theme: Uniform Default
+Version: 1.8
+By: Josh Pyles
+License: MIT License
+---
+For use with the Uniform plugin:
+http://uniformjs.com/
+
+*/
+/* General settings */
+div.selector,
+div.selector span,
+div.checker span,
+div.radio span,
+div.uploader,
+div.uploader span.action,
+div.button,
+div.button span {
+  background-image: url("%%GLOBAL_TPL_PATH%%/images/uniform-sprite.png");
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased; }
+
+.selector,
+.checker,
+.button,
+.radio,
+.uploader {
+  display: -moz-inline-box;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle; }
+
+.selector select:focus,
+.radio input:focus,
+.checker input:focus,
+.uploader input:focus {
+  outline: 0; }
+
+.selector,
+.radio,
+.checker,
+.uploader,
+.button,
+.selector *,
+.radio *,
+.checker *,
+.uploader *,
+.button * {
+  margin: 0;
+  padding: 0; }
+
+.highContrastDetect {
+  background: url("%%GLOBAL_TPL_PATH%%/images/uniform-bg-input.png") repeat-x 0 0;
+  width: 0px;
+  height: 0px; }
+
+/* Input & Textarea */
+input.text,
+input.email,
+input.search,
+input.tel,
+input.url,
+input.datetime,
+input.date,
+input.month,
+input.week,
+input.time,
+input.datetime-local,
+input.number,
+input.color,
+input.password,
+select.uniform-multiselect,
+textarea.uniform {
+  padding: 3px;
+  background: url("%%GLOBAL_TPL_PATH%%/images/uniform-bg-input.png") repeat-x 0 0;
+  outline: 0; }
+
+/* Remove default webkit and possible mozilla .search styles */
+div.checker input,
+input.search,
+input.search:active {
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+input.text:focus,
+input.email:focus,
+input.search:focus,
+input.tel:focus,
+input.url:focus,
+input.datetime:focus,
+input.date:focus,
+input.month:focus,
+input.week:focus,
+input.time:focus,
+input.datetime-local:focus,
+input.number:focus,
+input.color:focus,
+input.password:focus,
+select.uniform-multiselect:focus,
+textarea.uniform:focus {
+  background: url("%%GLOBAL_TPL_PATH%%/images/uniform-bg-input-focus.png") repeat-x 0 0; }
+
+/* Select */
+div.selector {
+  background:none #fff;
+  line-height: 26px;
+  height: 26px;
+  padding: 0 10px;
+  position: relative;
+  border:1px solid #e4e4e4;
+  color: #464646;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+}
+
+div.selector.fixedWidth {
+  width: 190px; 
+  display: block;
+}
+
+div.selector span {
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  background:none;
+  height: 26px;
+  line-height: 26px;
+  padding-right: 22px;
+  cursor: pointer;
+  display: block; 
+  background: none; 
+  font-size: 13px;
+  margin:0px 0;
+  color: #6E6E6E;
+  font-style: normal;
+  text-align: left;
+}
+div.selector span:before {
+  font-family: 'Glyphicons Halflings';
+  content:"\e114";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  display: block;
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  z-index: 1;
+  color: #FF7800;
+  text-align: center;
+}
+div.selector.focus span{}
+
+div.selector.fixedWidth span {
+  width: 155px; }
+
+div.selector select {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  border: none;
+  background: none;
+  display: block;
+  position: absolute;
+  height: 26px;
+  top: 0;
+  left: 0px;
+  width: 100% !important; 
+  z-index: 10;  }
+
+div.selector:active,
+div.selector.active {
+ }
+
+div.selector:active span,
+div.selector.active span {
+  }
+
+div.selector.focus,
+div.selector.hover,
+div.selector:hover {
+  }
+
+div.selector.focus span,
+div.selector.hover span,
+div.selector:hover span {
+   }
+
+div.selector.focus:active,
+div.selector.focus.active,
+div.selector:hover:active,
+div.selector.active:hover {
+  }
+
+div.selector.focus:active span,
+div.selector:hover:active span,
+div.selector.active:hover span,
+div.selector.focus.active span {
+  }
+
+div.selector.disabled,
+div.selector.disabled:active,
+div.selector.disabled.active {
+ }
+
+div.selector.disabled span,
+div.selector.disabled:active span,
+div.selector.disabled.active span {
+   }
+
+/* Checkbox */
+div.checker,
+div.checker span,
+div.checker input {
+  width: 14px;
+  height: 14px; 
+ }
+
+div.checker {
+  position: relative;
+  margin-right: 5px;}
+
+div.checker span {
+  background: url("%%GLOBAL_TPL_PATH%%/images/checkradio.png") no-repeat -41px -20px; 
+  display: block;
+  }
+
+div.checker input {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  border: none;
+  background: none;
+  display: -moz-inline-box;
+  display: inline-block;
+  *display: inline;
+  zoom: 1; }
+
+div.checker:active span,
+div.checker.active span {
+   }
+
+div.checker.focus span,
+div.checker:hover span {
+   }
+
+div.checker.focus:active span,
+div.checker:active:hover span,
+div.checker.active:hover span,
+div.checker.focus.active span {
+   }
+
+div.checker span.checked {
+  background: url("%%GLOBAL_TPL_PATH%%/images/checkradio.png") no-repeat -1px -20px; }
+
+div.checker:hover  span.checked {
+ }
+
+
+div.checker:active span.checked,
+div.checker.active span.checked {
+  }
+
+div.checker.focus span.checked,
+div.checker:hover span.checked {
+  }
+
+div.checker.focus:active span.checked,
+div.checker:hover:active span.checked,
+div.checker.active:hover span.checked,
+div.checker.active.focus span.checked {
+  }
+
+div.checker.disabled span,
+div.checker.disabled:active span,
+div.checker.disabled.active span {
+  opacity:0.5;}
+
+div.checker.disabled span.checked,
+div.checker.disabled:active span.checked,
+div.checker.disabled.active span.checked {
+  background: url("%%GLOBAL_TPL_PATH%%/images/checkradio.png") no-repeat -22px -20px; 
+  
+ }
+
+/* Radio */
+div.radio,
+div.radio span,
+div.radio input {
+  width: 14px;
+  height: 14px; }
+
+div.radio {
+  position: relative; margin-right: 5px; }
+
+div.radio span {
+  display: block;
+  background: url("%%GLOBAL_TPL_PATH%%/images/checkradio.png") no-repeat -42px 0px;  }
+
+div.radio input {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  border: none;
+  background: none;
+  display: -moz-inline-box;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  text-align: center; }
+
+div.radio:active span,
+div.radio.active span {
+  }
+
+div.radio.focus span,
+div.radio:hover span {
+   }
+
+div.radio.focus:active span,
+div.radio:active:hover span,
+div.radio.active:hover span,
+div.radio.active.focus span {
+ }
+
+div.radio span.checked {
+   background: url("%%GLOBAL_TPL_PATH%%/images/checkradio.png") no-repeat -21px 0px; }
+
+div.radio:hover span.checked {
+    }
+
+div.radio:active span.checked,
+div.radio.active span.checked {
+}
+
+div.radio.focus span.checked,
+div.radio:hover span.checked {
+}
+
+div.radio.focus:active span.checked,
+div.radio:hover:active span.checked,
+div.radio.focus.active span.checked,
+div.radio.active:hover span.checked {
+ }
+
+div.radio.disabled span,
+div.radio.disabled:active span,
+div.radio.disabled.active span {
+	
+ }
+
+div.radio.disabled span.checked,
+div.radio.disabled:active span.checked,
+div.radio.disabled.active span.checked {
+background: url("%%GLOBAL_TPL_PATH%%/images/checkradio.png") no-repeat 0 0px; 
+ }
+
+/* Uploader */
+div.uploader {
+  height: 32px;
+  width: 230px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; 
+  background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 16px 16px 16px 16px;
+    font-family: 'Droid Sans',sans-serif;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+ margin-bottom: 5px;
+ overflow: hidden;
+}
+
+div.uploader span.action {
+  background: url("%%GLOBAL_TPL_PATH%%/images/submit-arrow.png") no-repeat scroll center center #FF7800; 
+  height: 32px;
+  line-height: 32px;
+  width: 32px;
+  text-align: center;
+  float: right;
+  display: inline;
+  overflow: hidden;
+  cursor: pointer; 
+  text-indent: -9999px;
+}
+div.uploader span.action:hover{
+    background: url("%%GLOBAL_TPL_PATH%%/images/submit-arrow.png") no-repeat scroll center center #FF7800 !important; 
+}
+
+div.uploader span.filename {
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  float: left;
+  cursor: default;
+  height: 32px;
+  margin: 0;
+  line-height: 32px;
+  width: 165px;
+  padding: 0 15px; 
+  color: #6E6E6E;
+}
+
+div.uploader input {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  border: none;
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  float: right;
+  cursor: default;
+  width: 100%;
+  height: 100%; 
+  z-index: 10
+}
+
+div.uploader.focus,
+div.uploader.hover,
+div.uploader:hover {
+ }
+
+div.uploader.focus span.action,
+div.uploader.hover span.action,
+div.uploader:hover span.action {
+  }
+
+div.uploader.active span.action,
+div.uploader:active span.action {
+  }
+
+div.uploader.focus.active span.action,
+div.uploader:focus.active span.action,
+div.uploader.focus:active span.action,
+div.uploader:focus:active span.action {
+  }
+
+div.uploader.disabled {
+  }
+
+div.uploader.disabled span.action {
+  }
+
+/* Buttons */
+div.button a,
+div.button button,
+div.button input {
+  position: absolute;
+  display: none; }
+
+div.button {
+  background-position: 0 -641px;
+  height: 30px;
+  cursor: pointer;
+  position: relative; }
+
+div.button span {
+  display: -moz-inline-box;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  line-height: 1;
+  text-align: center;
+  background-position: right -521px;
+  height: 22px;
+  margin-left: 13px;
+  padding: 8px 15px 0 2px; }
+
+div.button.focus,
+div.button:focus,
+div.button:hover,
+div.button.hover {
+  background-position: 0 -701px; }
+
+div.button.focus span,
+div.button:focus span,
+div.button:hover span,
+div.button.hover span {
+  background-position: right -581px; }
+
+div.button.active,
+div.button:active {
+  background-position: 0 -671px; }
+
+div.button.active span,
+div.button:active span {
+  background-position: right -551px;
+  cursor: default; }
+
+div.button.disabled {
+  background-position: 0 -731px; }
+
+/* Separate from above due to IE8 */
+div.button:disabled {
+  background-position: 0 -731px; }
+
+div.button.disabled span {
+  background-position: right -611px;
+  cursor: default; }
+
+/* Separate from above due to IE8 */
+div.button:disabled span {
+  background-position: right -611px;
+  cursor: default; }
+
+/* INPUT & TEXTAREA */
+input.text,
+input.email,
+input.search,
+input.tel,
+input.url,
+input.datetime,
+input.date,
+input.month,
+input.week,
+input.time,
+input.datetime-local,
+input.number,
+input.color,
+input.password,
+select.uniform-multiselect,
+textarea.uniform {
+  font-weight: normal;
+  color: #777;
+  border-top: solid 1px #aaa;
+  border-left: solid 1px #aaa;
+  border-bottom: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+
+input.text:focus,
+input.email:focus,
+input.search:focus,
+input.tel:focus,
+input.url:focus,
+input.datetime:focus,
+input.date:focus,
+input.month:focus,
+input.week:focus,
+input.time:focus,
+input.datetime-local:focus,
+input.number:focus,
+input.color:focus,
+input.password:focus,
+select.uniform-multiselect:focus,
+textarea.uniform:focus {
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  border-color: #999; }
+
+/* PRESENTATION */
+/* Buttons */
+div.button.active span,
+div.button:active span {
+  color: #555; }
+
+div.button span {
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+
+div.button.disabled span {
+  color: #bbb; }
+
+/* Separate from above due to IE8 */
+div.button:disabled span {
+  color: #bbb; }
+
+/* Select */
+div.selector {
+  
+
+div.selector select { }
+
+div.selector span {
+  color: #666;
+  text-shadow: 0 1px 0 #fff; }
+
+div.selector.disabled span {
+  color: #bbb; }
+
+/* Checker */
+div.checker {
+  margin-right: 5px; }
+
+/* Radio */
+div.radio {
+  margin-right: 3px; }
+
+/* Uploader */
+div.uploader span.action {
+  text-shadow: #fff 0px 1px 0px;
+  background-color: #fff;
+  font-size: 11px;
+  font-weight: bold; }
+
+div.uploader span.filename {
+  color: #777;
+  border-right: solid 1px #bbb;
+  font-size: 11px; }
+
+div.uploader.disabled span.action {
+  color: #aaa; }
+
+div.uploader.disabled span.filename {
+  border-color: #ddd;
+  color: #aaa; }

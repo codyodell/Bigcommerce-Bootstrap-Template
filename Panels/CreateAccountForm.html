@@ -1,0 +1,67 @@
+<script type="text/javascript">
+	var RecaptchaOptions = {
+		theme : 'white'
+	};
+</script>
+<div class="Block Moveable Panel" id="CreateAccountForm">
+	<div class="CreateAccountIntro">
+		
+		<p style="display: %%GLOBAL_HideCreateAccountIntroMessage%%">
+			%%LNG_CreateAccountIntro4%% <em>%%GLOBAL_StoreName%%</em> %%LNG_CreateAccountIntro5%%
+		</p>
+
+		<p class="alert alert-danger" style="display:%%GLOBAL_HideCreateAccountErrorMessage%%">
+			%%GLOBAL_ErrorMessage%%
+		</p>
+	</div>
+	<div class="BlockContent">
+
+		<form action="%%GLOBAL_ShopPath%%/login.php?action=save_new_account" method="post" onsubmit="return check_create_account_form()">
+
+				<div class="panel panel-default">
+					<div class="panel-heading">%%LNG_PersonalDetails%%</div>
+						<div class="panel-body">
+
+							<p>%%LNG_CreateAccountPersonalIntro%%</p>
+							<dl>
+								%%GLOBAL_CreateAccountEmailPassword%%
+							</dl>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">%%LNG_ShippingDetails%%</div>
+						<div class="panel-body">
+
+							<p>%%LNG_CreateAccountShippingIntro%%</p>
+							<dl>
+								%%GLOBAL_CreateAccountDetails%%
+							</dl>
+							
+							<div class="required form-group">
+
+								<label style="display: %%GLOBAL_HideReviewCaptcha%%">Security Question</label>
+								<script type="text/javascript"
+									src="https://www.google.com/recaptcha/api/challenge?k=%%GLOBAL_ReCaptchaAPIKeyPublic%%">
+								</script>
+								<noscript>
+									<iframe src="https://www.google.com/recaptcha/api/noscript?k=%%GLOBAL_ReCaptchaAPIKeyPublic%%"
+											height="300" width="500" frameborder="0"></iframe>
+									<textarea name="recaptcha_challenge_field" rows="3" cols="40">
+									</textarea>
+									<input type="hidden" name="recaptcha_response_field"
+										   value="manual_challenge">
+								</noscript>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<input type="submit" value="%%GLOBAL_CreateAccountButtonText%%" class="btn btn-primary" />
+
+		</form>
+
+		%%Panel.CreateAccountJavaScript%%
+	</div>
+</div>

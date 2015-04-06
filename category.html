@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+%%Panel.HTMLHead%%
+<body class="page-category">
+<div id="site">
+
+	%%Panel.Header%%
+
+	<div id="breadcrumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">		
+					%%Panel.CategoryBreadcrumb%%
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<header class="col-md-12">
+
+				%%Banner.TopBanner%%
+				
+				<h1 class="title">%%GLOBAL_CatName%%</h1>
+				
+				%%Panel.WrapperBanner%%
+			</header>
+			<aside class="col-md-3">
+
+				%%Panel.CategoryHeading%%
+			</aside>    
+			<main class="col-md-9 %%GLOBAL_ExtraCategoryClass%%">
+				
+				<div class="row">
+					
+					%%Panel.CategoryPagingTop%%
+
+					%%SNIPPET_CategorySortBox%%
+				</div>
+
+				%%Panel.CategoryContent%%
+				
+				%%Panel.CategoryPagingBottom%%
+			</main>
+			<footer class="col-md-12 banner-bottom">
+
+				%%Banner.BottomBanner%%
+			</footer>
+		</div>
+	</div>
+	
+	%%Panel.Footer%%
+</div>
+</body>
+</html>

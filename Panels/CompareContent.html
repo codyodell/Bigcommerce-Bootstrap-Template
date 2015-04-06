@@ -1,0 +1,18 @@
+<div id="CompareContent">
+
+	<h2>%%GLOBAL_ComparisonHeading%%</h2>
+
+	<p class="alert alert-info">%%LNG_ProductComparisonIntro%%</p>
+	<p class="alert alert-danger" style="display: %%GLOBAL_HideTooManyProductsMessage%%">%%GLOBAL_TooManyProductsMessage%%</p>
+
+    <table class="table table-bordered table-striped" id="CompareTable">
+            %%SNIPPET_ComparisonList%%
+    </table>
+</div>
+
+<script>
+
+	var num_compare_items = %%GLOBAL_NumCompareItems%%;
+
+	config.lang.CompareTwoProducts = "%%LNG_CompareTwoProducts%%";
+</script>

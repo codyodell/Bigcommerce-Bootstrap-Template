@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+%%Panel.HTMLHead%%
+<body>
+<div id="site">
+
+	%%Panel.Header%%
+
+	<div id="breadcrumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">		
+                    <ul class="breadcrumb">
+                        <li><a href="http://bcthree.simply.com.au/">Home</a><span class="separator"> / </span></li>
+                        <li><a href="javascript:history.go(-1)">... Previous Page</a><span class="separator"> / </span></li>
+                        <li>Checkout</li>
+                    </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<header class="col-md-12">
+				
+				<h1 class="title">%%LNG_SecureCheckout%%</h1>
+				%%Panel.WrapperBanner%%
+			</header>
+
+				<div class="CreateAccount col-md-6">
+					<form action="checkout.php?action=choose_billing_address" method="post">
+						<div id="CheckoutGuestForm" style="%%GLOBAL_HideCheckoutGuest%%">
+							<h2>%%LNG_NotAnExistingCustomer%%</h2>
+							<p>%%LNG_CheckoutGuestIntro%%</p>
+							<dl>
+								<dd><label><input name="checkout_type" id="checkout_type_guest" value="guest" type="radio" /> %%LNG_CheckoutAsAGuest%%</label>&nbsp;</dd>
+								<dd><label><input name="checkout_type" id="checkout_type_register" value="register" checked="checked" type="radio" /> %%LNG_RegisterAnAccount%%</label>&nbsp;</dd>
+							</dl>
+							<input type="submit" class="btn btn-primary" value="%%LNG_Continue%%" />
+						</div>
+						<div style="%%GLOBAL_HideCheckoutRegistrationRequired%%">
+							
+							<h2>%%LNG_NotAnExistingCustomer%%</h2>
+							<p>%%LNG_CreateAccountIntroTitle%%</p>
+							<ul>
+								<li>%%LNG_CreateAccountIntro1%%</li>
+								<li>%%LNG_CreateAccountIntro2%%</li>
+								<li>%%LNG_CreateAccountIntro3%%</li>
+							</ul>
+
+							<input type="submit" class="btn btn-primary" value="%%LNG_Continue%%" />
+						</div>
+					</form>
+				</div>
+
+				<div class="AccountLogin col-md-6">
+					<h2>%%LNG_AlreadyHaveAnAccount%%</h2>
+					<p>%%LNG_AlreadyHaveAnAccountIntro%%</p>
+					<form action="checkout.php?action=choose_billing_address" id="LoginForm" method="post">
+						<div class="FormContainer HorizontalFormContainer NarrowFormContainer">
+
+							<p style="display: %%GLOBAL_HideLoginMessage%%" class="%%GLOBAL_MessageClass%% alert alert-info">
+								%%GLOBAL_LoginMessage%%
+							</p>
+
+							<dl>
+								<dt>%%LNG_EmailAddress%%:</dt>
+								<dd><input type="text" class="InitialFocus" name="login_email" id="login_email" /></dd>
+
+								<dt>%%LNG_Password%%:</dt>
+								<dd><input type="password" autocomplete="off" class="Textbox Field200" name="login_pass" id="login_pass" /></dd>
+							</dl>
+
+							<button id="LoginButton" class="btn btn-primary" type="submit">
+								%%LNG_Continue%%
+								<i class="glyphicon glyphicon-chevron-right"></i>
+							</button>
+
+							<a href="%%GLOBAL_ShopPath%%/login.php?action=reset_password" class="btn btn-secondary">%%LNG_ForgotYourPassword%%</a>
+						</div>
+					</form>
+				</div>
+
+				
+		</div>
+	</div>
+
+    %%Panel.Footer%%
+</div>
+</body>
+</html>

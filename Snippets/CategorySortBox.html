@@ -1,0 +1,16 @@
+<div class="col-md-6 col-sm-6 col-xs-12 pull-right" id="category-sort">
+	<form action="%%GLOBAL_URL%%" method="get" class="form-inline">
+		%%GLOBAL_HiddenSortField%%
+        <strong class="control-label">%%LNG_SortBy%%</strong>
+		<select name="sort" id="sort" onchange="this.form.submit()" class="form-control">
+			<option %%GLOBAL_SortFeaturedSelected%% value="featured">%%LNG_FeaturedItems%%</option>
+			<option %%GLOBAL_SortNewestSelected%% value="newest">%%LNG_NewestItems%%</option>
+			<option %%GLOBAL_SortBestSellingSelected%% value="bestselling">%%LNG_Bestselling%%</option>
+			<option %%GLOBAL_SortAlphaAsc%% value="alphaasc">%%LNG_AlphaAsc%%</option>
+			<option %%GLOBAL_SortAlphaDesc%% value="alphadesc">%%LNG_AlphaDesc%%</option>
+			<option %%GLOBAL_SortAvgReview%% value="avgcustomerreview">%%LNG_AvgCustomerReview%%</option>
+			<option %%GLOBAL_SortPriceAsc%% value="priceasc">%%LNG_PriceAsc%%</option>
+			<option %%GLOBAL_SortPriceDesc%% value="pricedesc">%%LNG_PriceDesc%%</option>
+		</select>
+	</form>
+</div>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    %%Panel.HTMLHead%%
+    <body class="page-product">
+        
+        <script src="%%ASSET_js/jquery.validate.1.13.1.js%%"></script>
+        <script src="%%ASSET_js/product.functions.js%%"></script>
+        <script src="%%ASSET_js/product.js%%"></script>
+        
+        <div id="site">
+            
+            %%Panel.Header%%
+            
+            <div id="breadcrumbs" %%GLOBAL_HideBreadCrumbs%%>
+                <div class="container">
+                    <div class="row">
+                        <header class="col-md-12">
+                            %%Panel.ProductBreadcrumb%%
+                        </header>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row">
+                    <main class="col-md-12 banner-top">
+
+                        %%Panel.WrapperBanner%%
+
+                        %%Panel.ProductDetails%%
+                        
+                    </main>
+                </div>
+            </div>
+            
+            %%Panel.Footer%%
+        </div>
+        
+        %%Panel.SideProductAddToWishList%%
+        
+        <script>
+            
+            $().ready(function() {
+                
+                var hash = window.location.hash,
+                    searchUrl = window.location.search;
+                
+                if (hash == '#write_review') {
+                    
+                    $('.WriteReviewBtn').hide();
+                }
+                
+                if (hash == '#write_review' || searchUrl == '?tab=ProductReviews' || hash == '#reviews') {
+                    
+                    $('#ProductReviews > h2').trigger('click'); 
+                    
+                    var idCurr = $('.Block.current').attr('id');
+                    
+                    if (idCurr != 'ProductReviews') {
+                        //$('#ProductReviews > h2').trigger('click'); 
+                        $('html, body').animate({
+                            scrollTop: ($("#write_review").offset().top -  $('.Block.current').height()) - 50
+                        }, 0); 
+                        } else {
+                        
+                        $('html, body').animate({
+                            scrollTop: $("#write_review").offset().top -50
+                        }, 0);  
+                    }
+                }
+                
+                $('.WriteReviewBtn').click(function() {
+                    
+                    $(this).hide();
+                    
+                    var idCurr = $('.Block.current').attr('id');
+                    
+                    if (idCurr != 'ProductReviews') {
+                        
+                        $('#ProductReviews > h2').trigger('click'); 
+                        
+                        $('html, body').animate({
+                            scrollTop: $("#write_review").offset().top -  $('.Block.current').height()
+                        }, 0); 
+                        } else {
+                        
+                        $('html, body').animate({
+                            scrollTop: $("#write_review").offset().top
+                        }, 0);  
+                    }
+                    
+                    return false;
+                });
+                
+                //$('.product-images .image-container').first().trigger('click');    
+            });
+        </script>
+    </body>
+</html>

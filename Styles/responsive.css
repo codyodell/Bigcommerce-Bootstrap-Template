@@ -1,0 +1,376 @@
+@media screen and (max-width: 1199px){
+
+/*    #TopMenu .row .nav:first-child{
+
+        display: none;
+    }*/
+}
+
+/*@media screen and (min-width: 991px){*/
+
+    #ToggleSearchFormLink{
+
+        visibility: visible;
+        position: relative;
+        top: 34px;
+        z-index: 99999;
+    }
+}
+
+/*@media screen and (min-width: 768px){*/
+
+    #category-paging-top{
+
+        text-align: left;
+    }
+
+    #category-sort, #search-sort{
+
+        text-align: right;
+    }
+
+    #header-search-container{
+
+        text-align: right;
+    }
+
+    #category-sort .control-label, #search-sort .control-label{
+
+        padding-right: 5px;
+    }
+
+/*    #ToggleSearchFormLink{
+
+        float: right;
+    }*/
+
+    #ModalButtonRow,.ModalButtonRow {
+
+        text-align: right;
+    }
+
+
+    /* Header */
+    .logo{
+
+        float:left;
+    }
+
+    /* Currency Chooser */
+    .CurrencyChooser:hover .BlockContent{
+
+        position: absolute;
+        top:35px;
+        left:0;
+    }
+
+    .CurrencyChooser{
+
+        border-left: 1px solid #7b9326;
+        padding: 12px 22px 12px 10px;
+    }
+
+    .CurrencyList dd{
+
+        padding: 8px 0;
+    }
+
+/*}*/
+
+/*@media screen and (max-width: 767px){
+
+    #category-paging-top, #category-sort, #search-sort{
+
+        text-align: center;
+    }
+
+    #SearchForm input[type=text]{
+
+        background: transparent;
+    }
+
+    #category-sort .control-label, #search-sort .control-label{
+
+        line-height: 2.5em;
+    }
+
+    #footer .address{
+
+        background: rgba(0,0,0,0.05);
+        padding: 5px 0 20px 0;
+        margin-top: 25px;
+    }
+
+    .text-center ul{
+
+        list-style: none;
+    }
+
+    .CreateAccount ul{
+
+        list-style: none;
+    }
+
+    .nav-tabs{
+
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .nav-tabs > li{
+
+        float: none !important;
+        display: inline-block;
+    }
+
+    .newsletter-promo{
+
+        padding: 25px 0 15px 0;
+        background: #ededed;
+        margin: 25px 0 15px 0;
+    }
+
+    #ModalButtonRow,.ModalButtonRow {
+        
+        text-align: center;
+    }
+
+    #ModalContainer{
+
+        width: 100% !important;
+        margin-left: 0 !important;
+        left: 0;
+    }
+
+    .ExpressCheckoutCompletedContent{
+
+        font-weight: normal;
+        font-size: 11px;
+        display: block;
+        line-height: 2em;
+        margin-top: 10px;
+    }
+
+
+
+    body, #Header .social, #footer .logo, #copyright *, #footer .toplink, .ProceedToCheckout{
+
+        text-align: center;
+    }
+
+    .ProceedToCheckout{
+
+        margin-top: 25px;
+    }
+
+    #TopMenu .login-logout .navbar-text{
+
+        display: none;
+    }
+
+    .CurrencyChooser{
+
+        line-height: 20px;
+        padding: 8px 15px;
+    }
+
+    .newsletter-form .summary{
+
+        background-position: 10% 50%;
+    }
+
+    .navbar-nav{
+
+        margin: 0 !important;
+    }
+
+    #footer .logo a:first-child{
+
+        display: block;
+        margin: 15px 0;
+    }
+
+    .toplink{
+
+        display: inline;
+        padding: 13px 52px;
+    }
+
+    #TopMenu{
+
+        border-radius: 0;
+    }
+
+    #TopMenu li{
+
+        display: block;
+    }
+
+    #TopMenu .row, #TopMenu .container{
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .CartLink{
+
+        padding: 8px 5px;
+    }
+
+    .CartLink a{
+
+        display: inline !important;
+    }
+
+    #footer .col-md-4:last-child{
+
+        padding-bottom: 15px;
+    }
+
+    #header-menu-container{
+
+        padding: 0;
+        background: #90ad2d;
+    }
+
+    #header-menu-container li a{
+
+        color: #f7fae5;
+    }
+
+    #header-menu-container li a:hover{
+
+        background: #5b6615;
+    }
+
+    #header-top h3{
+
+        display: block;
+        text-align: center;
+        line-height: 30px;
+        background: #bf1e2e;
+        color: #fff;
+    }
+
+    #header .col-md-12{
+
+        padding: 0;
+    }
+
+    #header .logo{
+
+        padding: 15px 0;
+    }
+
+    #PagesMenu a{
+
+        display: block;
+    }
+
+    .icon-bar{
+
+        background: #fff;
+    }
+
+    .navbar-toggle{
+
+        padding-top: 4px;
+    }
+
+    #footer{
+        
+        background: #6c6c6c;
+        border-top:1px solid #c6c6c6;
+        padding-bottom: 25px;
+    }
+
+    #footer h3{
+
+        background: #fff;
+        color: #c6c6c6;
+        margin-bottom: 15px;
+        margin: 15px 0 10px 0;
+        line-height: 40px;
+    }
+
+    #footer h3:first-child{
+
+        margin-top: 0;
+    }
+
+    #footer .form-control{
+
+        margin-bottom: 10px;
+    }
+
+    #footer .form-submit{
+
+        padding-bottom: 15px;
+    }
+
+    #footer p{
+
+        margin-bottom: 15px;
+    }
+
+    #footer-bottom{
+
+        clear: both;
+    }
+
+    #authorizenet{
+
+        margin-right: 15px;
+    }
+
+    #TopMenu li {
+
+        padding: 0;
+    }
+
+    #PagesMenu li span{
+
+        padding: 0;
+        background: #6c6c6c;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    #TopMenu li ul li{
+
+        clear: both;
+    }
+
+    .CartLink a{
+
+        display: block !important;
+    }
+
+    #SearchForm{
+
+        padding: 20px 16px;
+
+    }
+
+    #SearchForm input[type=text]{
+
+        border-width: 0;
+        background: #fff;
+        line-height: 28px;
+        padding: 0 18px;
+    }
+}*/
+
+/*@media screen and (max-width: 629px){
+
+    #ModalContainer{
+
+        overflow: scroll;
+        background: #fff;
+    }
+}*/
+
+.TabSection #Details ol {
+
+	padding-left: 23px;
+}

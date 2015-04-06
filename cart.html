@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+%%Panel.HTMLHead%%
+<body class="page-cart">
+<script src="%%GLOBAL_CdnAppPath%%/javascript/cart.js?%%GLOBAL_JSCacheToken%%"></script>
+<script>
+$(document).ready(function() {
+
+  $('#CartBreadcrumb li a').text($('.CartLink .items').text());
+
+  $('#CartBreadcrumb li.total').text($('.CartLink .total').text());
+
+  if( $('.CartLink .items').text() == '0 Item' ) {
+
+	  $('#CartBreadcrumb').hide();
+  }
+});
+</script>
+
+<div id="site">
+
+	%%Panel.Header%%
+    
+	<div class="container">
+		<div class="row">
+
+			<header class="col-md-12">
+
+				%%Panel.CartHeader%%
+			</header>
+
+			<div class="col-md-12">
+
+				%%Panel.CartStatusMessage%%
+
+				%%Panel.CartContent%%
+
+				<div class="row CartCode" style="display: %%GLOBAL_HideShoppingCartGrid%%">
+
+					%%Panel.CartCouponCodeBox%%
+
+					%%Panel.CartGiftCertificateCodeBox%%
+				</div>
+
+				%%Panel.SuggestiveCartContent%%
+			</div>
+		</div>
+	</div>
+	
+	%%Panel.Footer%%
+</div>
+</body>
+</html>

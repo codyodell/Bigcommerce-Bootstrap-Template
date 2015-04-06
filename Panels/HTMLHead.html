@@ -1,0 +1,143 @@
+<head>
+
+	<title>%%Page.WindowTitle%%</title>
+
+    <meta charset="%%GLOBAL_CharacterSet%%">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name='viewport' content='width=1000'>
+	<meta name="description" content="%%Page.MetaDescription%%" />
+	<meta name="keywords" content="%%Page.MetaKeywords%%" />
+
+	%%GLOBAL_AdditionalMetaTags%%
+	%%Page.CanonicalLink%%
+	%%Page.Robots%%
+	
+	<link rel="shortcut icon" href="%%GLOBAL_Favicon%%" />
+
+	<!-- Load fonts from config file -->
+	%%GLOBAL_HeadFonts%%
+
+	<!-- GLOBAL STYLES -->
+	<!-- %%GLOBAL_Stylesheets%% -->
+	<!-- GLOBAL STYLES END -->
+
+    <link href="%%ASSET_Styles/bootstrap/bootstrap.css%%" rel="stylesheet">
+    <link href="%%ASSET_Styles/bootstrap/bootstrap-theme.css%%" rel="stylesheet">
+
+	<link href="%%ASSET_Styles/styles.css%%" rel="stylesheet">
+	<link href="%%ASSET_Styles/hipster.css%%" rel="stylesheet">
+	<link href="%%ASSET_Styles/theme.css%%" rel="stylesheet">
+	<link href="%%ASSET_Styles/white.css%%" rel="stylesheet">
+	<link href="%%ASSET_Styles/custom.css%%" rel="stylesheet">
+	<link href="%%ASSET_Styles/responsive.css%%" rel="stylesheet">
+
+	<link href="%%ASSET_Styles/social.css%%" rel="stylesheet">
+	<link href="%%ASSET_Styles/components.css%%" rel="stylesheet">
+
+	<!-- Tell the browsers about our RSS feeds -->
+	%%GLOBAL_HeadRSSLinks%%
+
+	<!-- Include visitor tracking code (if any) -->
+	%%GLOBAL_TrackingCode%%
+
+	%%GLOBAL_DesignModeStyleSheet%%
+	%%GLOBAL_HeaderImageStyle%%
+	%%GLOBAL_RTLStyles%%
+
+	<script>
+
+	/*  // = Deprecated  */
+	
+	var config                       = {}
+		lang                         = {},
+		QuickView                    = {},
+		config.lang                  = lang,
+		config.carousel              = {},
+		config.modal                 = {},
+		config.imagezoom             = {},
+		config.quicksearch           = {},
+		config.ShopPath              = '%%GLOBAL_ShopPath%%',
+		config.AppPath               = '', //
+		config.FastCart              = %%GLOBAL_FastCart%%,
+		config.ShowCookieWarning     = !!%%GLOBAL_ShowCookieWarningMessage%%,
+		config.ThumbnailWidth        = %%GLOBAL_ProductThumbImageWidth%%,
+		config.ThumbnailHeight       = %%GLOBAL_ProductThumbImageHeight%%,
+		config.quicksearch.alignment = 'right',
+		config.quicksearch.width     = '232px',
+		config.lang.EmptySmallSearch = "%%LNG_EmptySmallSearch%%",
+		QuickView.attachFormValidator = function() {
+		
+			$('#productDetailsAddToCartForm').validate({
+				onsubmit: false,
+				ignoreTitle: true,
+				showErrors: function (errorMap, errorList) {
+					// nothing
+				},
+				invalidHandler: function (form, validator) {
+
+					if(!validator.size())
+						return;
+					
+					alert(validator.errorList[0].message);
+				}
+			});
+		};
+
+	</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="%%ASSET_js/jquery-migrate-1.2.1.min.js%%"></script>
+
+	<script src="%%ASSET_js/bootstrap.js%%"></script>
+
+	<script src="%%ASSET_js/jquery.imagesloaded.js%%"></script>
+
+	<script src="%%ASSET_js/common.js%%"></script>
+	<script src="%%ASSET_js/init.js%%"></script>
+	<script src="%%ASSET_js/main.js%%"></script>
+	<script src="%%ASSET_js/cleanglobals.js%%"></script>
+	<script src="%%ASSET_js/quicksearch.js%%"></script>
+	<script src="%%ASSET_js/jquery.validate.1.13.1.js%%"></script>
+	<!-- <script src="%%ASSET_js/quickview.js%%"></script> -->
+
+	<script src="%%ASSET_js/product.functions.js%%"></script>
+	<script src="%%ASSET_js/product.attributes.js%%"></script>
+
+	<script src="//ws.sharethis.com/button/buttons.js"></script>
+
+	<script src="%%GLOBAL_CdnAppPath%%/javascript/iselector.js?%%GLOBAL_JSCacheToken%%"></script>
+	<script src="%%GLOBAL_CdnAppPath%%/javascript/viewport.js??%%GLOBAL_JSCacheToken%%"></script>
+	<script>
+		// Sharethis Code
+	    stLight.options({
+
+	        publisher: "b93f5d16-0d14-4db5-880a-abb4267b34e7", 
+	        doNotHash: false, 
+	        doNotCopy: false, 
+	        hashAddressBar: false
+	    });
+
+	    $().ready( function(){
+
+	    	var test = $('#crappy_code').prop('outerHTML').replace('<!--', '').replace('-->', ''), // extract code from commented global
+	    		dummytag = $('<p />').append( test ), // append it to a temporary div to convert it to HTML
+	    		crap_scripts = $(dummytag).find('script'); // Find script tags
+
+		    $(crap_scripts).each( function(){	
+		    	// if no source, load it, we want to load scripts ourselves
+		    	if(!$(this).is('[src]') && !($(this).is(':contains("ShowImageZoomer")'))){
+
+		    		$('head').append(this);
+		    	}else{
+
+		    		console.log( 'Skipped loading ' + $(this).attr('src') );
+		    	}
+		    });
+		});
+	</script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>

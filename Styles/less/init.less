@@ -1,0 +1,297 @@
+/**
+ *   Bigcommerce Hipster
+ *   Style Initialisation
+ */
+
+// @Section-Store Header
+
+#Header{
+border-top:solid @color-header-border 35px;
+}
+
+#TopMenu li a{
+color:lighten(@color-header-border, 80%);
+} 
+
+#Header{
+background-color:@color-header-background;
+}
+
+#Logo h1 a{
+color:@color-store-name;
+}
+
+#HeaderLower{
+border-top:1px solid darken(@color-header-background, 5%);
+border-bottom:1px solid darken(@color-header-background, 5%);
+}
+
+#HeaderLower li a{
+color:@color-menu-text;
+border-left:1px solid @color-menu-text;
+}
+
+// @Section - Store Footer
+
+#ContainerFooter{
+background-color:@color-footer-background;
+}
+
+#FooterUpper .RecentNews li p{
+color:darken(@color-footer-background, 40%);
+}
+
+#ContainerFooter h3{
+color:@color-section-heading;
+border-bottom:1px solid darken(@color-footer-background, 10%);
+}
+
+#HomeRecentBlogs li{
+border-bottom:1px solid darken(@color-footer-background, 10%);
+}
+
+#FooterUpper li a{
+color:@color-links;
+}
+
+#Footer li{
+color:@color-links;
+}
+
+#Footer a{
+color:@color-links;
+}
+
+// @Section-Home Page
+
+.home-products .item h2 a{  
+color:@color-product-names;
+}
+
+.home-products .item .ProductPrice em{
+color:@color-product-prices;
+}
+
+// @Section-Product Page
+
+.PrimaryProductDetails .ProductMain h1{
+color:@color-product-name;
+}
+
+.ProductDetailsGrid .DetailRow.PriceRow .Value em{
+color:@color-product-price;
+}
+
+#prodAccordion .Block h2, #prodAccordion .Block.current h2{
+color:@color-product-description-headings;
+}
+
+#ProductDetails .Value a{
+color:@color-product-description;
+}
+
+.ProductDetailsGrid .Label{
+color:@color-product-description;
+}
+
+.PrimaryProductDetails .ProductMain{
+color:@color-product-description;
+}
+
+#uniform-qty_ span{
+color:@color-product-description;
+}
+
+#ProductDetails .BulkDiscount .AddCartButton,
+#ProductDetails .BulkDiscount .BulkDiscountLink .btn{
+background-color:@color-add-to-cart;
+border:solid darken(@color-add-to-cart, 15%) 1px;
+}
+
+#ProductDetails .BulkDiscount .AddCartButton:hover,
+#ProductDetails .BulkDiscount .BulkDiscountLink .btn:hover{
+background-color:lighten(@color-add-to-cart, 7%);
+}
+
+#ProductDetails input[type="button"].btn-secondary{
+background-color:@color-add-to-wishlist;
+border:1px solid darken(@color-add-to-wishlist, 15%);
+}
+
+#ProductDetails input[type="button"].btn-secondary:hover{
+background-color:lighten(@color-add-to-wishlist, 7%);
+}
+
+#ProductReviews .write-btn{
+background-color:@color-product-reviews-button;
+border:1px solid darken(@color-product-reviews-button, 15%);
+}
+
+#ProductReviews .write-btn:hover{
+background-color:lighten(@color-product-reviews-button, 7%);
+}
+
+#QuickViewProductDetails h1 a{
+color:@color-product-name !important;
+}
+
+#QuickViewProductDetails .ProductPriceWrap .productAttributeRow em{
+color:@color-product-price !important;
+}
+
+#QuickViewProductDetails p{
+color:@color-product-description;
+}
+
+#QuickViewProductDetails .Label,
+ #QuickViewProductDetails .productAttributeLabel{
+color:@color-product-description;
+}
+
+#QuickViewProductDetails .productAttributeValue{
+color:@color-product-description;
+}
+
+#QuickViewProductDetails .viewFull a{
+color:@color-product-description-headings;
+}
+
+#productDetailsAddToCartForm .bigBtn{
+background-color:@color-add-to-cart;
+border:solid darken(@color-add-to-cart, 15%) 1px;
+}
+
+#productDetailsAddToCartForm .bigBtn:hover{
+background-color:lighten(@color-add-to-cart, 10%);
+}
+
+#productDetailsAddToCartForm .ProductList a{
+color:@color-product-name;
+}
+
+.home-products .item .ProductInfo .view-details{
+color:@color-product-names;
+}
+
+.home-products .item a{
+color:@color-product-names;
+}
+
+.home-products .ProductInfo #QuickViewContent 
+.productOptionViewRectangle label .name{
+color:@color-product-description;
+}
+
+// @Section-Category page
+
+.CatHead h1{
+color:@color-category-title;
+}
+
+#CategoryContent .ProductList li .ProductName a, .item .ProductName a{
+color:@color-category-product-name;
+}
+
+#CategoryContent .ProductList .ProductPriceRating em,
+#CategoryContent .ProductList .ProductPrice {
+color:@color-category-product-price !important;
+}
+
+.ProductList li .ProductCompareButton{
+color:@color-category-compare-text;
+}
+
+#CategoryContent .btn-secondary{
+background-color:@color-category-list-button;
+border:1px solid darken(@color-category-list-button, 15%);
+}
+
+#CategoryContent .btn-secondary:hover{
+background-color:lighten(@color-category-list-button, 7%);
+}
+
+#CategoryContent .next{
+background-color:@color-compare-selected;
+border:1px solid darken(@color-compare-selected, 15%);
+}
+
+#CategoryContent .next:hover{
+background-color:lighten(@color-compare-selected, 7%);
+}
+
+
+//Background & Fonts
+
+#Outer{
+background:@color-page-background;
+}
+
+.Breadcrumb li a{
+color:darken(@color-page-background, 20%);
+}
+
+.Breadcrumb li{
+color:darken(@color-page-background, 20%);
+}
+
+.ProductList .ProductDetails{
+font-family:@font-page-text;
+}
+
+.home-products .item h2 a{  
+font-family:@font-page-text;
+}
+
+ .ProductPrice em{
+font-family:@font-page-text;
+}
+
+.ProductDetailsGrid .DetailRow.PriceRow .Value em{
+font-family:@font-page-text;
+}
+
+.ProductList .ProductPriceRating em{
+font-family:@font-page-text;
+}
+
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+font-family: @font-heading-text;
+}
+
+/* --- Faceted Search --- */
+
+.facet-container {
+    border-top: 1px solid @color-border;
+    
+    [class^="js-facet-clear"] {
+        color: lighten(@color-page-text, 40%);
+
+        &:hover {
+            color: lighten(@color-page-text, 20%);
+        }
+    }
+
+    .btn-facet-more-options.more {
+        color: @color-page-text;
+
+        &:hover {
+            color: @color-links;
+        }
+    }
+
+    .facet-option:hover {
+        background: @color-border;
+    }
+
+    .facet-option .facet-option-product-count {
+        color: lighten(@color-page-text, 40%);
+    }
+}
+
+.js-faceted-search-container > [class^='js-facet-']:last-of-type .facet-container {
+    border-bottom: 1px solid @color-border;
+}
+
+
+

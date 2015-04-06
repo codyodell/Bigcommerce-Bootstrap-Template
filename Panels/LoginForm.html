@@ -1,0 +1,54 @@
+<div class="row LoginForm" id="LoginForm">
+
+	<div class="col-md-6 col-sm-12 col-xs-12 CreateAccount">
+		<h2>%%GLOBAL_NewAccountHeading%%</h2>
+		<div style="display:%%GLOBAL_HideNewCustomerButton%%">
+			<p>%%LNG_NewCustomerIntro1%% %%GLOBAL_StoreName%% %%LNG_NewCustomerIntro2%%</p>
+			<form action="%%GLOBAL_ShopPath%%/login.php" method="get">
+				<input type="hidden" name="action" value="create_account" />
+				<input type="hidden" name="checking_out" value="yes" />
+				<input type="submit" value="%%LNG_ContinueRaquo%%"  />
+			</form>
+		</div>
+		<div style="display: %%GLOBAL_HideLoginNewAccountIntro%%">
+			
+			%%LNG_CreateAccountLoginIntro%%
+			 
+			<a href="%%GLOBAL_ShopPath%%/login.php?action=create_account" class="btn btn-primary">%%LNG_CreateAccount%%</a>
+		</div>
+	</div>
+
+	<div class="col-md-6 col-sm-12 col-xs-12 AccountLogin">
+		<h2>%%GLOBAL_ExistingUserHeading%%</h2>
+
+		<form action="%%GLOBAL_ShopPath%%/login.php?action=check_login" method="post" onsubmit="return check_login_form()" class="form-horizontal">
+
+				<p style="display: %%GLOBAL_HideLoginMessage%%" class="%%GLOBAL_MessageClass%% alert alert-info">
+					%%GLOBAL_LoginMessage%%
+				</p>
+
+				<div class="form-group">
+
+					<label class="control-label col-sm-3">%%LNG_EmailAddress%%:</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control InitialFocus" name="login_email" id="login_email">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3">%%LNG_Password%%:</label>
+					<div class="col-sm-9">
+						<input type="password" autocomplete="off" class="form-control" name="login_pass" id="login_pass">
+					</div>
+				</div>
+				
+				<div class="col-sm-9 col-sm-offset-3">
+					<div class="form-group">
+						<input id="LoginButton" type="submit" value="%%LNG_LoginWord%%"  class="btn btn-primary">
+						<a href="%%GLOBAL_ShopPath%%/login.php?action=reset_password" class="btn btn-link">%%LNG_ForgotYourPassword%%</a>
+					</div>
+				</div>
+		</form>
+	</div>
+
+</div>
+%%Panel.LoginJavaScript%%

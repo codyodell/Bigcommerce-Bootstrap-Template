@@ -1,0 +1,86 @@
+/*#socnet a {
+
+	display:inline-block;
+	text-align:left;
+	text-indent:-9999px;
+	margin-right: 12px;
+}
+
+#socnet a:last-child{
+
+	margin-right: 0;
+}*/
+
+@font-face {
+    font-family: 'Mono Social Icons Font';
+    src: url('%%ASSET_fonts/MonoSocialIconsFont-1.10.eot%%');
+    src: url('%%ASSET_fonts/MonoSocialIconsFont-1.10.eot?#iefix%%') format('embedded-opentype'),
+         url('%%ASSET_fonts/MonoSocialIconsFont-1.10.woff%%') format('woff'),
+         url('%%ASSET_fonts/MonoSocialIconsFont-1.10.ttf%%') format('truetype'),
+         url('%%ASSET_fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont%%') format('svg');
+    src: url('%%ASSET_fonts/MonoSocialIconsFont-1.10.ttf%%') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.symbol, a.symbol:before {
+
+    font-family: 'Mono Social Icons Font';
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+a.symbol:before {
+
+    content: attr(title);
+    margin-right: 0.3em;
+    font-size: 130%;
+}
+
+#socnet{
+
+	float: right;
+	margin: 0;
+	display: none;
+}
+
+#socnet li{
+
+	display: inline-block;
+}
+
+#socnet a{
+
+	display: block;
+	margin: 0px;
+	line-height: 25px;
+}
+
+#socnet a:hover{
+
+	text-decoration: none;
+}
+
+#socnet .symbol{
+
+	font-size: 26px;
+	color: #fff;
+	transition: all 200ms linear;
+	line-height: 24px;
+	vertical-align: middle;
+}
+
+#socnet a:hover .symbol{
+
+	color: #ddd;
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+
+}

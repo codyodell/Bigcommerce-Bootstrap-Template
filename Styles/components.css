@@ -1,0 +1,674 @@
+/*
+*
+* COMPONENTS - This file is for adding your own components to bootstrap, or even your own components.
+* The idea is that we can make our own reusables styles and then we can use these and customize them in /Styles/custom.css
+*
+*/
+
+/* Sprites - Generated from spritepad */
+
+.icon-search, .badge-authorizenet, .badge-trustwave, .badge-upfront, .icon-cart, .icon-home, .icon-payment-options, .icon-phone, .sprite{
+
+  display: inline-block;
+  background: url(%%ASSET_images/sprites.png%%) no-repeat;
+}
+
+.sprite{
+
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.icon-search{
+  background-position: -399px 0;
+  width: 22px;
+  height: 22px;
+}
+
+.badge-authorizenet{
+  background-position: -305px 0;
+  width: 87px;
+  height: 69px;
+}
+
+.badge-trustwave{
+  background-position: 0 -40px ;
+  width: 76px;
+  height: 38px;
+}
+
+.badge-upfront{
+  background-position: -81px -41px ;
+  width: 107px;
+  height: 36px;
+}
+
+.icon-cart{
+  background-position: -196px -43px ;
+  width: 57px;
+  height: 46px;
+}
+
+.icon-home{
+  background-position: -401px -32px ;
+  width: 18px;
+  height: 16px;
+}
+
+.icon-payment-options{
+  background-position: 0 0;
+  width: 300px;
+  height: 38px;
+}
+
+.icon-phone{
+  background-position: -261px -42px ;
+  width: 27px;
+  height: 41px;
+}
+
+/*
+ * Inline Menu (Simple Horizontal Menu with separators)
+*/
+
+.inline-menu{
+
+	margin: 0;
+}
+
+.inline-menu li{
+
+	border-right: 1px solid #333;
+	line-height: 13px;
+	padding: 0 10px;
+	list-style: none;
+	display: inline-block;
+}
+
+.inline-menu li a{
+
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 13px;
+}
+
+.inline-menu li:last-child{
+
+	border-right-width: 0;
+}
+
+.inline-menu li:first-child{
+
+	padding-left: 0 !important;
+}
+
+.inline-menu li:last-child{
+
+	padding-right: 0 !important;
+}
+
+/* Carets*/
+
+.caret-down {
+
+	display: inline-block;
+	width: 0; 
+	height: 0; 
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 12px solid #fff;
+}
+
+.caret-left {
+
+	display: inline-block;
+	width: 0; 
+	height: 0; 
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-right: 12px solid #fff; 
+}
+
+.caret-right {
+
+	display: inline-block;
+	width: 0; 
+	height: 0; 
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-left: 12px solid #fff;
+}
+
+/* Ribbon Titles - Titles with a line going horizontally throught the center on the text */
+
+h2.ribbon-title{
+
+  text-align: center;
+  margin-bottom: 1.5em;
+  line-height: 0.63em;
+  height: 0.63em;
+  border-bottom: 4px solid #333;
+}
+
+h2.ribbon-title span{
+
+  background: #fff;
+  padding: 0 0.5em;
+  line-height: 1em;
+  height: 1em;
+}
+	
+/* Secondary Button */
+
+.btn-secondary{
+
+    color: #fff;
+    background: rgb(10,88,153); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(10,88,153,1) 0%, rgba(7,57,102,1) 100%); /* FF3.6+ */ 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(10,88,153,1)), color-stop(100%,rgba(7,57,102,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(10,88,153,1) 0%,rgba(7,57,102,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(10,88,153,1) 0%,rgba(7,57,102,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(10,88,153,1) 0%,rgba(7,57,102,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(10,88,153,1) 0%,rgba(7,57,102,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a5899', endColorstr='#073966',GradientType=0 ); /* IE6-9 */
+}
+
+.btn-secondary:hover{
+
+    color: #fff;
+    /*text-shadow: 0 1px 4px rgba(0,0,0,0.8);*/
+    background: rgb(58,178,78); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(58,178,78,1) 0%, rgba(14,134,34,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(58,178,78,1)), color-stop(100%,rgba(14,134,34,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(58,178,78,1) 0%,rgba(14,134,34,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(58,178,78,1) 0%,rgba(14,134,34,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(58,178,78,1) 0%,rgba(14,134,34,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(58,178,78,1) 0%,rgba(14,134,34,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3ab24e', endColorstr='#0e8622',GradientType=0 ); /* IE6-9 */
+}
+
+/* Carousel */
+
+.carousel{
+
+  position: static;
+}
+
+/* Glyphicons */
+
+i.glyphicon-disabled{
+
+  opacity: 0.5;
+}
+
+.glyphicon-spin{
+
+     -webkit-transform-origin: 50% 50%;
+     transform-origin:50% 50%;
+     -ms-transform-origin:50% 50%; /* IE 9 */
+     -webkit-animation: spin 1s infinite linear;
+     -moz-animation: spin 1s infinite linear;
+     -o-animation: spin 1s infinite linear;
+     animation: spin 1s infinite linear;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Buttons */
+
+li.QuickView:hover .btn-quickview{
+
+  opacity: 1;
+  transition: all 200ms ease-out;
+}
+
+.btn-quickview{
+
+  position: absolute;
+  display: block;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: rgba(0,0,0,0.5);
+  text-align: center;
+  opacity: 0;
+
+  
+}
+
+.btn-quickview > span{
+
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+
+
+/* Column Item */
+
+.col-item
+{
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    background: #FFF;
+}
+
+.col-item .photo{
+
+  position: relative;
+  text-align: center;
+}
+.col-item .photo img
+{
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.col-item .info
+{
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 1px;
+}
+
+.col-item:hover .info {
+    background-color: #F5F5DC;
+}
+.col-item .price
+{
+    /*width: 50%;*/
+    float: left;
+    margin-top: 5px;
+}
+
+.col-item .price h5
+{
+    line-height: 20px;
+    margin: 0;
+    min-height: 3em;
+}
+
+.price-text-color
+{
+    color: #219FD1;
+    font-size: 24px;
+    text-align: center;
+}
+
+.col-item .info .rating
+{
+    color: #777;
+}
+
+.col-item .Rating{
+
+  text-align: center;
+}
+
+
+
+.col-item .separator
+{
+    border-top: 1px solid #E1E1E1;
+}
+
+.clear-left
+{
+    clear: left;
+}
+
+.col-item .separator p
+{
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.col-item .separator p i
+{
+    margin-right: 5px;
+}
+.col-item .btn-add
+{
+    width: 50%;
+    float: left;
+}
+
+.col-item .btn-add
+{
+    border-right: 1px solid #E1E1E1;
+}
+
+.col-item .btn-details
+{
+    width: 50%;
+    float: left;
+    padding-left: 10px;
+}
+.controls
+{
+    margin-top: 20px;
+}
+
+/* Equal Height Columns */
+
+.row-eq-height {
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin: 10px -15px;
+  width: 100%;
+}
+
+.list-eq-height{
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 10px -15px;
+}
+
+.list-eq-height li img{
+
+	vertical-align: middle;
+}
+
+/* Make Bootsrap Unresponsive */
+/*
+body.unresponsive {
+  min-width: 1000px;
+}
+body.unresponsive .container {
+  max-width: none !important;
+  width: 1000px !important;
+}
+body.unresponsive [class^="col-"] {
+  float: left;
+}
+body.unresponsive .col-md-1,
+body.unresponsive .col-lg-1 {
+  width: 8.33333333% !important;
+}
+body.unresponsive .col-md-2,
+body.unresponsive .col-lg-2 {
+  width: 16.66666667% !important;
+}
+body.unresponsive .col-md-3,
+body.unresponsive .col-lg-3 {
+  width: 25% !important;
+}
+body.unresponsive .col-md-4,
+body.unresponsive .col-lg-4 {
+  width: 33.33333333% !important;
+}
+body.unresponsive .col-md-5,
+body.unresponsive .col-lg-5 {
+  width: 41.66666667% !important;
+}
+body.unresponsive .col-md-6,
+body.unresponsive .col-lg-6 {
+  width: 50% !important;
+}
+body.unresponsive .col-md-7,
+body.unresponsive .col-lg-7 {
+  width: 58.33333333% !important;
+}
+body.unresponsive .col-md-8,
+body.unresponsive .col-lg-8 {
+  width: 66.66666667% !important;
+}
+body.unresponsive .col-md-9,
+body.unresponsive .col-lg-9 {
+  width: 75% !important;
+}
+body.unresponsive .col-md-10,
+body.unresponsive .col-lg-10 {
+  width: 83.33333333% !important;
+}
+body.unresponsive .col-md-11,
+body.unresponsive .col-lg-11 {
+  width: 91.66666667% !important;
+}
+body.unresponsive .col-md-12,
+body.unresponsive .col-lg-12 {
+  width: 100% !important;
+}
+body.unresponsive .col-md-offset-0,
+body.unresponsive .col-lg-offset-0 {
+  margin-left: 0 !important;
+}
+body.unresponsive .col-md-offset-1,
+body.unresponsive .col-lg-offset-1 {
+  margin-left: 8.33333333% !important;
+}
+body.unresponsive .col-md-offset-2,
+body.unresponsive .col-lg-offset-2 {
+  margin-left: 16.66666667% !important;
+}
+body.unresponsive .col-sm-offset-3,
+body.unresponsive .col-md-offset-3,
+body.unresponsive .col-lg-offset-3 {
+  margin-left: 25% !important;
+}
+body.unresponsive .col-sm-offset-4,
+body.unresponsive .col-md-offset-4,
+body.unresponsive .col-lg-offset-4 {
+  margin-left: 33.33333333% !important;
+}
+body.unresponsive .col-sm-offset-5,
+body.unresponsive .col-md-offset-5,
+body.unresponsive .col-lg-offset-5 {
+  margin-left: 41.66666667% !important;
+}
+body.unresponsive .col-sm-offset-6,
+body.unresponsive .col-md-offset-6,
+body.unresponsive .col-lg-offset-6 {
+  margin-left: 50% !important;
+}
+body.unresponsive .col-sm-offset-7,
+body.unresponsive .col-md-offset-7,
+body.unresponsive .col-lg-offset-7 {
+  margin-left: 58.33333333% !important;
+}
+body.unresponsive .col-sm-offset-8,
+body.unresponsive .col-md-offset-8,
+body.unresponsive .col-lg-offset-8 {
+  margin-left: 66.66666667% !important;
+}
+body.unresponsive .col-sm-offset-9,
+body.unresponsive .col-md-offset-9,
+body.unresponsive .col-lg-offset-9 {
+  margin-left: 75% !important;
+}
+body.unresponsive .col-sm-offset-10,
+body.unresponsive .col-md-offset-10,
+body.unresponsive .col-lg-offset-10 {
+  margin-left: 83.33333333% !important;
+}
+body.unresponsive .col-sm-offset-11,
+body.unresponsive .col-md-offset-11,
+body.unresponsive .col-lg-offset-11 {
+  margin-left: 91.66666667% !important;
+}
+body.unresponsive .col-sm-offset-12,
+body.unresponsive .col-md-offset-12,
+body.unresponsive .col-lg-offset-12 {
+  margin-left: 100% !important;
+}
+body.unresponsive .visible-xs,
+body.unresponsive .visible-xs-block,
+body.unresponsive .visible-sm,
+body.unresponsive .visible-sm-block {
+  display: block !important;
+}
+body.unresponsive .visible-xs-inline,
+body.unresponsive .visible-sm-inline {
+  display: inline !important;
+}
+body.unresponsive .visible-xs-inline-block,
+body.unresponsive .visible-sm-inline-block {
+  display: inline-block !important;
+}
+body.unresponsive .hidden-xs,
+body.unresponsive .hidden-sm {
+  display: block !important;
+}
+body.unresponsive .container .navbar-header,
+body.unresponsive .container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+body.unresponsive .navbar-header {
+  float: left;
+}
+body.unresponsive .navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+}
+body.unresponsive .navbar-toggle {
+  display: none;
+}
+body.unresponsive .navbar-collapse {
+  border-top: 0;
+}
+body.unresponsive .navbar-brand {
+  margin-left: -15px;
+}
+body.unresponsive .navbar-nav {
+  float: left;
+  margin: 0;
+}
+body.unresponsive .navbar-nav > li {
+  float: left;
+}
+body.unresponsive .navbar-nav > li > a {
+  padding: 15px;
+}
+body.unresponsive .navbar-nav.navbar-right {
+  float: right;
+}
+body.unresponsive .navbar .navbar-nav .open .dropdown-menu {
+  position: absolute;
+  float: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-width: 0 1px 1px;
+  border-radius: 0 0 4px 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+body.unresponsive .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #333;
+}
+body.unresponsive .navbar .navbar-nav .open .dropdown-menu > li > a:hover,
+body.unresponsive .navbar .navbar-nav .open .dropdown-menu > li > a:focus,
+body.unresponsive .navbar .navbar-nav .open .dropdown-menu > .active > a,
+body.unresponsive .navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+body.unresponsive .navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #fff !important;
+  background-color: #428bca !important;
+}
+body.unresponsive .navbar .navbar-nav .open .dropdown-menu > .disabled > a,
+body.unresponsive .navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+body.unresponsive .navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  color: #999 !important;
+  background-color: transparent !important;
+}
+*/
+/* Add Support for 5 column rows */
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    float: left;
+    width: 20% !important;
+}
+
+.col-xs-2-5ths,
+.col-sm-2-5ths,
+.col-md-2-5ths,
+.col-lg-2-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    float: left;
+    width: 40% !important;
+}
+
+/* Disable for non-responsive */
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+    .col-sm-2-5ths {
+        width: 40%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+    .col-md-2-5ths {
+        width: 40%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+    .col-lg-2-5ths {
+        width: 40%;
+        float: left;
+    }
+}

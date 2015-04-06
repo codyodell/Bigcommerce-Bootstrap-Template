@@ -1,0 +1,16 @@
+<script type="text/javascript">
+$(document).ready(function() {
+	if( /Android|webOS|iPhone|iPod|BlackBerry|windows phone/i.test(navigator.userAgent) ) {
+ 		
+		config.FastCart = 0;
+	} else {
+		
+	}
+	
+	// attach fast cart event to all 'add to cart' link
+	$(".ProductActionAdd a[href*='cart.php?action=add']").click(function(event) {
+		fastCartAction($(this).attr('href'));
+		return false;
+	});
+});
+</script>

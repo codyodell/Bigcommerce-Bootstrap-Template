@@ -1,0 +1,263 @@
+<script>
+	QuickView.attachFormValidator();
+</script>
+<style>
+.row-modal{
+
+	clear: both;
+}
+
+.modal-footer{
+
+	text-align: center;
+}
+
+.productAttributeConfigurablePickListSet, .productAttributeConfigurablePickListSwatch{
+
+	border-bottom: 1px solid #f3f3f3;
+	margin-bottom: 1em;
+}
+
+#add-to-cart-box .productAttributeRow{
+
+	margin-bottom: 0;
+}
+</style>
+<div id="site-modal">
+
+	<form method="post" action="%%GLOBAL_CartLink%%" onsubmit="return check_add_to_cart(this, %%GLOBAL_ProductOptionRequired%%) %%GLOBAL_FastCartButtonJs%%"  enctype="multipart/form-data" id="productDetailsAddToCartForm">
+
+		<input type="hidden" name="action" value="add">
+		<input type="hidden" name="product_id" value="%%GLOBAL_ProductId%%">
+		<input type="hidden" name="variation_id" class="CartVariationId" value="">
+		<input type="hidden" name="currency_id" value="">
+
+		<div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		    <h4 class="modal-title text-center">
+				<a href="%%GLOBAL_QuickViewProductURL%%">%%GLOBAL_QuickViewProductName%%</a>
+		    </h4>
+		</div>
+		<div class="modal-body">
+			<div class="te">
+
+		        <div class="thumbnail">
+		            <a href="%%GLOBAL_QuickViewProductURL%%">
+		                <img src="%%GLOBAL_ThumbImageURL%%" alt="%%GLOBAL_QuickViewProductName%%" />
+		            </a>
+		        </div>
+
+				<p class="lead">%%GLOBAL_QuickViewProductDescription%%</p>	
+
+				<div class="row-modal well cf">
+
+					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow ProductSKU" style="display: %%GLOBAL_HideSKU%%">
+						<dt class="productAttributeLabel">%%LNG_SKU%%</dt>
+						<dd class="productAttributeValue VariationProductSKU">
+							%%GLOBAL_SKU%%
+						</dd>
+					</dl>
+					
+					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_HideVendorDetails%%">
+						<dt class="productAttributeLabel">%%LNG_Vendor%%</dt>
+						<dd class="productAttributeValue">
+							%%GLOBAL_VendorName%%
+						</dd>
+					</dl>
+
+					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideBrandLink%%">
+						<dt class="productAttributeLabel">%%LNG_Brand%%</dt>
+						<dd class="productAttributeValue">
+							<a href="%%GLOBAL_BrandLink%%">%%GLOBAL_BrandName%%</a>
+						</dd>
+					</dl>
+
+					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideCondition%%">
+						<dt class="productAttributeLabel">%%LNG_Condition%%</dt>
+						<dd class="productAttributeValue">
+							%%GLOBAL_ProductCondition%%
+						</dd>
+					</dl>
+
+					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideWeight%%">
+						<dt class="productAttributeLabel">%%LNG_Weight%%</dt>
+						<dd class="productAttributeValue VariationProductWeight">
+							%%GLOBAL_ProductWeight%%
+						</dd>
+					</dl>
+
+					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideAvailability%%">
+						<dt class="productAttributeLabel">%%LNG_Availability%%</dt>
+						<dd class="productAttributeValue">
+							%%GLOBAL_Availability%%
+						</dd>
+					</dl>
+
+					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_HideMinQty%%">
+						<dt class="productAttributeLabel">%%LNG_ProductMinQty%%</dt>
+						<dd class="productAttributeValue">
+							%%GLOBAL_MinQty%% %%LNG_units%%
+						</dd>
+					</dl>
+
+					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_HideMaxQty%%">
+						<dt class="productAttributeLabel">%%LNG_ProductMaxQty%%</dt>
+						<dd class="productAttributeValue">
+							%%GLOBAL_MaxQty%% %%LNG_units%%
+						</dd>
+					</dl>
+					
+					<dl class="productAttributeRow InventoryLevel" style="%%GLOBAL_HideCurrentStock%%">
+						<dt class="productAttributeLabel">%%GLOBAL_CurrentStockLabel%%</dt>
+						<dd class="productAttributeValue VariationProductInventory">
+							%%GLOBAL_InventoryList%%
+						</dd>
+					</dl>
+
+					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_HideGiftWrapMessage%%">
+						<dt class="productAttributeLabel">%%LNG_GiftWrapping%%</dt>
+						<dd class="productAttributeValue">
+							%%GLOBAL_GiftWrappingAvailable%%
+						</dd>
+					</dl>
+				</div>
+
+
+				
+	        </div><!-- END te -->
+	    </div>
+	    <div class="modal-footer cf">
+
+			<div class="row-modal">
+				%%SNIPPET_ProductFieldsList%%
+			</div>
+			
+			<div class="row-modal" style="%%GLOBAL_HideProductAttributeList%%">
+				%%GLOBAL_ProductAttributeList%%
+			</div>
+			
+			<div class="row-modal">
+				%%SNIPPET_EventDate%%
+			</div>
+
+			<div class="row-modal" id="add-to-cart-box">
+
+				<dl class="col-md-4 col-sm-4 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideShipping%%">
+					<dt class="productAttributeLabel">%%LNG_Shipping%%</dt>
+					<dd class="productAttributeValue">
+						%%GLOBAL_ShippingPrice%%
+					</dd>
+				</dl>
+
+                <div class="col-md-4 col-sm-4 col-xs-12 ProductPriceWrap">
+
+                    <div class="productAttributeRow RetailPrice" style="display: %%GLOBAL_HideRRP%%">
+                        <span class="productAttributeLabel">%%LNG_RRP%%:</span>
+                        %%GLOBAL_RetailPrice%%
+                        %%GLOBAL_YouSave%%
+                    </div>
+
+                    <div class="productAttributeRow PriceRow" style="%%GLOBAL_HidePrice%%">
+                        <!-- <div class="productAttributeLabel">%%GLOBAL_PriceLabel%%</div> -->
+                        <div class="productAttributeValue">
+                            <em class="ProductPrice VariationProductPrice">%%GLOBAL_ProductPrice%%</em>
+                            %%GLOBAL_IncludingExcludingTax%%
+                        </div>
+                    </div>
+                </div>
+
+				<div class="col-md-4 col-sm-4 col-xs-12 productAttributeRow" style="display: %%GLOBAL_DisplayAdd%%">
+
+		            <div class="input-group" style="display: %%GLOBAL_DisplayAddQty%%">
+		                
+		                <label class="input-group-addon">%%LNG_QuantityFull%%</label>
+		                %%GLOBAL_AddToCartQty%%
+		            </div>
+				</div>
+				
+				<div class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideBulkDiscountLink%%;">
+					<div class="productAttributeLabel">%%LNG_QuickViewBulkDiscountsLabel%% </div>
+					<div class="productAttributeValue">
+						<ul>%%GLOBAL_BulkDiscountThickBoxRates%%</ul>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_ItemSoldOut%%">
+					<div class="productAttributeValue OutOfStockMessage">
+						%%SNIPPET_SideAddItemSoldOut%%
+					</div>
+				</div>
+			</div>
+
+			<div class="row-modal">
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<a href="#" class="btn btn-default btn-block add-to-wishlist" style="display:%%GLOBAL_HideWishlist%%">
+						<i class="glyphicon glyphicon-star"></i>
+						Add to Wishlist
+					</a>
+				</div>
+
+		    	<div class="col-md-4 col-sm-4 col-xs-12">
+					<button class="btn btn-primary btn-block" style="display: %%GLOBAL_DisplayAdd%%;">
+						<i class="glyphicon glyphicon-shopping-cart"></i>
+						Add to Cart
+					</button>
+				</div>
+
+				<div class="col-md-4 col-sm-4 col-xs-12 pull-right">
+					<a href="%%GLOBAL_QuickViewProductURL%%" class="btn btn-default btn-block">
+						View Details
+						<i class="glyphicon glyphicon-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+	    </div>
+    </form>
+</div>
+
+<div id="SideProductAddToWishList" style="display:none;">
+
+    <form name="frmWishList" id="frmWishList" action="%%GLOBAL_ShopPath%%/wishlist.php" method="get">
+        <input type="hidden" name="action" value="add">
+        <input type="hidden" name="product_id" value="%%GLOBAL_ProductId%%">
+        <input type="hidden" name="variation_id" value="" class="WishListVariationId">
+        <input type="submit" class="btn btn-default" value="Add to wishlist" alt="%%LNG_AddToWishList%%">
+    </form>
+</div>
+
+<script>
+
+	lang.OptionMessage           = "%%GLOBAL_OptionMessage%%";
+	lang.VariationSoldOutMessage = "%%LNG_VariationSoldOutMessage%%";
+	lang.InvalidQuantity         = "%%LNG_InvalidQuantity%%";
+	lang.EnterRequiredField      = "%%LNG_EnterRequiredField%%";
+	lang.InvalidFileTypeJS       = "%%LNG_InvalidFileTypeJS%%";
+
+	var ShowAddToCartQtyBox = "%%GLOBAL_ShowAddToCartQtyBox%%";
+
+	%%GLOBAL_ProductMinMaxQtyJavascript%%
+
+	$().ready(function() {
+
+		$(".quantityInput").addClass('form-control');
+
+		$('.productAttributeLabel .name').each(function() {
+
+			$(this).text($(this).text().replace(':', '')); 
+		});
+
+		$('#productDetailsAddToCartForm').on('submit', function(event) {
+
+			event.stopPropagation();
+		});
+
+		$('.add-to-wishlist').on('click', function(e){
+
+			e.preventDefault();
+
+			$('#frmWishList').submit();
+		});
+	});
+</script>
+
+%%GLOBAL_EventDateJavascript%%

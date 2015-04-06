@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+%%Panel.HTMLHead%%
+<body class="page-wishlist">
+<div id="site">
+
+	%%Panel.Header%%
+
+	<div id="breadcrumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">		
+					%%Panel.WishlistBreadcrumb%%
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<header class="col-md-12">
+
+				<h1 class="title">My Account</h1>
+				%%Panel.WrapperBanner%%
+            </header>
+			<aside class="col-md-3">
+
+				%%Panel.SideAccountMenu%%
+			</aside>
+			<main class="col-md-9">
+				
+			    %%Panel.WishListItems%%
+			   
+				%%Panel.WishLists%%
+				%%Panel.WishListAddForm%%
+			</main>
+		</div>
+	</div>
+
+	%%Panel.Footer%%
+</div>
+<script type="text/javascript">
+//<![CDATA[
+function ValidateWishListForm(formtype)
+{
+	var wishlistname = g("wishlistname");
+
+	wishlistname.value = wishlistname.value.replace(/^\s+|\s+$/g, '') ;
+	if(wishlistname.value == "") {
+		alert("%%LNG_EnterWishListName%%");
+		wishlistname.focus();
+		wishlistname.select();
+		return false;
+	} else {
+		return true;
+	}
+}
+
+
+function ValidateDeleteWishlist(bulkDelete, wishlistId)
+{
+	if (bulkDelete == true) {
+		var deleteWishList = g("wishlistsform").elements;
+
+		var wishlistSelected = false;
+		for(i = 0; i < deleteWishList.length; i++) {
+			if (deleteWishList[i].checked == true) {
+				wishlistSelected = true;
+				break;
+			}
+		}
+		if (wishlistSelected == true) {
+			return window.confirm('%%LNG_ConfirmDeleteWishLists%%');
+		} else {
+			alert('%%LNG_SelectAWishListToDelete%%');
+			return false
+		}
+	} else {
+		if (window.confirm('%%LNG_ConfirmDeleteWishLists%%') == true) {
+			window.location = 'wishlist.php?action=deletewishlist&wishlistid='+wishlistId;
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+
+function ToggleWishListDeleteBoxes(Status)
+{
+	var deleteWishList = g("wishlistsform").elements;
+
+	for(i = 0; i < deleteWishList.length; i++) {
+		deleteWishList[i].checked = Status;
+	}
+}
+//]]>
+</script>
+</body>
+</html>

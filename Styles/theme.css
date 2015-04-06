@@ -1,0 +1,159 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700,800);
+
+/*
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:200,400,700,300,900,400italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
+
+!!!!!!!!!! WARNING !!!!!!!!!!
+
+If you edit theme.css, your changes will be overwritten by any compilation of theme.less
+Please remember to replicate your changes in init.less, or just make your changes in another file if possible
+
+!!!!!!!!!! WARNING !!!!!!!!!!
+
+ *   Bigcommerce Bluprint with Less
+ *   – For the Less variables and functions that you don't want available in the Style Editor, declare them in this file.
+
+
+ *   Bigcommerce Hipster with Less
+ *
+ *   For compatability with the Bigcommerce Style Editor:
+ *    + Import your Google fonts first
+ *
+ *    + Declare your fonts for use in the editor by using '@font-declaration' (JSON format)
+ *      eg @font-declaration: '{ "Open Sans":["Open Sans","Arial","sans-serif"], "Freckle Face":["Freckle Face","cursive"] }'
+ *
+ *    + Declare your color palette for use in the editor by using '@color-declaration'
+ *      eg @color-declaration: '["#333", "#1399BE", "#EDEDED", "#FFF"]';
+ *
+ *    + Prefix fonts with '@font-' for the style editor to make it editable by the end user
+ *
+ *    + Prefix colors with '@color-' for the style editor to make it editable by the end user
+ *
+ *    + Prefix settings with '@setting-' for the style editor to make it adjustable by the end user
+
+
+
+ * Style Initialization
+
+   --- Header --- */
+
+#TopMenu a{ color: #fff; }
+#header + .container{ background: #fff; }
+#cart-link{ color: #333333; }
+
+.CurrencyChooser:hover{ background-color: #69790e; }
+.CurrencyChooser:hover .BlockContent{ background: #69790e; }
+
+
+/* --- Form --- */
+
+.form-group.required .control-label:before { color: red; }
+.Required { color:#FF7800; }
+
+
+
+/* --- Products --- */
+
+.productAttributeList .required { color: #be0303; }
+
+
+
+/* --- Fast Cart --- */
+
+
+/* --- Modal --- */
+
+.CartRemoveLink{ color: #FF7800; }
+.ComparisonTable a { color:#6E6E6E; }
+.ComparisonTable a:hover {
+	color:#6E6E6E;
+	text-decoration:underline;
+}
+.CompareFieldName a { color:#6E6E6E; }
+td.ProductName a{ color:#6E6E6E; }
+
+#footer-bottom{
+
+  color: #e1e2e0;
+	background: #5c5c5c;
+}
+
+blockquote:before { color: #ccc; }
+ul.ShippingAddressList li .UtilityLinks a { color: #464646; }
+.CompareFieldTop { color:#026398; }
+.Availability { color:gray; }
+.LittleNote { color:gray; }
+.DownloadExpires { color: gray; }
+.TransitTime { color: gray; }
+.LittleNotePassword { color:gray; }
+.DownloadExpiresToday { color:red; }
+.QuickSearchResultNoImage { color:#777; }
+.SearchTips .Examples { color:#555; }
+.SortBox option { color:#444; }
+.SoldOut { color:#999; }
+.AddToWishlistLink .wishlist-button { color: #000; }
+.ExpressCheckoutBlockCompleted .ExpressCheckoutTitle { color:#777; }
+.CartContents .CartProductFieldsLink { color: #666; }
+.WrappingOptions { color:#666; }
+.Content .ProductList.List li.custom-quickview { color:#6E6E6E; }
+.Content .ProductList.List .ProductPrice { color:#464646; }
+.productOptionViewProductPickListWithImage { border-color:#ddd; }
+.WrappingOptions a { /*color: #FF7800;*/ }
+
+
+
+/* --- Blog --- */
+
+ul.blog-tags li span:hover{ border-color: #aaa; }
+
+
+
+/* --- Faceted Search --- */
+
+.facet-container { border-top: 1px solid #dcdcdc; }
+.facet-container [class^="js-facet-clear"] { color: #d4d4d4; }
+.facet-container [class^="js-facet-clear"]:hover { color: #a1a1a1; }
+.facet-container .btn-facet-more-options.more { color: #6e6e6e; }
+.facet-container .btn-facet-more-options.more:hover { color: #9c9c9c; }
+.facet-container .facet-option:hover { background: #dcdcdc; }
+.facet-container .facet-option .facet-option-product-count { color: #d4d4d4; }
+.js-faceted-search-container > [class^='js-facet-']:last-of-type .facet-container { border-bottom: 1px solid #dcdcdc; }
+#footer-bottom a{ color: #aaa; }
+
+
+
+/* --- Form Placeholders --- */
+
+::-webkit-input-placeholder {
+   color: #888888;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #888888;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #888888;
+}
+
+:-ms-input-placeholder {  
+   color: #888888;
+}
+
+.form-control ::-webkit-input-placeholder {
+   color: #222222;
+}
+
+.form-control :-moz-placeholder { /* Firefox 18- */
+   color: #222222;
+}
+
+.form-control ::-moz-placeholder {  /* Firefox 19+ */
+   color: #222222;
+}
+
+.form-control :-ms-input-placeholder {  
+   color: #222222;
+}

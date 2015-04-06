@@ -1,0 +1,113 @@
+<header id="SearchPageHeader">
+
+	<script src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jstree/jquery.jstree.js"></script>
+
+	<h2>%%GLOBAL_SearchTitle%%</h2>
+
+	<div style="display:%%GLOBAL_HideAdvancedOptions%%">
+		<div class="AdvancedSearch">
+			<form id="AdvancedSearchForm" action="%%GLOBAL_ShopPath%%/search.php" method="get" onsubmit="return CheckAdvancedSearchForm()">
+
+				<input type="hidden" name="mode" value="1" />
+
+				<div class="panel panel-default">
+					<div class="panel-heading">%%LNG_AdvancedSearch%%</div>
+					 <div class="panel-body">
+
+						<div class="form-group">
+							<label class="control-label">%%LNG_SearchKeyword%%:</label>
+							<input type="text" class="form-control" name="search_query_adv" id="search_query_adv" value="%%GLOBAL_FormattedSearchQuery%%">
+						</div>
+
+						<div class="form-group">
+							<label class="control-label">%%LNG_BrandName%%:</label>
+							<select name="brand" id="brand" class="form-control">
+								<option value="">%%LNG_NoPreference%%</option>
+								%%GLOBAL_BrandNameOptions%%
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label">%%LNG_Categories%%:</label>
+							<div id="category" class="categoryPicker"></div>
+						</div>
+
+						<div class="form-group">
+							<label for="searchsubs">
+								<input type="checkbox" name="searchsubs" id="searchsubs" value="ON" checked="checked" /> 
+								%%LNG_AutoSearchSubCats%%
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading" style="display: %%GLOBAL_HideProductSearchOptions%%">%%LNG_SearchByPrice%%</div>
+					 <div class="panel-body">
+						<div class="form-inline" style="display: %%GLOBAL_HideProductSearchOptions%%">
+
+							<div class="form-group">
+
+								<label class="control-label">%%LNG_From%%</label>
+							    <div class="input-group">
+							    	<div class="input-group-addon">$</div>
+							    	<input type="text" class="form-control" name="price_from" id="price_from" size="4" style="width: 80px;" placeholder="0.00" value="%%GLOBAL_PriceFrom%%">
+							    </div>
+							    &nbsp;&nbsp;
+							    <label class="control-label">%%LNG_To%%</label>
+							    <div class="input-group">
+							    	<div class="input-group-addon">$</div>
+							    	<input type="text" class="form-control" size="4" name="price_to" id="price_to" style="width: 80px;" placeholder="0.00" value="%%GLOBAL_PriceTo%%">
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default" style="display: %%GLOBAL_HideProductSearchOptions%%">
+					<div class="panel-heading">%%LNG_SearchBySetting%%</div>
+					<div class="panel-body">
+
+						<div class="form-group">
+							<label class="control-label">%%LNG_FeaturedProduct%%:</dt>
+							<select name="featured" id="featured">
+								<option value="">%%LNG_NoPreference%%</option>
+								<option value="1">%%LNG_OnlyFeaturedProducts%%</option>
+								<option value="2">%%LNG_OnlyNonFeaturedProducts%%</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="control-label">%%LNG_FreeShipping%%:</label>
+							<select name="shipping" id="shipping">
+								<option value="">%%LNG_NoPreference%%</option>
+								<option value="1">%%LNG_OnlyFreeShipping%%</option>
+								<option value="2">%%LNG_OnlyPaidShipping%%</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<input type="submit" value="%%LNG_Search%%" class="btn btn-primary">
+
+			</form>
+		</div>
+
+	</div>
+
+	<a name="results"></a>
+
+	<p class="alert alert-info" style="display:%%GLOBAL_HideRelatedSearches%%">
+		<strong>%%LNG_RelatedSearches%%:</strong> %%SNIPPET_RelatedSearches%%
+	</p>
+
+	<p class="SearchSuggest" style="display: %%GLOBAL_ShowSearchSuggestion%%">
+		<strong>%%LNG_DidYouMean%%:</strong> 
+		<a class="nofollow" rel="nofollow" data-params="&amp;correction=%%GLOBAL_SearchId%%" href="%%GLOBAL_ShopPath%%/search.php?search_query=%%GLOBAL_SuggestQueryEscaped%%">%%GLOBAL_SuggestQuery%%</a>
+	</p>
+
+	%%Panel.SearchJavaScript%%
+</header>
+
+<div id="ToggleSearchFormLink" style="display:%%GLOBAL_HideAdvancedLink%%;">
+	<a id="toggle_form_link" class="btn btn-default" href="javascript:void(0)" onclick="ToggleSearchForm()" name="toggle_form_link">%%LNG_HideSearchForm%%</a>
+</div>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+%%Panel.HTMLHead%%
+<body>
+<div id="site">
+	
+	%%Panel.Header%%
+
+	<div id="breadcrumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					%%Panel.NewsBreadcrumb%%
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				%%Panel.WrapperBanner%%
+			</div>
+			<main class="col-md-9">
+				
+				<h1>%%GLOBAL_BlogName%%</h1>
+				%%SNIPPET_RecentPostsContent%%
+				<div class="product-nav btm">
+					<div class="Block Moveable Panel PagingBottom" id="CategoryPagingBottom">
+						<div class="CategoryPagination BloggingPagination" style="display: %%GLOBAL_HideSectionPaging%%">
+							<div class="FloatLeft">
+								%%GLOBAL_SectionPagingPrevious%%
+							</div>
+							<div class="FloatRight">
+								%%GLOBAL_SectionPagingNext%%
+							</div>
+							<ul class="PagingList">
+								%%GLOBAL_SectionPaging%%
+							</ul>
+						</div>
+					</div>
+				</div>
+			</main>
+			<aside class="col-md-3">
+				%%Panel.BlogRecentPosts%%
+			</aside>
+		</div>
+	</div>
+	%%Panel.Footer%%
+</div>
+</body>
+</html>

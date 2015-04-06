@@ -1,0 +1,68 @@
+/** IE 67 Specific Fixes **/
+
+*html #Header {
+	height: 187px;
+}
+* html .Content {
+	height: 300px;
+}
+* html #Menu {
+	position: relative;
+	z-index: 999;
+}
+* html #Menu li a {
+	float: left;
+}
+* html #HeaderLower {
+	position: relative;
+	z-index: 99;
+}
+* html #SideCategoryList h2 {
+	padding-bottom: 14px;
+}
+* html #SideCategoryList li a {
+	float: left;
+	padding-bottom: 14px;
+}
+* html #SideCategoryList .sf-menu li a  {
+	float: left;
+	height: 31px;
+}
+* html #HeaderLower {
+	background-image: none;
+}
+* html .Content .ProductList li {
+	margin: 5px 5px 10px 5px;
+	display: inline;
+}
+* html .SelectGiftWrapMultiple {
+	height: 400px;
+}
+* html .Content .ProductList li {
+	height: 21em;
+}
+* html .Block.banner_home_page_top, * html .Block.banner_category_page_top, * html .Block.banner_brand_page_top, * html .Block.banner_search_page_top {
+	float: left;
+	width: 100%;
+}
+
+/** General IE Fixes **/
+
+div.QuickView {
+	
+	
+}
+
+.Content .FeedLink {
+	margin: 2px 4px 0 0;
+}
+#SearchForm .Button, #SearchForm input, .NewsletterSubscription input{
+	vertical-align: middle;
+	
+}
+select, input {
+	
+}
+
+.AlternativeCheckout p{text-align: right;}
+.Content .ProductList .ProductImage{width:200px !important; height:245px !important; display:block; line-height: 0 !important;}

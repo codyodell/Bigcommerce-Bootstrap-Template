@@ -1,0 +1,104 @@
+<footer id="footer">
+    <div class="container">
+
+        <section class="col-md-3 newsletter">
+
+            %%Panel.SideNewsletterBox%%
+        </section>
+
+        <section class="col-md-3 account-menu">
+
+            <h4>Account Menu</h4>
+            <ul>
+                <li><a href="/account.php">My Account</a></li>
+                <li><a href="/orderstatus.php">Order Status</a></li>
+                <li><a href="/wishlist.php">Wishlist</a></li>
+                <li><a href="/giftcertificates.php">Gift Certificates</a></li>
+                <li><a href="/login.php">Sign In</a> or</li>
+                <li><a href="/login.php?action=create_account">Create an Account</a></li>
+            </ul>
+        </section>
+
+        <section class="col-md-3 popular-categories-menu">
+
+            %%Panel.FooterCategoryList%%
+        </section>
+
+        <section class="col-md-3 resources-menu">
+
+            <h4>Resources</h4>
+
+            <ul>
+                <li><a href="/shipping-and-returns/">Shipping &amp; Returns</a></li>
+                <li><a href="/terms-and-conditions/">Terms &amp; Conditions</a></li>
+                <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                <li><a href="/about-us/">About Us</a></li>
+                <li><a href="/contact-us/">Contact Us</a></li>
+                <li><a href="/testimonials/">Testimonials</a></li>
+            </ul>
+        </section>
+
+    </div>
+</footer>
+
+<footer id="footer-bottom">
+    <div class="container">
+        <div class="row">
+            <nav class="col-md-12">
+
+                <ul class="list-inline" id="copyright-info">
+                    <li>Copyright %%GLOBAL_Year%%</li>
+                    <li>Electric Motor Warehouse.</li>
+                    <li>All Rights Reserved</li> 
+                    <li>Email: <a href="mailto:info@electricmotorwarehouse.com">info@electricmotorwarehouse.com</a>.</li>
+                    <li>Phone: 1-877-986-6867 or 1-810-744-1240</li>
+                </ul>
+
+                <ul class="list-inline cf" id="more-info">
+                    <li><a href="/sitemap.php">Sitemap</a></li>
+                    <li><a href="http://www.redheadlabs.com/">Redhead Labs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+<div style="display:none;">
+    %%Panel.SideCartContents%%
+    <input type="hidden" value="%%GLOBAL_CurrentCustomerFirstName%%" id="CustomerFirstName"/>
+</div>
+
+<div class="modal fade" id="general-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"></div>
+    </div>
+</div>
+
+%%GLOBAL_DesignModeHTML%%
+%%GLOBAL_QueryList%%
+%%GLOBAL_DesignModeScriptTag%%
+%%GLOBAL_LiveChatFooterCode%%
+%%GLOBAL_PinterestJS%%
+%%SNIPPET_FastCartThickBoxJs%%
+
+%%GLOBAL_DebugDetails%%
+
+<!--
+%%GLOBAL_FooterScripts%%
+-->
+
+<!--<script type="text/javascript" src="https://cdn4.bigcommerce.com/r-cec7842b26c0eed6998969d65a117ecc33435494/javascript/superfish/js/jquery.bgiframe.min.js"></script>
+<script type="text/javascript" src="https://cdn4.bigcommerce.com/r-cec7842b26c0eed6998969d65a117ecc33435494/javascript/superfish/js/superfish.js"></script>
+<script type="text/javascript">
+    $(function(){
+        if (typeof $.fn.superfish == "function") {
+            $("ul.sf-menu").superfish({
+                delay: 800,
+                dropShadows: false,
+                speed: "fast"
+            })
+            .find("ul")
+            .bgIframe();
+        }
+    })
+</script>-->
