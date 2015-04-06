@@ -16,40 +16,50 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<header class="col-md-12">
+	%%Panel.WrapperBanner%%
 
-				%%Banner.TopBanner%%
-				
-				<h1 class="title">%%GLOBAL_CatName%%</h1>
-				
-				%%Panel.WrapperBanner%%
-			</header>
-			<aside class="col-md-3">
-
-				%%Panel.CategoryHeading%%
-			</aside>    
-			<main class="col-md-9 %%GLOBAL_ExtraCategoryClass%%">
-				
-				<div class="row">
-					
-					%%Panel.CategoryPagingTop%%
-
-					%%SNIPPET_CategorySortBox%%
-				</div>
-
-				%%Panel.CategoryContent%%
-				
-				%%Panel.CategoryPagingBottom%%
-			</main>
-			<footer class="col-md-12 banner-bottom">
-
-				%%Banner.BottomBanner%%
-			</footer>
-		</div>
+	<div id="banner-top">
+		%%Banner.TopBanner%%
 	</div>
+
+	<main id="main">
+		<div class="container">
+			<div class="row">
+
+				<header class="col-md-12">
+
+					<h1 class="page-header">%%GLOBAL_CatName%%</h1>
+				</header>
+				<aside class="col-md-3">
+
+					<summary>%%GLOBAL_CatDesc%%</summary>
+
+					<ul class="list-group">
+						%%SNIPPET_SubCategories%%
+					</ul>
+				</aside>    
+				<div class="col-md-9 %%GLOBAL_ExtraCategoryClass%%">
+					
+					<div class="row">
+						
+						%%Panel.CategoryPagingTop%%
+
+						%%SNIPPET_CategorySortBox%%
+					</div>
+
+					%%Panel.CategoryContent%%
+					
+					%%Panel.CategoryPagingBottom%%
+				</div>
+			</div>
+		</div>
+	</main>
 	
+	<div id="banner-bottom">
+
+		%%Banner.BottomBanner%%
+	</div>
+				
 	%%Panel.Footer%%
 </div>
 </body>

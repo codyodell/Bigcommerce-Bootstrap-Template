@@ -1,4 +1,4 @@
-<footer id="footer">
+<footer id="footer" role="contentinfo">
     <div class="container">
 
         <section class="col-md-3 newsletter">
@@ -6,59 +6,56 @@
             %%Panel.SideNewsletterBox%%
         </section>
 
-        <section class="col-md-3 account-menu">
+        <nav class="col-md-3 account-menu">
 
-            <h4>Account Menu</h4>
-            <ul>
-                <li><a href="/account.php">My Account</a></li>
-                <li><a href="/orderstatus.php">Order Status</a></li>
-                <li><a href="/wishlist.php">Wishlist</a></li>
-                <li><a href="/giftcertificates.php">Gift Certificates</a></li>
-                <li><a href="/login.php">Sign In</a> or</li>
-                <li><a href="/login.php?action=create_account">Create an Account</a></li>
+            <ul class="list-group">
+                <li class="list-group-item"><h4 class="list-group-item-heading">Account Menu</h4></li>
+                <li class="list-group-item"><a href="/account.php">My Account</a></li>
+                <li class="list-group-item"><a href="/orderstatus.php">Order Status</a></li>
+                <li class="list-group-item"><a href="/wishlist.php">Wishlist</a></li>
+                <li class="list-group-item"><a href="/giftcertificates.php">Gift Certificates</a></li>
+                <li class="list-group-item"><a href="/login.php">Sign In</a> or</li>
+                <li class="list-group-item"><a href="/login.php?action=create_account">Create an Account</a></li>
             </ul>
-        </section>
+        </nav>
 
-        <section class="col-md-3 popular-categories-menu">
+        <nav class="col-md-3 popular-categories-menu">
+        
+            %%SNIPPET_SideCategoryList%%
 
-            %%Panel.FooterCategoryList%%
-        </section>
+        </nav>
 
-        <section class="col-md-3 resources-menu">
+        <nav class="col-md-3 resources-menu">
 
-            <h4>Resources</h4>
-
-            <ul>
-                <li><a href="/shipping-and-returns/">Shipping &amp; Returns</a></li>
-                <li><a href="/terms-and-conditions/">Terms &amp; Conditions</a></li>
-                <li><a href="/privacy-policy/">Privacy Policy</a></li>
-                <li><a href="/about-us/">About Us</a></li>
-                <li><a href="/contact-us/">Contact Us</a></li>
-                <li><a href="/testimonials/">Testimonials</a></li>
+            <ul class="list-group">
+                <li class="list-group-item"><h4 class="list-group-item-heading">Resources</h4></li>
+                <li class="list-group-item"><a href="/shipping-and-returns/">Shipping &amp; Returns</a></li>
+                <li class="list-group-item"><a href="/terms-and-conditions/">Terms &amp; Conditions</a></li>
+                <li class="list-group-item"><a href="/privacy-policy/">Privacy Policy</a></li>
+                <li class="list-group-item"><a href="/about-us/">About Us</a></li>
+                <li class="list-group-item"><a href="/contact-us/">Contact Us</a></li>
+                <li class="list-group-item"><a href="/testimonials/">Testimonials</a></li>
             </ul>
-        </section>
+        </nav>
 
     </div>
 </footer>
 
-<footer id="footer-bottom">
+<footer id="footer-bottom" role="contentinfo">
     <div class="container">
         <div class="row">
-            <nav class="col-md-12">
+            <section class="col-md-12">
 
-                <ul class="list-inline" id="copyright-info">
-                    <li>Copyright %%GLOBAL_Year%%</li>
-                    <li>Electric Motor Warehouse.</li>
-                    <li>All Rights Reserved</li> 
-                    <li>Email: <a href="mailto:info@electricmotorwarehouse.com">info@electricmotorwarehouse.com</a>.</li>
-                    <li>Phone: 1-877-986-6867 or 1-810-744-1240</li>
+                <ul class="list-inline" id="copyright">
+                    <li><i>&copy;</i> Copyright <span>%%GLOBAL_Year%%</span></li>
+                    <li><i>&reg;</i> All Rights Reserved</li> 
                 </ul>
 
-                <ul class="list-inline cf" id="more-info">
+                <ul class="list-inline" id="more-info">
                     <li><a href="/sitemap.php">Sitemap</a></li>
                     <li><a href="http://www.redheadlabs.com/">Redhead Labs</a></li>
                 </ul>
-            </nav>
+            </section>
         </div>
     </div>
 </footer>
@@ -74,6 +71,27 @@
     </div>
 </div>
 
+<script id="template-quicksearch-product" type="text/template">
+<div>
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-left">
+                <a href="{{product.url}}">
+                    <img class="media-object thumbnail quicksearch-product-image" src="{{product.image}}" alt="{{product.name}}">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <a href="{{product.url}}">{{product.name}}</a>
+                </h4>
+                <span class="quicksearch-product-rating"></span>
+                <strong class="quicksearch-product-price">{{product.price}}</strong>
+            </div>
+        </div>
+    </li>
+</div>
+</script>
+
 %%GLOBAL_DesignModeHTML%%
 %%GLOBAL_QueryList%%
 %%GLOBAL_DesignModeScriptTag%%
@@ -82,23 +100,3 @@
 %%SNIPPET_FastCartThickBoxJs%%
 
 %%GLOBAL_DebugDetails%%
-
-<!--
-%%GLOBAL_FooterScripts%%
--->
-
-<!--<script type="text/javascript" src="https://cdn4.bigcommerce.com/r-cec7842b26c0eed6998969d65a117ecc33435494/javascript/superfish/js/jquery.bgiframe.min.js"></script>
-<script type="text/javascript" src="https://cdn4.bigcommerce.com/r-cec7842b26c0eed6998969d65a117ecc33435494/javascript/superfish/js/superfish.js"></script>
-<script type="text/javascript">
-    $(function(){
-        if (typeof $.fn.superfish == "function") {
-            $("ul.sf-menu").superfish({
-                delay: 800,
-                dropShadows: false,
-                speed: "fast"
-            })
-            .find("ul")
-            .bgIframe();
-        }
-    })
-</script>-->

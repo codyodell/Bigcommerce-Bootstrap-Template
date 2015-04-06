@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 %%Panel.HTMLHead%%
-<body>
+<body class="page-checkout">
 <div id="site">
 
 	%%Panel.Header%%
@@ -20,72 +20,86 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<header class="col-md-12">
-				
-				<h1 class="title">%%LNG_SecureCheckout%%</h1>
-				%%Panel.WrapperBanner%%
-			</header>
+	%%Panel.WrapperBanner%%
 
-				<div class="CreateAccount col-md-6">
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-12">
+					
+					<h1 class="page-header">%%LNG_SecureCheckout%%</h1>
+				</header>
+				<div id="account-create" class="col-md-6">
+
 					<form action="checkout.php?action=choose_billing_address" method="post">
-						<div id="CheckoutGuestForm" style="%%GLOBAL_HideCheckoutGuest%%">
+
+						<div id="checkout-form-guest" style="%%GLOBAL_HideCheckoutGuest%%">
+
 							<h2>%%LNG_NotAnExistingCustomer%%</h2>
+
 							<p>%%LNG_CheckoutGuestIntro%%</p>
-							<dl>
-								<dd><label><input name="checkout_type" id="checkout_type_guest" value="guest" type="radio" /> %%LNG_CheckoutAsAGuest%%</label>&nbsp;</dd>
-								<dd><label><input name="checkout_type" id="checkout_type_register" value="register" checked="checked" type="radio" /> %%LNG_RegisterAnAccount%%</label>&nbsp;</dd>
-							</dl>
-							<input type="submit" class="btn btn-primary" value="%%LNG_Continue%%" />
+
+							<div class="radio">
+								<label>
+									<input name="checkout_type" id="checkout_type_guest" value="guest" type="radio"> 
+									%%LNG_CheckoutAsAGuest%%
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input name="checkout_type" id="checkout_type_register" value="register" checked="checked" type="radio"> %%LNG_RegisterAnAccount%%
+								</label>
+							</div>
+
+							<input type="submit" class="btn btn-primary" value="%%LNG_Continue%%">
+
 						</div>
 						<div style="%%GLOBAL_HideCheckoutRegistrationRequired%%">
 							
 							<h2>%%LNG_NotAnExistingCustomer%%</h2>
+
 							<p>%%LNG_CreateAccountIntroTitle%%</p>
+
 							<ul>
 								<li>%%LNG_CreateAccountIntro1%%</li>
 								<li>%%LNG_CreateAccountIntro2%%</li>
 								<li>%%LNG_CreateAccountIntro3%%</li>
 							</ul>
 
-							<input type="submit" class="btn btn-primary" value="%%LNG_Continue%%" />
+							<input type="submit" class="btn btn-primary" value="%%LNG_Continue%%">
 						</div>
 					</form>
 				</div>
 
-				<div class="AccountLogin col-md-6">
-					<h2>%%LNG_AlreadyHaveAnAccount%%</h2>
-					<p>%%LNG_AlreadyHaveAnAccountIntro%%</p>
-					<form action="checkout.php?action=choose_billing_address" id="LoginForm" method="post">
-						<div class="FormContainer HorizontalFormContainer NarrowFormContainer">
+				<div id="account-login" class="panel panel-default col-md-6">
 
-							<p style="display: %%GLOBAL_HideLoginMessage%%" class="%%GLOBAL_MessageClass%% alert alert-info">
-								%%GLOBAL_LoginMessage%%
-							</p>
+					<div class="panel-heading">
+						<h3 class="panel-title">%%LNG_AlreadyHaveAnAccount%%</h3>
+					</div>
+					<div class="panel-body">
 
-							<dl>
-								<dt>%%LNG_EmailAddress%%:</dt>
-								<dd><input type="text" class="InitialFocus" name="login_email" id="login_email" /></dd>
+						<p class="alert alert-info" style="display: %%GLOBAL_HideLoginMessage%%">%%GLOBAL_LoginMessage%%</p>
 
-								<dt>%%LNG_Password%%:</dt>
-								<dd><input type="password" autocomplete="off" class="Textbox Field200" name="login_pass" id="login_pass" /></dd>
-							</dl>
+						<p>%%LNG_AlreadyHaveAnAccountIntro%%</p>
 
-							<button id="LoginButton" class="btn btn-primary" type="submit">
-								%%LNG_Continue%%
-								<i class="glyphicon glyphicon-chevron-right"></i>
-							</button>
+						<div class="form-group form-group-lg form-group-stacked">
 
-							<a href="%%GLOBAL_ShopPath%%/login.php?action=reset_password" class="btn btn-secondary">%%LNG_ForgotYourPassword%%</a>
+							<label for="login_email" class="sr-only">%%LNG_EmailAddress%%</label>
+							<input class="form-control" type="email" name="login_email" id="login_email" placeholder="%%LNG_EmailAddress%%">
+							<label form="login_pass" class="sr-only">%%LNG_Password%%</label>
+							<input class="form-control" type="password" autocomplete="off" name="login_pass" id="login_pass" placeholder="%%LNG_Password%%">
 						</div>
-					</form>
-				</div>
+					</div>
+					<div class="panel-footer text-right">
 
-				
+						<a href="%%GLOBAL_ShopPath%%/login.php?action=reset_password" class="btn btn-link btn-lg">%%LNG_ForgotYourPassword%%</a>
+						<input type="submit" class="btn btn-primary btn-lg" value="%%LNG_Continue%%">
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-
+	</main>
+	
     %%Panel.Footer%%
 </div>
 </body>

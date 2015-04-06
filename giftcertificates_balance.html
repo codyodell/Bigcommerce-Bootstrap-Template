@@ -12,7 +12,7 @@
 				<div class="col-md-12">		
 		            <ul class="breadcrumb">
 		                <li><a href="%%GLOBAL_ShopPathNormal%%/">%%LNG_Home%%</a></li>
-		                <li><a href="javascript:history.go(-1)">... %%LNG_PreviousPage%%</a></li>
+		                <li><a href="javascript:history.go(-1)">&hellip;%%LNG_PreviousPage%%</a></li>
 		                <li>%%LNG_GiftCertificates%%</li>
 		            </ul>
 				</div>
@@ -20,25 +20,29 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<header class="col-md-12">
+	%%Panel.WrapperBanner%%
 
-				<h1 class="title">%%LNG_GiftCertificates%%</h1>
-				%%Panel.WrapperBanner%%
-	      	</header>
-			<aside class="col-md-3">
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-12">
 
-				%%Panel.GiftCertificatesMenu%%
-			</aside>
-			<main class="col-md-9">
-				
-				%%Panel.GiftCertificateBalanceRemaining%%
-				%%Panel.CheckGiftCertificateBalance%%
-			</main>
+					<h1 class="page-header">%%LNG_GiftCertificates%%</h1>
+		      	</header>
+				<aside class="col-md-3">
+
+					%%Panel.GiftCertificatesMenu%%
+				</aside>
+				<div class="col-md-9">
+					
+					%%Panel.GiftCertificateBalanceRemaining%%
+
+					%%Panel.CheckGiftCertificateBalance%%
+				</div>
+			</div>
 		</div>
-	</div>
-	
+	</main>
+
 	%%Panel.Footer%%
 </div>
 </body>

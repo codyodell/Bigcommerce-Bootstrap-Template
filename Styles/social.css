@@ -47,9 +47,9 @@ a.symbol:before {
 
 #socnet{
 
-	float: right;
-	margin: 0;
-	display: none;
+    float: right;
+    display: inline-block;
+    margin-right: 1em;
 }
 
 #socnet li{
@@ -59,9 +59,7 @@ a.symbol:before {
 
 #socnet a{
 
-	display: block;
-	margin: 0px;
-	line-height: 25px;
+	line-height: 2.57em;
 }
 
 #socnet a:hover{
@@ -72,15 +70,12 @@ a.symbol:before {
 #socnet .symbol{
 
 	font-size: 26px;
-	color: #fff;
-	transition: all 200ms linear;
 	line-height: 24px;
 	vertical-align: middle;
+    transition: all 200ms linear;
 }
 
 #socnet a:hover .symbol{
 
-	color: #ddd;
-	text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
-
+	color: #000;
 }

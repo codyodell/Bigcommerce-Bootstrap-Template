@@ -1,14 +1,29 @@
 <div class="col-md-6 col-sm-12 col-xs-12 GiftCertificate">
-	<h3>%%LNG_GiftCertificateCode%%</h3>
-	<script>
-		lang.EnterGiftCertificateCode = "%%LNG_EnterGiftCertificateCode%%";
-	</script>
-	<form onsubmit="return Cart.CheckGiftCertificateCode()" action="%%GLOBAL_ShopPath%%/cart.php" method="post">
-		<input type="hidden" name="action" value="applygiftcertificate" class="Field200" />
-		<div class="GiftCertificateCode">
+
+	<form class="panel panel-default" onsubmit="return Cart.CheckGiftCertificateCode()" action="%%GLOBAL_ShopPath%%/cart.php" method="post">
+
+		<input type="hidden" name="action" value="applygiftcertificate">
+
+		<div class="panel-heading">
+
+			<h3 class="panel-title">%%LNG_GiftCertificateCode%%</h3>
+		</div>
+		<div class="panel-body">
+
 			<p>%%LNG_GiftCertificateCodeIntro%%</p>
-			<input type="text" name="giftcertificatecode" id="giftcertificatecode" class="Textbox Field200" />
-			<input type="submit" value="Go" class="btn btn-secondary" />
+
+			<div class="input-group input-group-lg">
+
+				<input type="text" class="form-control" name="giftcertificatecode" id="giftcertificatecode" placeholder="Gift Certificate Code">
+
+				<span class="input-group-btn">
+					<input type="submit" value="Go" class="btn btn-primary">
+				</span>
+			</div>
 		</div>
 	</form>
 </div>
+
+<script>
+	lang.EnterGiftCertificateCode = "%%LNG_EnterGiftCertificateCode%%";
+</script>

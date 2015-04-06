@@ -16,84 +16,86 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<header class="col-md-12">
+	%%Panel.WrapperBanner%%
 
-				<h1 class="title">My Account</h1>
-				%%Panel.WrapperBanner%%
-            </header>
-			<aside class="col-md-3">
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-12">
 
-				%%Panel.SideAccountMenu%%
-			</aside>
-			<main class="col-md-9">
-				
-			    %%Panel.WishListItems%%
-			   
-				%%Panel.WishLists%%
-				%%Panel.WishListAddForm%%
-			</main>
+					<h1 class="page-header">My Account</h1>
+	            </header>
+				<aside class="col-md-3">
+
+					%%Panel.SideAccountMenu%%
+				</aside>
+				<main class="col-md-9">
+					
+				    %%Panel.WishListItems%%
+				   
+					%%Panel.WishLists%%
+					%%Panel.WishListAddForm%%
+				</main>
+			</div>
 		</div>
-	</div>
+	</main>
 
 	%%Panel.Footer%%
-</div>
-<script type="text/javascript">
-//<![CDATA[
-function ValidateWishListForm(formtype)
-{
-	var wishlistname = g("wishlistname");
 
-	wishlistname.value = wishlistname.value.replace(/^\s+|\s+$/g, '') ;
-	if(wishlistname.value == "") {
-		alert("%%LNG_EnterWishListName%%");
-		wishlistname.focus();
-		wishlistname.select();
-		return false;
-	} else {
-		return true;
+	<script>
+
+	function ValidateWishListForm(formtype){
+
+		var wishlistname = g("wishlistname");
+
+		wishlistname.value = wishlistname.value.replace(/^\s+|\s+$/g, '') ;
+		if(wishlistname.value == "") {
+			alert("%%LNG_EnterWishListName%%");
+			wishlistname.focus();
+			wishlistname.select();
+			return false;
+		} else {
+			return true;
+		}
 	}
-}
 
+	function ValidateDeleteWishlist(bulkDelete, wishlistId){
 
-function ValidateDeleteWishlist(bulkDelete, wishlistId)
-{
-	if (bulkDelete == true) {
-		var deleteWishList = g("wishlistsform").elements;
+		if (bulkDelete == true) {
+			var deleteWishList = g("wishlistsform").elements;
 
-		var wishlistSelected = false;
-		for(i = 0; i < deleteWishList.length; i++) {
-			if (deleteWishList[i].checked == true) {
-				wishlistSelected = true;
-				break;
+			var wishlistSelected = false;
+			for(i = 0; i < deleteWishList.length; i++) {
+				if (deleteWishList[i].checked == true) {
+					wishlistSelected = true;
+					break;
+				}
+			}
+			if (wishlistSelected == true) {
+				return window.confirm('%%LNG_ConfirmDeleteWishLists%%');
+			} else {
+				alert('%%LNG_SelectAWishListToDelete%%');
+				return false
+			}
+		} else {
+			if (window.confirm('%%LNG_ConfirmDeleteWishLists%%') == true) {
+				window.location = 'wishlist.php?action=deletewishlist&wishlistid='+wishlistId;
+				return true;
+			} else {
+				return false;
 			}
 		}
-		if (wishlistSelected == true) {
-			return window.confirm('%%LNG_ConfirmDeleteWishLists%%');
-		} else {
-			alert('%%LNG_SelectAWishListToDelete%%');
-			return false
-		}
-	} else {
-		if (window.confirm('%%LNG_ConfirmDeleteWishLists%%') == true) {
-			window.location = 'wishlist.php?action=deletewishlist&wishlistid='+wishlistId;
-			return true;
-		} else {
-			return false;
+	}
+
+	function ToggleWishListDeleteBoxes(Status){
+		
+		var deleteWishList = g("wishlistsform").elements;
+
+		for(i = 0; i < deleteWishList.length; i++) {
+			deleteWishList[i].checked = Status;
 		}
 	}
-}
-
-function ToggleWishListDeleteBoxes(Status)
-{
-	var deleteWishList = g("wishlistsform").elements;
-
-	for(i = 0; i < deleteWishList.length; i++) {
-		deleteWishList[i].checked = Status;
-	}
-}
-//]]>
-</script>
+	</script>
+</div>
 </body>
 </html>

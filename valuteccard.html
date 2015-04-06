@@ -1,28 +1,22 @@
-	<p class="alert alert-info">
-		%%LNG_CreditCardPaymentIntro%%
-	</p>
-
+	<p class="alert alert-info">%%LNG_CreditCardPaymentIntro%%</p>
 	<p class="alert alert-danger" style="display: %%GLOBAL_HideCreditCardError%%">
-		<strong>%%LNG_CreditCardProcessingError%%</strong><br />
+		<p><strong>%%LNG_CreditCardProcessingError%%</strong></p>
 		%%GLOBAL_CreditCardErrorMessage%%
 	</p>
-
 	<p class="alert alert-info" style="display: %%GLOBAL_HideCreditCardError%%">
 		<a href="checkout.php?action=choose_billing_address">Click Here to Change Billing Details if Required</a>
 	</p>
 
 	<form action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=process_payment" method="post" onsubmit="return check_creditcard_payment_form()">
-		<div class="FormContainer HorizontalFormContainer">
 			<dl>
 				<dt><span class="Required">*</span> %%LNG_ValutecNumber%%:</dt>
 				<dd>
-					<input type="text" class="Textbox" name="creditcard_ccno" id="creditcard_ccno" value="%%GLOBAL_CreditCardNum%%" size="30" />
+					<input type="text" class="form-control" name="creditcard_ccno" id="creditcard_ccno" value="%%GLOBAL_CreditCardNum%%" size="30">
 				</dd>
 				<dt>%%LNG_CreditCardTotalAmount%%:</dt>
-				<dd><em class="ProductPrice">%%GLOBAL_OrderAmount%%</em></dd>
+				<dd><strong class="product-price lead">%%GLOBAL_OrderAmount%%</strong></dd>
 			</dl>
 
-			<input type="submit" class="btn btn-primary" value="%%LNG_CreditCardPayForOrder%%" />
-		</div>
+			<input type="submit" class="btn btn-primary" value="%%LNG_CreditCardPayForOrder%%">
 	</form>
 %%Panel.ValutecCardPaymentJavaScript%%

@@ -1,18 +1,3 @@
-
-
-.form-group.required .control-label:before {
-
-	content:"*";
-	padding-right: 5px;
-}
-
-.form-group.optional .control-label:after {
-
-	content:"(optional)";
-	display: block;
-	font-size: 11px;
-}
-
 /* --- Alerts --- */
 
 .alert ul{
@@ -52,138 +37,89 @@ span.or{
 	padding: 0 1em;
 }
 
-.PrimaryProductDetails .productAddToCartBelow {
-		padding:0 0 0 30px;
-}
-.PrimaryProductDetails .ProductMain h1 {
+main{
 
-	font-size:28px;
-	font-weight:bold;
-	line-height:34px;
-	text-transform:uppercase;
-	padding:0 0 25px;
-	margin:0;
-
+    margin-bottom: 25px;
 }
 
 /* Quick Search */
-.QuickSearch {
-	margin:0;
-	padding:0;
-	text-align:left;
-	background:#fff;
-	position:absolute;
-	z-index:9999;
-	top:128px !important;
-	width:300px !important;
-}
-.QuickSearchTitle td,.QuickSearchAllResults td {
-	font-weight:bold;
-	padding:5px 44px 15px;
-}
-.QuickSearchResult td {
-	font-size:12px;
-	padding:8px 0px 8px 8px;
-	cursor:pointer;
-}
-.QuickSearchResultImage {
-	margin-left:4px;
-	margin-right:10px;
-	text-align:center;
-}
-.QuickSearchResultNoImage {
 
-	padding-top:10px;
+#form-search{
+
+	padding: 0;
 }
 
-.QuickSearchResultName {
+#form-search .dropdown-menu{
 
-	text-decoration:none;
-	display:block;
-	padding-bottom:5px;
+	border-width: 0;
+	margin: 0;
+	padding: 0;
 }
 
-.QuickSearchResult .Price {
+#form-search #search_results li .thumbnail{
 
-	font-weight:bold;
-	font-size:12px;
-	padding-right:5px;
+	max-width: 48px;
+	float: left;
+	margin: 0;
 }
 
-.QuickSearchHover a {
-
-	text-decoration:underline;
+#form-search #search_results{
+	
+	border-radius: 0 0 4px 4px;
+	width: 100%;
 }
 
-.QuickSearchAllResults {}
+#form-search #search_results li h4{
 
-.QuickSearchAllResults td {
-
-	text-align:right;
+	font-size: 14px;
 }
 
-.QuickSearchAllResults a {
+#form-search #search_results  li.list-group-item:first-child{
 
-	height:25px;
+	border-top-width:0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
-.QuickSearchAllResults a:active,.QuickSearchAllResults a {
+#form-search.has-results input[type=text]{
 
-	outline:none;
-	-moz-outline-style: none;
+	border-bottom-left-radius: 0;
 }
 
+#form-search.has-results button{
+
+	border-bottom-right-radius: 0;
+}
+
+#form-search.no-results #search_results{
+
+	display: none;
+	opacity: 0;
+	transition: all 300ms linear;
+}
+
+#form-search.has-results #search_results{
+
+	display: block;
+	opacity: 1;
+	transition: all 300ms linear;
+}
+
+/* Cart */
+
+body.page-cart td{
+
+	vertical-align: middle !important; /* Bootstrap override */
+}
 
 /* Brand Tag Clouds */
 
-.BrandCloud .smallest {
-
-	font-size:12px;
-}
-
-.BrandCloud .small {
-
-	font-size:15px;
-}
-
-.BrandCloud .medium {
-
-	font-size:18px;
-}
-
-.BrandCloud .large {
-
-	font-size:20px;
-}
-
-.BrandCloud .largest {
-
-	font-size:26px;
-}
-
-.BrandCloud a {
-
-	padding-right:5px;
-}
-
-.GoogleCheckout p,.PayPalExpressCheckout p,.AlternativeCheckout p {
-	margin:0;
-	font-size:90%;
-}
-.GoogleCheckout,.PayPalExpressCheckout,.AlternativeCheckout {
-	text-align:center;
-	margin-bottom:20px;
-	clear:both;
-}
-
-.fastCartSummaryBox .GoogleCheckout,
-.fastCartSummaryBox .PayPalExpressCheckout,
-.fastCartSummaryBox .AlternativeCheckout {
-	text-align:center;
-	margin-bottom:20px;
-	clear:both;
-	float: none !important;
-}
+.BrandCloud a { padding-right:5px; }
+.BrandCloud .smallest { font-size:0.8em; }
+.BrandCloud .small { font-size:1em; }
+.BrandCloud .medium { font-size:1.4em; }
+.BrandCloud .large { font-size:2.3em; }
+.BrandCloud .largest { font-size:3em; }
 
 /* Express Checkout */
 
@@ -224,29 +160,9 @@ a.ChangeLink {
 	margin-top:20px;
 }
 
-.CartThumb {
-
-	text-align:center;
-}
-
 .CartThumb img {
 
-	max-width:107px;
-	max-height:150px;
-}
-
-.SelectGiftWrapMultiple {
-	max-height: 400px;
-}
-
-
-/* .ProductAddToCart dd.AddCartButton div.BulkDiscount div.BulkDiscountLink{padding-left: 4px;}*/
-#VendorLogo .BlockContent,#VendorPhoto .BlockContent {
-	margin:0;
-	text-align:center;
-}
-.TransitTime {
-	font-weight:normal;
+	max-height:80px;
 }
 
 .OrderItemMessage {
@@ -256,64 +172,7 @@ a.ChangeLink {
 }
 
 
-
-/* --- Quick View --- */
-
-.QuickViewBtn{
-
-	cursor: pointer;
-	position: absolute;
-	width: 100%;
-}
-
-/* --- Custom Fields --- */
-
-.LittleNotePassword {
-
-	font-size:0.85em;
-	padding:2px 0px 2px 0px;
-}
-
-/* Custom Fields - End */
-/* Product Details */
-
-.ProductDetailsGrid dl, .ProductDetailsGrid .DetailRow{
-
-	width: 50%;
-	float: left;
-	margin-bottom: 10px;
-}
-
-.ProductDetailsGrid .DetailRow .Label{
-
-	font-weight: bold;
-}
-
-.ProductPriceWrap .PriceRow em{
-
-	font-style: normal;
-}
-
-.productAttributeRow{
-
-	padding-bottom: 0.5em;
-}
-
-
-/** Search All Form Result - End **/
-/** AJAX loading box - Start **/
-
-#AjaxLoading {
-	display:none;
-	text-align:center;
-	width:180px;
-	z-index:10000000000;
-	padding:5px 10px;
-}
-#AjaxLoading img {
-	vertical-align:bottom;
-	margin-right: 5px;
-}
+/* --- Loading Slidedown Indicator */
 
 #loading{
 
@@ -336,53 +195,8 @@ a.ChangeLink {
 	margin-right: 0.5em;
 }
 
-
-/** AJAX loading box - End **/
-/** Product image gallery **/
-
-#ProductDescription h2{
-
-	font-size: 18px;
-	font-weight: normal;
-	font-style: normal;
-}
-
-#ProductDescription h2 strong{
-
-	font-weight: normal;
-}
-
-#ProductDescription ul{
-
-	margin-left: 1em;
-}
-
-#ProductDescription ul{
-
-	margin-top: 2em;
-}
-
-#ProductDescription ul li h4{
-
-	margin-bottom: 0;
-	font-style: normal;
-	font-size: 16px;
-	font-weight: normal;
-}
-
-.ProductDetailsGrid {
-
-	margin: 20px 0;
-	padding: 20px 0;
-	border: 1px solid #ddd;
-	border-width: 1px 0;
-}
-
-
-
-/** Product image gallery end **/
-/** AJAX loading box - End **/
 /* Product Videos */
+
 #VideoList li {
 	float:left;
 	list-style:none;
@@ -392,7 +206,8 @@ a.ChangeLink {
 	opacity:0.5 !important;
 	filter:alpha(opacity = 50) !important;
 }
-#VideoList li:hover,#VideoList li.currentVideo {
+#VideoList li:hover,
+#VideoList li.currentVideo {
 	opacity:1 !important;
 	filter:alpha(opacity = 100) !important;
 }
@@ -430,15 +245,20 @@ a.ChangeLink {
 	width:100%;
 	top: 0;
 }
-/** If you change the width of the .VideoPreviewSize class below,change the padding-left of the .VideoContentContainer class above **/
-.VideoPreviewSize {
+.VideoPreviewSize { 
+	/* 
+	 * If you change the width of the .VideoPreviewSize class 
+	 * below,change the padding-left of the .VideoContentContainer 
+	 * class above
+	*/
 	height:104px;
 	width:126px;
 }
 .videoRowLength {
 	padding-left:4px;
 }
-.videoRow,.videoRowTitle,.videoRow img,.videoRowLength {
+.videoRow,.videoRowTitle,
+.videoRow img,.videoRowLength {
 	cursor:pointer;
 }
 #VideoList ul {
@@ -468,7 +288,8 @@ a.ChangeLink {
 	padding-right:5px;
 	display:none;
 }
-.Left #VideoMiddleContainer,.Right #VideoMiddleContainer {
+.Left #VideoMiddleContainer,
+.Right #VideoMiddleContainer {
 	display:none;
 }
 .Content #VideoSideContainer {
@@ -495,9 +316,7 @@ a.ChangeLink {
 	background: #fff;
 	position: relative;
 }
-#ModalContentContainer,#ModalTitle,.ModalTitle,#ModalButtonRow,.ModalButtonRow {
-/*	background: #fff;*/
-}
+
 #ModalContent, .ModalContent {
 
 	max-height: 550px;
@@ -518,11 +337,6 @@ a.ChangeLink {
 	background: rgba(0,0,0,0.75);
 }
 
-.fastCartItemBox small {
-
-	display:block;
-}
-
 .modalClose {
 
 	content: "\e014";
@@ -540,6 +354,8 @@ a.ChangeLink {
 	height: 20px;
 	text-indent: -9999px;
 }
+
+/* --- Fast Cart --- */
 
 #fastCartContainer .ProductDetails {
 
@@ -576,7 +392,8 @@ a.ChangeLink {
 	line-height: 40px;
 }
 
-#fastCartContainer .ProductList li .ProductImage, #fastCartContainer .ProductList li .ProductDetails{
+#fastCartContainer .ProductList li .ProductImage, 
+#fastCartContainer .ProductList li .ProductDetails{
 
 	width: auto;
 	float: none;
@@ -616,6 +433,8 @@ a.ChangeLink {
 	height:20px;
 }
 
+/* --- Cookie Notification --- */
+
 #cookieNotification {
 	max-height: 88px;
 }
@@ -644,56 +463,51 @@ a.ChangeLink {
 	}
 }
 
+/* --- Site Map --- */
+
 #SitemapContent ul li{
 
 	list-style: none;
 }
 
-.ProductTinyImageList ul li{
 
-	width: 23.12% !important;
-	float: left !important;
-	margin-bottom: 2.5%;
+/* --- Product List --- */
+
+.ProductList > li{
+
+	margin-bottom: 2em;
 }
 
-#accordion > .panel{
-
-	margin-top: 15px;
-}
-
-#accordion .panel-body ul{
-
-	margin-left: 1.3em;
+.product-rating {
+	
+	line-height: 2.5em;
+	text-align: center;
+	font-size: 18px;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
+/* --- Product Slider & Product Modal Slider --- */
 
 #product-image-carousel{
 
 	position: relative;
+	text-align: center;
 }
 
-#product-image-carousel .carousel-inner img, #product-image-carousel-modal .carousel-inner img{
+#product-image-carousel .carousel-inner img, 
+#product-image-carousel-modal .carousel-inner img{
 
-	max-height: 500px;
+	max-height: 400px;
 	margin: 0 auto;
+	display: inline-block;
+	vertical-align: middle;
 }
 
-
-#product-image-carousel .carousel-inner .item, #product-image-carousel-modal .carousel-inner .item{
+#product-image-carousel .carousel-inner .item, 
+#product-image-carousel-modal .carousel-inner .item{
 
 	min-height: 400px;
+	line-height: 400px;
 }
 
 .zoomContainer{
@@ -703,12 +517,22 @@ a.ChangeLink {
 
 #product-image-carousel .carousel-control{
 
-	line-height: 500px;
+	line-height: 400px;
 	color: #0157cf;
 	opacity: 1;	
 }
 
 #product-image-carousel .carousel-control span{
+
+	display: none;
+}
+
+#product-image-carousel .product-image-thumbnails{
+
+	margin-top: 75px;
+}
+
+#product-image-carousel .pagination a span{
 
 	display: none;
 }
@@ -748,45 +572,8 @@ a.ChangeLink {
 	transform: scale(1.1); 
 }
 
-#product-image-carousel .product-image-thumbnails{
 
-	margin-top: 75px;
-}
-
-#product-image-carousel .pagination a span{
-
-	display: none;
-}
-
-.page-product .carousel-control{
-
-	background: none;
-	background-image: none;
-}
-
-.page-product .productAttributeRow{
-	
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 20px;
-}
-
-/*.modal-header, .modal-footer{
-
-	color: #fff;
-	background: linear-gradient(to bottom, rgba(1,117,220,1) 0%,rgba(1,84,206,1) 100%);
-}*/
-
-/* Product Options (eg: Size) */
-
-.list-horizontal{
-
-	list-style: none;
-}
-
-.list-horizontal li{
-
-	display: inline-block;
-}
+/* --- Product Options --- */
 
 .productOptionViewRectangle .list-horizontal li{
 
@@ -819,7 +606,8 @@ a.ChangeLink {
 	display: none;
 }
 
-/* Product Color Swatches */
+
+/* --- Product Color Swatches --- */
 
 .productOptionPickListSwatch li{
 
@@ -845,45 +633,74 @@ a.ChangeLink {
 	display: none;
 }
 
-/*
-#top-products-slide-show .carousel-inner .active.left { left: -25%; }
-#top-products-slide-show .carousel-inner .next        { left:  25%; }
 
-*/
+/* --- Currency Chooser --- */
 
+.currency-info, #change-currency{
 
-
-
-
-
-/**
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    contenteditable attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that are clearfixed.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    display: none;
 }
 
-.cf:after {
-    clear: both;
+.CurrencyChooser{
+
+    cursor: pointer;    
 }
 
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-.cf {
-    *zoom: 1;
+.CurrencyChooser .BlockContent{
+
+    display: none;
 }
 
-#crappy_code{
+.selected-currency .Text{
 
-	display: none;
+    font-size: 10px;
+    padding-left: 3px;
+}
+
+.CurrencyChooser:hover .BlockContent{
+
+    display: block;
+    padding: 5px;
+    width: 100%;
+    border-top: 1px solid transparent;
+    z-index: 99999;
+}
+
+.CurrencyChooser .caret{
+
+    position: absolute !important;
+    right: 9px;
+    top: 40%;
+}
+
+.CurrencyChooser dl{
+
+    margin-bottom: 0;
+    font-size: 10px;
+}
+
+.ChooseCurrencyBox{
+
+    text-align: center;
+}
+
+.ChooseCurrencyBox .Flag{
+
+    margin-right: 5px;
+}
+
+
+/* --- Coupon Code & Gift Certificate Boxes --- */
+
+.CartCode > .CouponCode p, .GiftCertificate p{
+
+    min-height: 3em;
+}
+
+/* Cart */
+
+.table .shipping-estimator td{
+
+	border-width: 0;
+	padding: 0;
 }

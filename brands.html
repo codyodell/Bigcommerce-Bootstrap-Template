@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 %%Panel.HTMLHead%%
-<body>
+<body class="page-brands">
 
 <div id="site">
 
@@ -17,24 +17,32 @@
     	</div>
     </div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
+    <div id="banner-top">
+        %%Banner.TopBanner%%
+    </div>
 
-				<h1>%%GLOBAL_TrailBrandName%%</h1>
+    %%Panel.WrapperBanner%%
 
-				%%SNIPPET_CategorySortBox%%
+    <main id="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
 
-		        %%Banner.TopBanner%%
-		    
-				%%Panel.WrapperBanner%%
+					<h1 class="page-header">%%GLOBAL_TrailBrandName%%</h1>
 
-				%%Panel.BrandContent%%
+					%%SNIPPET_CategorySortBox%%
+				</div>
+				<div class="col-md-12">
 
-				%%Banner.BottomBanner%%
+					%%Panel.BrandContent%%
+				</div>
 			</div>
 		</div>
-	</div>
+	</main>
+
+    <div id="banner-bottom">
+        %%Banner.BottomBanner%%
+    </div>
 
 	%%Panel.Footer%%
 </div>

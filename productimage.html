@@ -24,56 +24,57 @@
 	<script src="%%ASSET_js/productimage-modal.js%%"></script>
 </head>
 <body class="page-productimage">
+<div id="site-modal">
 
-	<div id="site-modal">
+	<div class="modal-header">
 
-		<div class="modal-header">
-		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		     <h4 class="modal-title text-center">test %%GLOBAL_ProductName%%</h4>
-		</div>
-		<div class="modal-body">
-			<div class="te">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	     <h4 class="modal-title text-center">test %%GLOBAL_ProductName%%</h4>
+	</div>
+	<div class="modal-body">
 
-		        <div id="product-image-carousel-modal" class="carousel slide" data-ride="carousel" data-indicators="true">
+		<div class="te">
 
-		            <ul class="carousel-inner" role="listbox" id="product-image-gallery"></ul>
+	        <div id="product-image-carousel-modal" class="carousel slide" data-ride="carousel" data-indicators="true">
 
-		            <nav class="text-center">
-		                <ul class="pagination" aria-label="Go to Slide...">
-		                    <li>
-		                        <a href="#product-image-carousel-modal" role="button" data-slide="prev">
-		                            <i class="glyphicon glyphicon-arrow-left"></i>
-		                            <span>Previous</span>
-		                        </a>
-		                    </li>
-		                    <li class="image-count">
-		                        <span><!-- %%LNG_Image%%--> <strong class="current-modal-image-index">1</strong> %%LNG_Of%% <strong class="total-modal-images"></strong></span>
-		                    </li>
-		                    <li>
-		                        <a href="#product-image-carousel-modal" role="button" data-slide="next">
-		                            <span>Next</span>
-		                            <i class="glyphicon glyphicon-arrow-right"></i>
-		                        </a>
-		                    </li>
-		                </ul>
-		            </nav>
+	            <ul class="carousel-inner" role="listbox" id="product-image-gallery"></ul>
 
-		        </div>
+	            <nav class="text-center">
+	                <ul class="pagination" aria-label="Go to Slide...">
+	                    <li>
+	                        <a href="#product-image-carousel-modal" role="button" data-slide="prev">
+	                            <i class="glyphicon glyphicon-arrow-left"></i>
+	                            <span>Previous</span>
+	                        </a>
+	                    </li>
+	                    <li class="image-count">
+	                        <span><!-- %%LNG_Image%%--> <strong class="current-modal-image-index">1</strong> %%LNG_Of%% <strong class="total-modal-images"></strong></span>
+	                    </li>
+	                    <li>
+	                        <a href="#product-image-carousel-modal" role="button" data-slide="next">
+	                            <span>Next</span>
+	                            <i class="glyphicon glyphicon-arrow-right"></i>
+	                        </a>
+	                    </li>
+	                </ul>
+	            </nav>
 
-		        <a href="%%GLOBAL_ShopPath%%/productimage.php?product_id=%%GLOBAL_ProductId%%" data-toggle="modal" data-target="#product-image-modal" style="%%GLOBAL_HideMorePicturesLink%%" id="product-image-modal-link">%%GLOBAL_SeeMorePictures%%</a>
-
-			</div>
-		</div>
-		<div class="modal-footer">
-
-	        <div class="controls">
-	            <ul id="carousel-thumbnails-modal" class="product-image-thumbnails">
-	                %%SNIPPET_ProductTinyImages%%
-	            </ul>
 	        </div>
+
+	        <a href="%%GLOBAL_ShopPath%%/productimage.php?product_id=%%GLOBAL_ProductId%%" data-toggle="modal" data-target="#product-image-modal" style="%%GLOBAL_HideMorePicturesLink%%" id="product-image-modal-link">%%GLOBAL_SeeMorePictures%%</a>
 
 		</div>
 	</div>
+	<div class="modal-footer">
 
+        <div class="controls">
+            <ul id="carousel-thumbnails-modal" class="product-image-thumbnails">
+                %%SNIPPET_ProductTinyImages%%
+            </ul>
+        </div>
+
+	</div>
+	
+</div>
 </body>
 </html>

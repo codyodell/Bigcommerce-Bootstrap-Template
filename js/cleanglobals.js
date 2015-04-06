@@ -24,30 +24,29 @@ $().ready( function(){
 			}
 		}
 	});
-
-
-
-
 	
 	$("#breadcrumbs ul").addClass('breadcrumb'); // Still need this for products page
+	
+	$('.sf-menu').removeClass('sf-menu');
+	$('.sf-vertical').removeClass('sf-vertical');
 	
 	// $(".ProductList").addClass('row-eq-height');
 	
 	//$("#pages-menu-container ul.sf-menu").attr('class', 'nav navbar-nav collapse in');
 	
-	$(".Message").each( function(){
+	// $(".Message").each( function(){
 		
-		//If message doesn't have a second class make it default to info message
-		if($(this).attr('class') == 'Message'){
+	// 	//If message doesn't have a second class make it default to info message
+	// 	if($(this).attr('class') == 'Message'){
 		
-			$(this).attr('class', 'alert alert-info');
-		}
-	});
+	// 		$(this).attr('class', 'alert alert-info');
+	// 	}
+	// });
 	
-	$(".Message").addClass('alert').removeClass('Message');
-	$(".SuccessMessage").addClass('alert-success').removeClass('.SuccessMessage');
-	$(".ErrorMessage").addClass('alert-danger').removeClass('.ErrorMessage');
-	$(".InfoMessage").addClass('alert-info').removeClass('.InfoMessage');
+	//$(".Message").addClass('alert').removeClass('Message');
+	$(".SuccessMessage").addClass('alert alert-success').removeClass('SuccessMessage').removeClass('Message');
+	$(".ErrorMessage").addClass('alert alert-danger').removeClass('ErrorMessage').removeClass('Message');
+	$(".InfoMessage").addClass('alert alert-info').removeClass('InfoMessage').removeClass('Message');
 	
 	if($("#PurchaseGiftCertificate").length){
 	
@@ -84,25 +83,15 @@ $().ready( function(){
 	
 	$("#subcategory-list li").each( function(){
 	
-	$(this).addClass('list-group-item');
+		$(this).addClass('list-group-item');
 	});
 	
 	if($(".pagination li:first-child").not('.sr-only').text() == ''){
 	
-	$(".pagination li:first-child").addClass('disabled').html( $('<a href="#">&laquo; Prev</a>') );
+		$(".pagination li:first-child").addClass('disabled').html( $('<a href="#">&laquo; Prev</a>') );
 	}
 	
 	$(".pagination li.ActivePage").addClass('active').wrapInner('<a href="#" />');
-	
-	$("#PagesMenu li").each( function(){
-	
-	var pageName = $("a", this).text();
-	
-	if(pageName == 'Blog'){
-	
-	$(this).addClass('link-blog');
-	}
-	});
 	
 	$("#SimilarProductsByCustomerViews h3").html( '<span>' + $("#SimilarProductsByCustomerViews h3").text() + '</span>' );
 	
@@ -131,5 +120,7 @@ $().ready( function(){
 
 		$('ul li label .swatchColour', this).addClass('btn');
 	});
+
+	$('#content-newsletter p a').addClass('btn btn-primary');
 	
 	});		

@@ -1,22 +1,21 @@
-<div id="SearchPage" style="display:%%GLOBAL_HideSearchPage%%">
+<div style="display:%%GLOBAL_HideSearchPage%%">
 	
-	<ul class="nav nav-tabs">
-		<li id="SearchProduct_Tab" class="%%GLOBAL_ProductTabActive%%"><a href="%%GLOBAL_ProductTabUrl%%" onclick="showSearchTabs('product'); return false;">%%LNG_SearchResultsTabProduct%%</a></li>
-		<li id="SearchContent_Tab" class="%%GLOBAL_ContentTabActive%%"><a href="%%GLOBAL_ContentTabUrl%%" onclick="showSearchTabs('content'); return false;">%%LNG_SearchResultsTabContent%%</a></li>
+	<ul class="nav nav-tabs" role="tablist">
+
+		<li id="SearchProduct_Tab" class="active %%GLOBAL_ProductTabActive%%" role="presentation">
+			<a href="#SearchProduct_Container" data-toggle="tab" role="tab">%%LNG_SearchResultsTabProduct%%</a>
+		</li>
+		<li id="SearchContent_Tab" class="%%GLOBAL_ContentTabActive%%" role="presentation">
+			<a href="#SearchContent_Container" data-toggle="tab" role="tab">%%LNG_SearchResultsTabContent%%</a>
+		</li>
 	</ul>
 
-	<div id="SearchProduct_Container" style="%%GLOBAL_ProductContainerDisplay%%">
-		%%Panel.SearchTabProducts%%
-	</div>
-
-	<div id="SearchContent_Container" style="%%GLOBAL_ContentContainerDisplay%%">
-		%%Panel.SearchTabContents%%
+	<div class="tab-content">
+		<div id="SearchProduct_Container" class="tab-pane active" role="tabpanel">
+			%%Panel.SearchTabProducts%%
+		</div>
+		<div id="SearchContent_Container" class="tab-pane" role="tabpanel">
+			%%Panel.SearchTabContents%%
+		</div>
 	</div>
 </div>
-
-<script>//<![CDATA[
-$(document).ready( function(){
-	
-	showSearchTabs("%%GLOBAL_SelectedSearchTab%%");
-});
-//]]></script>

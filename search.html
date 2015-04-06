@@ -4,29 +4,35 @@
 <body class="page-search">
 <div id="site">
 
+	<script src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jstree/jquery.jstree.js"></script>
+	
 	%%Panel.Header%%
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
+	%%Panel.WrapperBanner%%
 
-				%%Banner.TopBanner%%
-				%%Panel.WrapperBanner%%
-			</div>
-			<header class="col-md-12">
-
-				%%Panel.SearchPageHeader%%
-			</header>
-			<main class="col-md-12">
-
-				%%Panel.SearchPage%%
-			</main>
-			<footer class="text-center">
-
-				%%Banner.BottomBanner%%
-			</footer>
-		</div>
+	<div id="banner-top">
+		%%Banner.TopBanner%%
 	</div>
+
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-12">
+
+					%%Panel.SearchPageHeader%%
+				</header>
+				<div class="col-md-12">
+
+					%%Panel.SearchPage%%
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<div id="banner-bottom">
+		%%Banner.BottomBanner%%
+	</div>
+
 	%%Panel.Footer%%
 </div>
 </body>

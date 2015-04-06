@@ -6,27 +6,33 @@
 
 	%%Panel.Header%%
 
-	<div class="container">
-		<div class="row">
-			<header class="col-md-12">
-				<h1 class="title">%%LNG_NotFound%%</h1>
-				%%Panel.WrapperBanner%%
-			</header>
-			<main class="col-md-12">
+	%%Panel.WrapperBanner%%
 
-				<p class="alert alert-danger">%%LNG_NotFoundError%%</p>
-
-				<p>%%LNG_NotFoundReasonTitle%%</p>
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-12">
 				
-				<ul>
-					<li>%%LNG_NotFoundReason1%%</li>
-					<li>%%LNG_NotFoundReason2%%</li>
-				</ul>
-			</main>
-			<footer class="col-md-12">
-				%%Banner.BottomBanner%%
-			</footer>
+					<h1 class="title">%%LNG_NotFound%%</h1>
+				</header>
+				<div class="col-md-12">
+
+					<p class="alert alert-danger">%%LNG_NotFoundError%%</p>
+
+					<p>%%LNG_NotFoundReasonTitle%%</p>
+					
+					<ul>
+						<li>%%LNG_NotFoundReason1%%</li>
+						<li>%%LNG_NotFoundReason2%%</li>
+					</ul>
+				</div>
+
+			</div>
 		</div>
+	</main>
+
+	<div id="banner-bottom">
+		%%Banner.BottomBanner%%
 	</div>
 
 	%%Panel.Footer%%

@@ -2,28 +2,31 @@
 
                     <h4 class="sr-only">Newsletter</h4>
 
-                    <form action="%%GLOBAL_ShopPath%%/subscribe.php" method="post" id="subscribe_form" name="subscribe_form">
+                    <form action="%%GLOBAL_ShopPath%%/subscribe.php" method="post" id="subscribe_form" name="subscribe_form" class="form">
 
-                        <fieldset>
+                        <fieldset class="panel panel-default">
 
-                            <legend>Become an Opt-in Member</legend>
-
-                            <p>to receive Special Offers, Exclusive Discounts, and information on our latests products.</p>
-
-                            <div class="input-group">
-
-                                <label for="nl_first_name" class="sr-only">Name</label>
-                                <input type="text" class="form-control" name="nl_first_name" id="nl_first_name" placeholder="Name">
-
-                                <label for="nl_email" class="sr-only">Email</label>
-                                <input type="text" class="form-control" name="nl_email" id="nl_email" placeholder="Email">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Become an Opt-in Member</h4>
                             </div>
-                        </fieldset>
+                            <div class="panel-body">
 
-                        <fieldset>
+                                <p>to receive Special Offers, Exclusive Discounts, and information on our latests products.</p>
 
-                            <input type="submit" class="btn btn-primary btn-block" value="Join Now">
-                            <input type="hidden" name="action" value="subscribe">
+                                <div class="form-group form-group-stacked">
+
+                                    <!-- <label for="nl_first_name" class="sr-only">Name</label> -->
+                                    <input type="text" class="form-control" name="nl_first_name" id="nl_first_name" placeholder="Name">
+
+                                    <!-- <label for="nl_email" class="sr-only">Email</label> -->
+                                    <input type="email" class="form-control" name="nl_email" id="nl_email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+
+                                <input type="submit" class="btn btn-primary btn-block" value="Join Now">
+                                <input type="hidden" name="action" value="subscribe">
+                            </div>
                         </fieldset>
                     </form>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 %%Panel.HTMLHead%%
-<body>
+<body class="page-403">
 <div id="site">
 
 	%%Panel.Header%%
@@ -20,24 +20,31 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<header class="col-md-12">
-				
-				<h1 class="title">%%LNG_ForbiddenAccessPage%%</h1>
-				%%Panel.WrapperBanner%%
-			</header>
-			<main class="col-md-12">
-				<p class="alert alert-danger">%%LNG_NoPermissionToAccessThisPage%%</p>
-				<p>%%GLOBAL_Contact%%</p>
-				<a href="%%GLOBAL_ShopPath%%/">%%LNG_ReturnToHomepage%%</a>
-			</main>
-			<footer class="col-md-12">
-				%%Banner.BottomBanner%%
-			</footer>
+	%%Panel.WrapperBanner%%
+
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-12">
+					
+					<h1 class="page-header">%%LNG_ForbiddenAccessPage%%</h1>
+				</header>
+				<div class="col-md-12">
+
+					<p class="alert alert-danger">%%LNG_NoPermissionToAccessThisPage%%</p>
+
+					<p>%%GLOBAL_Contact%%</p>
+
+					<a href="%%GLOBAL_ShopPath%%/" class="btn btn-primary">%%LNG_ReturnToHomepage%%</a>
+				</div>
+			</div>
 		</div>
-	</div>
+    </main>
     
+	<div id="banner-bottom">
+		%%Banner.BottomBanner%%
+	</div>
+
 	%%Panel.Footer%%
 </div>
 </body>

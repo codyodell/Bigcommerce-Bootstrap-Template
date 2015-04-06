@@ -4,43 +4,49 @@
 <body class="page-search-with-facets">
 <div id="site">
 
+	<script src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jstree/jquery.jstree.js"></script>
+
 	%%Panel.Header%%
 
-	<div class="container">
-		<div class="row">
-			<header class="col-md-12">
+	%%Panel.WrapperBanner%%
 
-				%%Banner.TopBanner%%
-				%%Panel.WrapperBanner%%
-
-				<h2>%%GLOBAL_SearchTitle%%</h2>
-			</header>
-			<div class="col-md-12" id="search-page-header">
-
-				<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jstree/jquery.jstree.js"></script>
-				
-				<a name="results"></a>
-
-				<p class="alert alert-info" style="display:%%GLOBAL_HideRelatedSearches%%">
-					<strong>%%LNG_RelatedSearches%%:</strong> %%SNIPPET_RelatedSearches%%
-				</p>
-
-				<p class="SearchSuggest" style="display: %%GLOBAL_ShowSearchSuggestion%%">
-					<strong>%%LNG_DidYouMean%%:</strong> <a class="nofollow" rel="nofollow" data-params="&amp;correction=%%GLOBAL_SearchId%%" href="%%GLOBAL_ShopPath%%/search.php?search_query=%%GLOBAL_SuggestQueryEscaped%%">%%GLOBAL_SuggestQuery%%</a>
-				</p>
-
-				%%Panel.SearchJavaScript%%
-			</div>
-			<main class="col-md-12">
-				
-				%%Panel.SearchPageWithFacets%%
-			</main>
-			<footer class="col-md-12">
-
-				%%Banner.BottomBanner%%
-			</footer>
-		</div>
+	<div id="banner-top">
+		%%Banner.TopBanner%%
 	</div>
+
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-12">
+
+					<h2 class="page-header">%%GLOBAL_SearchTitle%%</h2>
+				</header>
+				<div class="col-md-12" id="search-page-header">
+
+					<a name="results"></a>
+
+					<p class="alert alert-info" style="display:%%GLOBAL_HideRelatedSearches%%">
+						<strong>%%LNG_RelatedSearches%%:</strong> %%SNIPPET_RelatedSearches%%
+					</p>
+					
+					<p class="SearchSuggest" style="display: %%GLOBAL_ShowSearchSuggestion%%">
+						<strong>%%LNG_DidYouMean%%:</strong> 
+						<a class="nofollow" rel="nofollow" data-params="&amp;correction=%%GLOBAL_SearchId%%" href="%%GLOBAL_ShopPath%%/search.php?search_query=%%GLOBAL_SuggestQueryEscaped%%">%%GLOBAL_SuggestQuery%%</a>
+					</p>
+				</div>
+				<div class="col-md-12">
+					
+					%%Panel.SearchPageWithFacets%%
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<div id="banner-bottom">
+		%%Banner.BottomBanner%%
+	</div>
+
+	%%Panel.SearchJavaScript%%
 
 	%%Panel.Footer%%
 </div>

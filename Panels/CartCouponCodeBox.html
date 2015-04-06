@@ -1,13 +1,30 @@
 <div class="col-md-6 col-sm-12 col-xs-12 CouponCode">
-	<h3>%%LNG_CouponCode%%</h3>
-	<script type="text/javascript">
-		lang.EnterCouponCode = "%%LNG_EnterCouponCode%%";
-	</script>
-	<form onsubmit="return Cart.CheckCouponCode()" action="%%GLOBAL_ShopPath%%/cart.php" method="post">
-		<input type="hidden" name="action" value="applycoupon" />
-		<div class="CouponCode">
+	
+
+	<form class="panel panel-default" onsubmit="return Cart.CheckCouponCode()" action="%%GLOBAL_ShopPath%%/cart.php" method="post">
+
+		<div class="panel-heading">
+
+			<h3 class="panel-title">%%LNG_CouponCode%%</h3>
+		</div>
+		<div class="panel-body">
+
+			<input type="hidden" name="action" value="applycoupon">
+
 			<p>%%LNG_CouponCodeIntro%%</p>
-			<input type="text" name="couponcode" id="couponcode" class="Textbox Field200" /> <input type="submit" value="Go" class="btn btn-secondary" />
+
+			<div class="input-group input-group-lg">
+
+				<input type="text" class="form-control" name="couponcode" id="couponcode" placeholder="Coupon Code"> 
+
+				<span class="input-group-btn">
+					<input type="submit" value="Go" class="btn btn-primary">
+				</span>
+			</div>
 		</div>
 	</form>
 </div>
+
+<script>
+	lang.EnterCouponCode = "%%LNG_EnterCouponCode%%";
+</script>

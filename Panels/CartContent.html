@@ -9,20 +9,21 @@ lang.SelectCountry = '%%LNG_ChooseShippingCountry%%';
 lang.SelectState = '%%LNG_ChooseShippingState%%';
 lang.EnterZip = '%%LNG_EnterShippingZip%%';
 </script>
-<script src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/imodal/imodal.js?%%GLOBAL_JSCacheToken%%" type="text/javascript"></script>
-<div class="Block Moveable Panel" id="CartContent">
-	<div class="BlockContent">
+
+<div id="CartContent">
+
 		<div style="display: %%GLOBAL_HideShoppingCartGrid%%">
 
-			<form enctype="multipart/form-data" onsubmit="return Cart.ValidateQuantityForm(this);" action="cart.php" name="cartForm" id="cartForm" method="post">
+			<form enctype="multipart/form-data" onsubmit="return Cart.ValidateQuantityForm(this);" action="cart.php" name="form-cart" id="form-cart" method="post">
+
 				<input type="hidden" name="action" value="update" />
 
-				<table class="table table-responsive CartContents" cellspacing="0" cellpadding="0">
+				<table class="table table-responsive table-striped table-hover" id="cart-contents">
 					<thead>
 						<tr>
 							<th colspan="2">%%LNG_CartItems%%</th>
-							<th class="CartItemQuantity">%%LNG_Qty%%</th>
 							<th class="CartItemIndividualPrice">%%LNG_ItemPrice%%</th>
+							<th class="CartItemQuantity">%%LNG_Qty%%</th>
 							<th class="CartItemTotalPrice">%%LNG_ItemTotal%%</th>
 						</tr>
 					</thead>
@@ -30,111 +31,129 @@ lang.EnterZip = '%%LNG_EnterShippingZip%%';
 						%%SNIPPET_CartItems%%
 					</tbody>
 					<tfoot>
-						<tr class="SubTotal">
-							<td colspan="4">%%LNG_Subtotal%%:</td>
-							<td><em class="ProductPrice">%%GLOBAL_CartItemTotal%%</em></td>
-						</tr>
-						<tr class="SubTotal" style="%%GLOBAL_HideGiftWrappingTotal%%">
-							<td colspan="4">%%LNG_GiftWrapping%%:</td>
-							<td><em class="ProductPrice">%%GLOBAL_GiftWrappingTotal%%</em></td>
-						</tr>
-						%%SNIPPET_NormalCoupons%%
-						<tr class="SubTotal" style="%%GLOBAL_HideDiscountAmount%%">
-							<td colspan="4">%%LNG_Discount%%:</td>
-							<td><em class="ProductPrice">%%GLOBAL_DiscountAmount%%</em></td>
-						</tr>
-						<tr class="SubTotal" style="%%GLOBAL_HideShoppingCartShippingEstimator%%">
-							<td colspan="5" style="text-align: right;">
-								<a href="#" class="EstimateShippingLink" onclick="Cart.ToggleShippingEstimation(); return false;"><strong>%%LNG_CalculateShippingHandling%%</strong></a>
-	                    <div class="EstimateShipping" style="display: none;">
-	                        <div class="EstimatedShippingForm">
-	                            <h3>Estimate Shipping &amp; Tax</h3>
-	                            <dl>
-	                                <dt><span class="Required">*</span>&nbsp;%%LNG_Country%%:</dt>
-	                                <dd>
-	                                    <select class="form-control" name="shippingZoneCountry" id="shippingZoneCountry" onchange="Cart.ToggleShippingEstimateCountry();">
-	                                        %%GLOBAL_ShippingCountryList%%
-	                                    </select>
-	                                </dd>
-	                                        
-	                                <dt><span class="Required" id="shippingZoneStateRequired">*</span>&nbsp;%%LNG_StateProvince%%:</dt>
-	                                <dd>
-	                                    <select style="display: %%GLOBAL_ShippingHideStateList%%" class="form-control" name="shippingZoneState" id="shippingZoneState">
-	                                        %%GLOBAL_ShippingStateList%%
-	                                    </select>
-	                                    <input style="display: %%GLOBAL_ShippingHideStateBox%%" type="text" class="form-control" name="shippingZoneStateName" id="shippingZoneStateName" value="%%GLOBAL_AddressState%%" />
-	                                </dd>
-	                                        
-	                                <dt><span class="Required">*</span>&nbsp;%%LNG_ZipPostcode%%:</dt>
-	                                <dd>
-	                                	<input type="text" class="form-control" name="shippingZoneZip" id="shippingZoneZip" value="%%GLOBAL_ShippingZip%%" />
-	                                </dd>
-	                                <dt></dt>	
-	                                <dd class="EstimateShippingButtons">
-	                                    <input type="button" class="btn btn-primary" onclick="Cart.EstimateShipping();" value="%%LNG_CalculateShipping%%" />
-	                                    <a href="#" class="btn btn-secondary" onclick="Cart.ToggleShippingEstimation();">%%LNG_Cancel%%</a>
-	                                </dd>
-	                            </dl>
-	                        </div>
-	                        <div class="EstimatedShippingMethods" style="display: none;">
-	                            <div class="ShippingMethodList">
-	                            </div>
-	                        </div>
-	                    </div>
+						<tr class="sub-total">
+							<td colspan="4" class="text-right"><strong>%%LNG_Subtotal%%</strong></td>
+							<td>
+
+								<strong class="btn product-subtotal">%%GLOBAL_CartItemTotal%%</strong>
+
+								<a href="#estimate-shipping-form" class="btn btn-info pull-right" id="estimate-shipping-link" data-toggle="collapse">
+									<i class="glyphicon glyphicon-plus-sign"></i>
+									%%LNG_CalculateShippingHandling%%
+								</a>
 							</td>
 						</tr>
-						<tr style="display:%%GLOBAL_HideShoppingCartShippingCost%%" class="SubTotal">
-							<td colspan="4">%%LNG_Shipping%% (%%GLOBAL_ShippingProvider%%):</td>
-							<td><em class="ProductPrice">%%GLOBAL_ShippingCost%%</em></td>
+						<tr class="gift-wrapping" style="%%GLOBAL_HideGiftWrappingTotal%%">
+							<td colspan="4" class="text-right"><strong>%%LNG_GiftWrapping%%</strong></td>
+							<td><strong class="ProductPrice">%%GLOBAL_GiftWrappingTotal%%</strong></td>
+						</tr>
+						%%SNIPPET_NormalCoupons%%
+						<tr class="gift-wrapping" style="%%GLOBAL_HideDiscountAmount%%">
+							<td colspan="4" class="text-right">%%LNG_Discount%%:</td>
+							<td><strong class="ProductPrice">%%GLOBAL_DiscountAmount%%</strong></td>
+						</tr>
+						<tr class="shipping-estimator" style="%%GLOBAL_HideShoppingCartShippingEstimator%%">
+							<td colspan="5">
+
+		                    	<div class="panel panel-default collapse" id="estimate-shipping-form">
+			                    	<div class="panel-heading text-center">
+			                    		<h3 class="panel-title">Estimate Shipping &amp; Tax</h3>
+			                    	</div>
+			                    	<div class="panel-body text-left">
+
+				                        <div class="form EstimatedShippingForm">
+
+				                            <div class="form-group">
+
+				                                <label for="shippingZoneCountry" class="control-label required">%%LNG_Country%%</label>
+			                                    <select class="form-control" name="shippingZoneCountry" id="shippingZoneCountry" onchange="Cart.ToggleShippingEstimateCountry();">
+			                                        %%GLOBAL_ShippingCountryList%%
+			                                    </select>
+				                            </div>
+				                            <div class="form-group">
+
+				                                <label for="shippingZoneState" class="required">%%LNG_StateProvince%%</label>
+			                                    <select style="display: %%GLOBAL_ShippingHideStateList%%" class="form-control" name="shippingZoneState" id="shippingZoneState">
+			                                        %%GLOBAL_ShippingStateList%%
+			                                    </select>
+			                                    <input style="display: %%GLOBAL_ShippingHideStateBox%%" type="text" class="form-control" name="shippingZoneStateName" id="shippingZoneStateName" value="%%GLOBAL_AddressState%%">
+			                                </div>
+
+			                                <div class="form-group">
+			                                    
+				                                <label for="shippingZoneZip" class="required">%%LNG_ZipPostcode%%</label>
+				                                <input type="text" class="form-control" name="shippingZoneZip" id="shippingZoneZip" value="%%GLOBAL_ShippingZip%%">
+				                            </div>
+				                        </div>
+			                    	</div>
+			                    	<div class="panel-footer text-right">
+
+				                        <input type="button" class="btn btn-primary" onclick="Cart.EstimateShipping();" value="%%LNG_CalculateShipping%%">
+				                        <a href="#estimate-shipping-form" class="btn btn-link" data-toggle="collapse">%%LNG_Cancel%%</a>
+			                    	</div>
+		                    	</div>
+
+		                        <div class="EstimatedShippingMethods">
+		                            <div class="ShippingMethodList text-center"></div>
+		                        </div>
+							</td>
+						</tr>
+						<tr class="cart-shipping-total" style="display:%%GLOBAL_HideShoppingCartShippingCost%%">
+							<td colspan="4" class="text-right lead">
+								<strong class="cart-shipping-total-label">
+									%%LNG_Shipping%% (%%GLOBAL_ShippingProvider%%)
+								</strong>
+							</td>
+							<td><strong class="lead cart-shipping-total-text">%%GLOBAL_ShippingCost%%</strong></td>
 						</tr>
 						%%SNIPPET_FreeShippingCoupons%%
-						<tr style="display: %%GLOBAL_HideShoppingCartHandlingCost%%" class="SubTotal">
-							<td colspan="4">%%LNG_Handling%%:</td>
-							<td><em class="ProductPrice">%%GLOBAL_HandlingCost%%</em></td>
+						<tr class="cart-handling-total" style="display: %%GLOBAL_HideShoppingCartHandlingCost%%">
+							<td colspan="4" class="text-right lead"><strong>%%LNG_Handling%%</strong></td>
+							<td><strong class="lead">%%GLOBAL_HandlingCost%%</strong></td>
 						</tr>
 						%%GLOBAL_Taxes%%
 						%%SNIPPET_GiftCertificates%%
-						<tr class="SubTotal GrandTotal">
-							<td colspan="4">%%LNG_GrandTotal%%:</td>
-							<td><em class="ProductPrice">%%GLOBAL_CartTotal%%</em></td>
+						<tr class="cart-grand-total">
+							<td colspan="4" class="text-right lead"><strong>%%LNG_GrandTotal%%</strong></td>
+							<td><strong class="lead btn cart-grand-total-text">%%GLOBAL_CartTotal%%</strong></td>
 						</tr>
 						%%GLOBAL_InclusiveTaxes%%
 					</tfoot>
 				</table>
 
 				<div class="row">
-		            <div class="col-md-4 col-sm-12 KeepShopping"  style="display: %%GLOBAL_HideShoppingCartGrid%%">
-		                <a  class="btn btn-primary btn-lg" href="%%GLOBAL_KeepShoppingLink%%">
+		            <div class="col-md-4 col-sm-12 cart-keep-shopping"  style="display: %%GLOBAL_HideShoppingCartGrid%%">
+
+		                <a  class="btn btn-primary btn-lg btn-keep-shopping" href="%%GLOBAL_KeepShoppingLink%%">
 		                	<i class="glyphicon glyphicon-arrow-left"></i>
 		                	Keep Shopping
 		                </a>
 		            </div>
-		            <div class="col-md-4 col-sm-12 text-center">
+		            <div class="col-md-4 col-sm-12 text-center cart-update">
 
-							<button class="btn btn-primary btn-lg CartUpdateBtn" type="submit" title="%%LNG_Update%%" style="display: %%GLOBAL_HideCartQuantityTextBox%%">
-								Update Cart
-								<i class="glyphicon glyphicon-refresh"></i>
-							</button>
+						<button class="btn btn-primary btn-lg btn-update-cart" style="display: %%GLOBAL_HideCartQuantityTextBox%%">
+							%%LNG_Update%%
+							<i class="glyphicon glyphicon-refresh"></i>
+						</button>
 		            </div>
-					<div class="col-md-4 col-sm-12 text-right ProceedToCheckout">
+					<div class="col-md-4 col-sm-12 text-right cart-checkout">
 
-							<!-- <span style="%%GLOBAL_HideMultipleAddressShippingOr%%" class="or">%%LNG_or%%</span> -->
-
-							<a class="btn btn-primary btn-lg" href="%%GLOBAL_CheckoutLink%%" title="%%LNG_CheckoutButtonTitle%%" style="%%GLOBAL_HideCheckoutButton%%">
-								Proceed To Checkout 
-								<i class="glyphicon glyphicon-arrow-right"></i>
-							</a>
-							<!--  -->
-
-							<a class="btn btn-primary btn-lg AlternativeCheckout" href="%%GLOBAL_ShopPath%%/checkout.php?action=multiple" style="%%GLOBAL_HideMultipleAddressShipping%%">%%LNG_CheckoutWithMultipleAddresses%%</a>
+						<a class="btn btn-primary btn-lg btn-checkout" href="%%GLOBAL_CheckoutLink%%" title="%%LNG_CheckoutButtonTitle%%" style="%%GLOBAL_HideCheckoutButton%%">
+							Proceed To Checkout 
+							<i class="glyphicon glyphicon-arrow-right"></i>
+						</a>
+						<!-- <span style="%%GLOBAL_HideMultipleAddressShippingOr%%" class="or">%%LNG_or%%</span> -->
+						<a class="btn btn-primary btn-lg btn-alternative-checkout" href="%%GLOBAL_ShopPath%%/checkout.php?action=multiple" style="%%GLOBAL_HideMultipleAddressShipping%%">
+							%%LNG_CheckoutWithMultipleAddresses%%
+						</a>
 					</div>
-
 				</div>
 
+				<hr />
 			</form>
-
+			<!-- START:GLOBAL_AdditionalCheckoutButtons -->
 			%%GLOBAL_AdditionalCheckoutButtons%%
-
+			<!-- END:GLOBAL_AdditionalCheckoutButtons -->
 		</div>
 		
 		<div style="display: %%GLOBAL_HideShoppingCartEmptyMessage%%">
@@ -143,7 +162,7 @@ lang.EnterZip = '%%LNG_EnterShippingZip%%';
 
 			<p>%%LNG_EmptyCartInfo%%</p>
 			
-            <a  class="btn btn-primary" href="%%GLOBAL_ShopPath%%/">%%LNG_ContinueShopping%%</a> 
+            <a class="btn btn-primary" href="%%GLOBAL_ShopPath%%/">%%LNG_ContinueShopping%%</a> 
 		</div>
 	</div>
 </div>

@@ -2,50 +2,49 @@
 <html>
 %%Panel.HTMLHead%%
 <body class="page-cart">
-<script src="%%GLOBAL_CdnAppPath%%/javascript/cart.js?%%GLOBAL_JSCacheToken%%"></script>
-<script>
-$(document).ready(function() {
-
-  $('#CartBreadcrumb li a').text($('.CartLink .items').text());
-
-  $('#CartBreadcrumb li.total').text($('.CartLink .total').text());
-
-  if( $('.CartLink .items').text() == '0 Item' ) {
-
-	  $('#CartBreadcrumb').hide();
-  }
-});
-</script>
-
 <div id="site">
 
+	<script src="%%ASSET_js/cart.js%%"></script>
+
 	%%Panel.Header%%
-    
-	<div class="container">
-		<div class="row">
+  	
+	<!--
+	<div id="CartBreadcrumb" class="Block Moveable Panel Breadcrumb">
+	   <ul>
+	       <li><a href="%%GLOBAL_ShopPath%%/cart.php" class="item">&nbsp;</a></li>
+	       <li class="total">&nbsp;</li>
+	   </ul>
+	</div>
+	-->
+	
+    <main id="main">
+		<div class="container">
+			<div class="row">
 
-			<header class="col-md-12">
+				<header class="col-md-12">
+					
+					%%Panel.CartHeader%%
+				</header>
 
-				%%Panel.CartHeader%%
-			</header>
+				<div class="col-md-12">
 
-			<div class="col-md-12">
+					%%Panel.CartStatusMessage%%
 
-				%%Panel.CartStatusMessage%%
-
-				%%Panel.CartContent%%
-
-				<div class="row CartCode" style="display: %%GLOBAL_HideShoppingCartGrid%%">
+					%%Panel.CartContent%%
+				</div>
+				<div class="col-md-12" style="display: %%GLOBAL_HideShoppingCartGrid%%">
 
 					%%Panel.CartCouponCodeBox%%
 
 					%%Panel.CartGiftCertificateCodeBox%%
 				</div>
+				<div class="col-md-12">
 
-				%%Panel.SuggestiveCartContent%%
+					%%Panel.SuggestiveCartContent%%
+				</div>
 			</div>
 		</div>
-	</div>
+	</main>
 	
 	%%Panel.Footer%%
 </div>

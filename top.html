@@ -2,39 +2,17 @@
 <html>
 %%Panel.HTMLHead%%
 <body class="page-top-bottom">
+<div id="site">
 
 <!-- Thie top.html and bottom.html files are *ONLY* used when ActiveKB -->
 <!-- is integrated into your store. If you haven't integrated ActiveKB -->
 <!-- then they don't need to be changed and wont affect anything. -->
 
-<!-- Overwrite default ActiveKB min-height and width styles -->
-<style>
-	.TitleHeading { padding-left:-25px; }
-	.Content img { padding-right:10px; }
-	#LayoutColumn2 #livesearch { display:none; }
-	#LayoutColumn2 #question_crumbs, #LayoutColumn2 .Box { border:none; background-color:#FFF; }
-	#LayoutColumn2 #question_crumbs { margin-left:0px; }
-</style>
-<!-- End styles -->
+%%Panel.Header%%
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('#livesearch').css('width', '200px');
-		$('#livesearch').css('display', 'inline');
-	});
-</script>
+%%Panel.WrapperBanner%%
 
-<div id="site">
-
-	%%Panel.Header%%
-
+<main id="main">
 	<div class="container">
 		<div class="row">
-			<header class="col-md-12">
-				
-				%%Panel.WrapperBanner%%
-			</header>
 			<div class="col-md-12">
-
-
-<!-- End Top Template -->

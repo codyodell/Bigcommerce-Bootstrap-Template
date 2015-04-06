@@ -13,14 +13,14 @@ ul{
 	padding: 0;
 }
 
-ul ul{
+nav ul ul{
 
 	height: 0;
 	overflow: hidden;
 	opacity: 0;
 }
 
-li:hover ul{
+nav li:hover ul{
 
 	display: block;
 	height: auto;
@@ -62,6 +62,12 @@ ul.carousel-inner ul{
 
 /* Top Menu*/
 
+#TopMenu{
+
+	display: inline-block;
+	float: right;
+}
+
 #TopMenu ul{
 
 	display: inline-block;
@@ -99,19 +105,6 @@ ul.carousel-inner ul{
 	width: 100%;
 }
 
-.PriceRow{
-
-	line-height: 34px;
-	font-size: 24px;
-	text-align: center;
-}
-
-.PriceRow em{
-
-	font-style: normal;
-	font-weight: 200;
-}
-
 .share-buttons > div{
 
 	padding: 0;
@@ -123,31 +116,7 @@ ul.carousel-inner ul{
 
     background: #e1e2e0;
     padding-bottom: 25px;
-}
-
-#footer ul{
-
-	margin-top: 15px;
-}
-
-#footer form input[type=submit]{
-
-	margin-top: 10px;
-}
-
-#footer legend{
-
-	font-size: 18px;
-	padding: 10px 0;
-	margin: 0;
-	line-height: 1.1;
-}
-
-#footer form h3{ /* match to other strong tags in footer */
-
-	font-weight: bold;
-	margin-bottom: 20px;
-	line-height: 20px;
+    padding-top: 15px;
 }
 
 #footer-bottom{
@@ -156,96 +125,6 @@ ul.carousel-inner ul{
 	padding: 15px 0;
 	text-align: center;
 }
-
-
-
-/* Product List */
-/*
-.ProductList li{
-
-	text-align: center;
-	position: relative;
-	margin-bottom: 25px;
-	display: flex;
-	text-align: center;
-}
-
-.ProductList li .spacer{
-
-	background: #fff;
-	flex: 1;
-	position: relative;
-	padding-bottom: 22px;
-}
-
-.ProductList li .ProductPriceRating{
-
-	text-align: left;
-	margin: 0 10px;
-}
-
-.ProductList li .ProductPriceRating em{
-
-	line-height: 2em;
-	font-weight: bold;
-}
-
-.ProductList li .SalePrice{
-
-	font-weight: bold;
-}
-
-.ProductList li .Rating{
-
-	text-align: right;
-	float: right;
-	line-height: 1.75em;
-	margin-right: -7px;
-}
-
-.ProductList li .ProductPriceRating{
-
-	display: none;
-}
-
-.ProductList li .ProductPriceRating em strike{
-
-	font-weight: normal;
-}
-
-.ProductList li .ProductName{
-
-	min-height: 3em;
-	font-size: 12px;
-	line-height: 15px;
-	margin: 0 10px;
-}
-
-.ProductList li .ProductImage {
-
-	min-height: 240px;
-	line-height: 240px;
-	height: 240px;
-	margin-bottom: 15px;
-	overflow: hidden;
-}
-
-.ProductList .ProductCompareButton, .CompareButton{
-
-	display: none;
-}
-
-.ProductList .ProductActionAdd{
-
-	position: absolute;
-	bottom: 10px;
-	left:0;
-	width: 100%;
-	display: none;
-}
-*/
-
-
 
 /* Category & Search page Shared Styles */
 
@@ -288,11 +167,6 @@ ul.carousel-inner ul{
 	margin: 0;
 }
 
-
-
-
-
-
 .row-eq-height .alert{
 
     margin: 0 15px;
@@ -303,3 +177,13 @@ ul.carousel-inner ul{
     top: 2px;
     padding: 0 7px;
 }
+
+.CartThumb .thumbnail{
+
+	margin-bottom: 0;
+}
+
+
+
+
+

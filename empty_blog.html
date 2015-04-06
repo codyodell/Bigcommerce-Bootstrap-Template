@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
 %%Panel.HTMLHead%%
-<body>
+<body class="page-empty-blog">
 <div id="site">
 
 	%%Panel.Header%%
 	
-	<div class="container">
-		<div class="row">
-			<header class="col-md-12">
+	%%Panel.WrapperBanner%%
+	
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-12">
 
-				<h1>%%GLOBAL_BlogName%%</h1>
-				%%Panel.WrapperBanner%%
-			</header>
-			<main class="col-md-12">
-				<p class="alert alert-info">There are no posts here yet, please check back later.</p>
-			</main>
+					<h1 class="page-header">%%GLOBAL_BlogName%%</h1>
+				</header>
+				<div class="col-md-12">
+
+					<p class="alert alert-info">There are no posts here yet, please check back later.</p>
+				</div>
+			</div>
 		</div>
-	</div>
-
+	</main>
+	
 	%%Panel.Footer%%
 </div>
 </body>

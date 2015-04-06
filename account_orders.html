@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 %%Panel.HTMLHead%%
-<body>
+<body class="page-account-orders">
 <div id="site">
 
 	%%Panel.Header%%
@@ -20,23 +20,27 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
+	%%Panel.WrapperBanner%%
 
-			<div class="col-md-12">
-		    	<h1 class="title">%%LNG_YourAccount%%</h1>
-		    	%%Panel.WrapperBanner%%
-		    </div>
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-12">
 
-			<div class="col-md-3">
-				%%Panel.SideAccountMenu%%
-			</div>
+			    	<h1 class="page-header">%%LNG_YourAccount%%</h1>
+			    </div>
+				<div class="col-md-3">
 
-			<div class="col-md-9">
-				%%Panel.AccountOrders%%
+					%%Panel.SideAccountMenu%%
+				</div>
+				<div class="col-md-9">
+
+					%%Panel.AccountOrders%%
+				</div>
 			</div>
 		</div>
-	</div>
+	</main>
 
 	%%Panel.Footer%%
 </div>

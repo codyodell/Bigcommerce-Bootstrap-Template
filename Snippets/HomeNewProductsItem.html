@@ -1,11 +1,38 @@
-<div class="item-new-product col-md-3 col-sm-4 col-xs-12 %%GLOBAL_AlternateClass%%">
-	<div class="ProductImage QuickView2" data-product="%%GLOBAL_ProductId%%">
-		 %%GLOBAL_ProductThumb%%
-	</div>
-	<div class="ProductInfo">
-		<h2 class="ProductName"><a href="%%GLOBAL_ProductLink%%">%%GLOBAL_ProductName%%</a></h2>
-		<div class="ProductPrice">
-			<em>%%GLOBAL_ProductPrice%%</em>
-		</div>
-	</div>
-</div>
+<li class="col-xs-4 col-sm-4 col-md-4 QuickView" data-product="%%GLOBAL_ProductId%%">
+    <div class="col-item">
+        <div class="photo">
+            %%GLOBAL_ProductThumb%%
+        </div>
+        <div class="info">
+            <div class="row">
+                <div class="price col-md-12">
+
+                    <h5><a href="%%GLOBAL_ProductLink%%">%%GLOBAL_ProductName%%</a></h5>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+
+                    <h5 class="price-text-color">%%GLOBAL_ProductPrice%%</h5>
+                </div>
+                <div class="product-rating hidden-sm col-md-6" data-rating="%%GLOBAL_ProductRating%%">
+                    <!-- 
+                    <i class="price-text-color fa fa-star"></i>
+                    <i class="price-text-color fa fa-star"></i>
+                    <i class="price-text-color fa fa-star"></i>
+                    <i class="price-text-color fa fa-star"></i>
+                    <i class="fa fa-star"></i> 
+                    -->
+                </div>
+            </div>
+            <div class="separator cf">
+                <p class="btn-add" style="display:%%GLOBAL_HideActionAdd%%;">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                    <a href="%%GLOBAL_ProductURL%%" class="hidden-sm">%%GLOBAL_ProductAddText%%</a>
+                </p>
+                <p class="btn-details">
+                    <i class="glyphicon glyphicon-list"></i>
+                    <a href="%%GLOBAL_ProductLink%%" class="hidden-sm">More details</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</li>

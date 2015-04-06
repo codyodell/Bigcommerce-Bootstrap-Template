@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 %%Panel.HTMLHead%%
-<body>
+<body class="page-account">
 <div id="site">
 
 	%%Panel.Header%%
@@ -19,57 +19,63 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<header class="col-md-12">
-				
-				<h1 class="title">%%LNG_YourAccount%%</h1>
-				%%Panel.WrapperBanner%%
-			</header>
-			<aside class="col-md-3">
+	%%Panel.WrapperBanner%%
 
-				%%Panel.SideAccountMenu%%
-				%%Panel.SideAccountStoreCredit%%
-			</aside>
-			<main class="col-md-9">
-				
-				<p>%%LNG_YourAccountHelpIntro%%</p>
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-12">
+					
+					<h1 class="page-header">%%LNG_YourAccount%%</h1>
+				</header>
+				<aside class="col-md-3">
 
-				<p style="display: %%GLOBAL_HideMessagesMenu%%">
-					<a href="%%GLOBAL_ShopPath%%/account.php?action=inbox"><strong>%%LNG_ViewMessages%%</strong></a><br />
-					%%LNG_ViewMessagesDescription%%
-				</p>
-				<p>
-					<a href="%%GLOBAL_ShopPath%%/account.php?action=order_status"><strong>%%LNG_ViewYourOrderStatus%%</strong></a><br />
-					%%LNG_ViewOrderStatusDescription%%
-				</p>
-				<p>
-					<a href="%%GLOBAL_ShopPath%%/account.php?action=view_orders"><strong>%%LNG_CompletedOrders%%</strong></a><br />
-					%%LNG_CompletedOrdersDescription%%
-				</p>
-				<p style="display: %%GLOBAL_HideReturnRequestsMenu%%">
-					<a href="%%GLOBAL_ShopPath%%/account.php?action=view_returns"><strong>%%LNG_ReturnRequests%%</strong></a><br />
-					%%LNG_ReturnRequestsDescription%%
-				</p>
-				<p>
-				<a href="%%GLOBAL_ShopPath%%/account.php?action=address_book"><strong>%%LNG_YourAddressBook%%</strong></a><br />
-					%%LNG_AddressBookDescription%%
-				</p>
-				<p style="display:%%GLOBAL_HideWishlist%%">
-					<a href="%%GLOBAL_ShopPath%%/wishlist.php"><strong>%%LNG_WishLists%%</strong></a><br />
-					%%LNG_WishListsDescription%%
-				</p>
-				<p>
-					<a href="%%GLOBAL_ShopPath%%/account.php?action=account_details"><strong>%%LNG_YourAccountDetails%%</strong></a><br />
-					%%LNG_AccountDetailsDescription%%
-				</p>
-				<p>
-					<a href="%%GLOBAL_ShopPath%%/account.php?action=recent_items"><strong>%%LNG_RecentlyViewedItems%%</strong></a><br />
-					%%LNG_RecentlyViewedItemsDescription%%
-				</p>
-			</main>
+					%%Panel.SideAccountMenu%%
+					
+					%%Panel.SideAccountStoreCredit%%
+				</aside>
+				<div class="col-md-9">
+					
+					<p>%%LNG_YourAccountHelpIntro%%</p>
+
+					<ul>
+						<li style="display: %%GLOBAL_HideMessagesMenu%%">
+							<a href="%%GLOBAL_ShopPath%%/account.php?action=inbox"><strong>%%LNG_ViewMessages%%</strong></a>
+							%%LNG_ViewMessagesDescription%%
+						</li>
+						<li>
+							<a href="%%GLOBAL_ShopPath%%/account.php?action=order_status"><strong>%%LNG_ViewYourOrderStatus%%</strong></a>
+							%%LNG_ViewOrderStatusDescription%%
+						</li>
+						<li>
+							<a href="%%GLOBAL_ShopPath%%/account.php?action=view_orders"><strong>%%LNG_CompletedOrders%%</strong></a>
+							%%LNG_CompletedOrdersDescription%%
+						</li>
+						<li style="display: %%GLOBAL_HideReturnRequestsMenu%%">
+							<a href="%%GLOBAL_ShopPath%%/account.php?action=view_returns"><strong>%%LNG_ReturnRequests%%</strong></a>
+							%%LNG_ReturnRequestsDescription%%
+						</li>
+						<li>
+						<a href="%%GLOBAL_ShopPath%%/account.php?action=address_book"><strong>%%LNG_YourAddressBook%%</strong></a>
+							%%LNG_AddressBookDescription%%
+						</li>
+						<li style="display:%%GLOBAL_HideWishlist%%">
+							<a href="%%GLOBAL_ShopPath%%/wishlist.php"><strong>%%LNG_WishLists%%</strong></a>
+							%%LNG_WishListsDescription%%
+						</li>
+						<li>
+							<a href="%%GLOBAL_ShopPath%%/account.php?action=account_details"><strong>%%LNG_YourAccountDetails%%</strong></a>
+							%%LNG_AccountDetailsDescription%%
+						</li>
+						<li>
+							<a href="%%GLOBAL_ShopPath%%/account.php?action=recent_items"><strong>%%LNG_RecentlyViewedItems%%</strong></a>
+							%%LNG_RecentlyViewedItemsDescription%%
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
-	</div>
+	</main>
 
 	%%Panel.Footer%%
 </div>

@@ -1,28 +1,23 @@
-		
-
 <div id="BrandContent">
 
 	<div class="pagination-container">
 		%%SNIPPET_BrandPaging%%
 	</div>
 
-	<div class="BlockContent">
+	<form name="frmCompare" id="frmCompare" action="%%GLOBAL_CompareLink%%" method="get" onsubmit="return compareProducts('%%GLOBAL_CompareLink%%')">
 
-		<script>
-			lang.CompareSelectMessage = '%%LNG_CompareSelectMessage%%';
-		</script>
+		%%Panel.BrandProductListing%%
 
-		<form name="frmCompare" id="frmCompare" action="%%GLOBAL_CompareLink%%" method="get" onsubmit="return compareProducts('%%GLOBAL_CompareLink%%')">
-
-			%%Panel.BrandProductListing%%
-
-			<div class="CompareButton" style="display:%%GLOBAL_HideCompareItems%%">
-				<input type="submit" class="btn btn-secondary next" value="%%LNG_CompareSelected%%"/>
-			</div>
-		</form>
-
-		<div class="PagingBottom">
-			%%SNIPPET_BrandPaging%%
+		<div class="CompareButton" style="display:%%GLOBAL_HideCompareItems%%">
+			<input type="submit" class="btn btn-secondary next" value="%%LNG_CompareSelected%%"/>
 		</div>
+	</form>
+
+	<div class="PagingBottom">
+		%%SNIPPET_BrandPaging%%
 	</div>
 </div>
+
+<script>
+	lang.CompareSelectMessage = '%%LNG_CompareSelectMessage%%';
+</script>

@@ -1,58 +1,71 @@
 <!DOCTYPE html>
 <html>
 %%Panel.HTMLHead%%
-<body>
-	<div id="site">
+<body class="page-account-new-return">
+<div id="site">
 
 	%%Panel.Header%%
 
-	<div class="container">
-		<div class="row">
-			<header class="col-md-12">
-				<h1 class="title">%%LNG_YourAccount%%</h1>
-				%%Panel.WrapperBanner%%
-			</header>
-			<aside class="col-md-3">
+	%%Panel.WrapperBanner%%
 
-				%%Panel.SideAccountMenu%%
-			</aside>
-			<main class="col-md-9">
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-12">
 
-				<form action="%%GLOBAL_ShopPath%%/account.php?action=save_new_return" method="post" onsubmit="return check_return_form()">
-					<input type="hidden" name="order_id" value="%%GLOBAL_OrderId%%" />
+					<h1 class="page-header">%%LNG_YourAccount%%</h1>	
+				</header>
+				<aside class="col-md-3">
 
-					<h2>%%LNG_SubmitNewReturn%%</h2>
-					
-					<p class="alert alert-danger" style="display:%%GLOBAL_HideErrorMessage%%">%%GLOBAL_ErrorMessage%%</p>
-					%%Panel.AccountNewReturnProducts%%
-					%%Panel.AccountNewReturnInfo%%
-				</form>
-				<script type="text/javascript">
-				function check_return_form() {
-					var sel = false;
-					$('.ReturnQty').each(function() {
-						if($(this).val() > 0) {
-							sel = true;
-						}
-					});
+					%%Panel.SideAccountMenu%%
+				</aside>
+				<div class="col-md-9">
 
-					if(sel == false) {
-						alert('%%LNG_SelectOneMoreItemsReturn%%');
-						return false;
-					}
+					<form action="%%GLOBAL_ShopPath%%/account.php?action=save_new_return" method="post" onsubmit="return check_return_form()">
 
-					if($('#return_reason').val() == '') {
-						alert('%%LNG_SelectReturnReason%%');
-						$('#return_reason').focus();
-						return false;
-					}
-				}
-				</script>
-			</main>
+						<input type="hidden" name="order_id" value="%%GLOBAL_OrderId%%">
+
+						<h2>%%LNG_SubmitNewReturn%%</h2>
+						
+						<p class="alert alert-danger" style="display:%%GLOBAL_HideErrorMessage%%">%%GLOBAL_ErrorMessage%%</p>
+
+						%%Panel.AccountNewReturnProducts%%
+
+						%%Panel.AccountNewReturnInfo%%
+					</form>
+
+				</div>
+			</div>
 		</div>
-	</div>
+	</main>
 
 	%%Panel.Footer%%
 </div>
+
+
+<script>
+
+function check_return_form() {
+
+	var sel = false;
+	$('.ReturnQty').each(function() {
+		if($(this).val() > 0) {
+			sel = true;
+		}
+	});
+
+	if(sel == false) {
+		alert('%%LNG_SelectOneMoreItemsReturn%%');
+		return false;
+	}
+
+	if($('#return_reason').val() == '') {
+		alert('%%LNG_SelectReturnReason%%');
+		$('#return_reason').focus();
+		return false;
+	}
+}
+</script>
+
 </body>
 </html>

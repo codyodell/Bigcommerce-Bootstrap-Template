@@ -22,7 +22,7 @@ var ThumbURLs = [],
 
 %%Discount.FreeShippingEligibility%%
 
-<main class="row cf">
+<main id="main" class="row">
     
     %%GLOBAL_ProductDetailFlashMessages%%
 
@@ -71,6 +71,8 @@ var ThumbURLs = [],
         <h1 class="title">%%GLOBAL_ProductName%%</h1>
         
         %%GLOBAL_FacebookLikeButtonAbove%% 
+
+        %%Panel.ProductDescription%%
         
         %%Panel.ProductWarranty%%
         
@@ -98,7 +100,7 @@ var ThumbURLs = [],
             
             <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideRating%%" id="product-attribute-rating">
                 <dt>%%LNG_Rating%%</dt>
-                <dd><img src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_Rating%%.png" alt="" /></dd>
+                <dd class="product-rating" data-rating="%%GLOBAL_Rating%%"><img src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_Rating%%.png" alt="" /></dd>
             </dl>
             
             <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideAvailability%%" id="product-attribute-availability">
@@ -143,7 +145,7 @@ var ThumbURLs = [],
 
             <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                 
-                <h2 class="ribbon-title"><span>Be nice and share</span></h2>
+                <h2><span>Be nice and share</span></h2>
 
                 <div class="social-buttons cf">
                     
@@ -163,7 +165,7 @@ var ThumbURLs = [],
     
 </main>
 
-%%Panel.ProductDescription%%
+
 
 <!-- Modal -->
 <div class="modal fade" id="product-image-modal" tabindex="-1" role="dialog" aria-hidden="true">

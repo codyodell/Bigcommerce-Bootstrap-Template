@@ -22,30 +22,17 @@
 	<!-- %%GLOBAL_Stylesheets%% -->
 	<!-- GLOBAL STYLES END -->
 
-    <link href="%%ASSET_Styles/bootstrap/bootstrap.css%%" rel="stylesheet">
-    <link href="%%ASSET_Styles/bootstrap/bootstrap-theme.css%%" rel="stylesheet">
-
-	<link href="%%ASSET_Styles/styles.css%%" rel="stylesheet">
-	<link href="%%ASSET_Styles/hipster.css%%" rel="stylesheet">
-	<link href="%%ASSET_Styles/theme.css%%" rel="stylesheet">
-	<link href="%%ASSET_Styles/white.css%%" rel="stylesheet">
-	<link href="%%ASSET_Styles/custom.css%%" rel="stylesheet">
-	<link href="%%ASSET_Styles/responsive.css%%" rel="stylesheet">
-
-	<link href="%%ASSET_Styles/social.css%%" rel="stylesheet">
-	<link href="%%ASSET_Styles/components.css%%" rel="stylesheet">
-
-	<!-- Tell the browsers about our RSS feeds -->
-	%%GLOBAL_HeadRSSLinks%%
-
-	<!-- Include visitor tracking code (if any) -->
-	%%GLOBAL_TrackingCode%%
-
-	%%GLOBAL_DesignModeStyleSheet%%
-	%%GLOBAL_HeaderImageStyle%%
-	%%GLOBAL_RTLStyles%%
-
+	<script src="%%ASSET_js/modernizr.js%%"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="%%ASSET_Styles/bootstrap/bootstrap.css%%" />
+	<link rel="stylesheet" type="text/css" href="%%ASSET_Styles/bootstrap/bootstrap-theme.css%%" />
+	<link rel="stylesheet" type="text/css" href="%%ASSET_Styles/styles.css%%" />
+	<link rel="stylesheet" type="text/css" href="%%ASSET_Styles/theme.css%%" />
+	<link rel="stylesheet" type="text/css" href="%%ASSET_Styles/custom.css%%" />
+	<link rel="stylesheet" type="text/css" href="%%ASSET_Styles/components.css%%" />
 	<script>
+
+	$.holdReady(true);
 
 	/*  // = Deprecated  */
 	
@@ -63,8 +50,6 @@
 		config.ShowCookieWarning     = !!%%GLOBAL_ShowCookieWarningMessage%%,
 		config.ThumbnailWidth        = %%GLOBAL_ProductThumbImageWidth%%,
 		config.ThumbnailHeight       = %%GLOBAL_ProductThumbImageHeight%%,
-		config.quicksearch.alignment = 'right',
-		config.quicksearch.width     = '232px',
 		config.lang.EmptySmallSearch = "%%LNG_EmptySmallSearch%%",
 		QuickView.attachFormValidator = function() {
 		
@@ -84,60 +69,92 @@
 			});
 		};
 
-	</script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="%%ASSET_js/jquery-migrate-1.2.1.min.js%%"></script>
+	Modernizr.load({
+		load: [
+	  		'%%ASSET_Styles/responsive.css%%',
+	  		'%%ASSET_Styles/social.css%%',
+		]
+	});
 
-	<script src="%%ASSET_js/bootstrap.js%%"></script>
+	Modernizr.load({
+	  	load: [
+	  		'%%ASSET_js/jquery-migrate-1.2.1.min.js%%',
+	  		'%%ASSET_js/bootstrap.js%%',
+	  		'%%ASSET_js/jquery.imagesloaded.js%%',
+	  		'%%ASSET_js/common.js%%' ,
+	  		'%%ASSET_js/init.js%%',
+	  		'%%ASSET_js/main.js%%',
+	  		'%%ASSET_js/cleanglobals.js%%',
+	  		'%%ASSET_js/quicksearch.js%%',
+	  		'%%ASSET_js/jquery.validate.1.13.1.js%%',
+	  		'%%ASSET_js/product.functions.js%%',
+	  		'%%ASSET_js/product.attributes.js%%',
+	  		'%%ASSET_js/jquery.cookie.js%%',
+	  		'%%ASSET_js/jquery.bootstrapThemeSwitcher.js%%',
+	  		'//ws.sharethis.com/button/buttons.js',
+	  		'%%GLOBAL_CdnAppPath%%/javascript/iselector.js?%%GLOBAL_JSCacheToken%%',
+	  		'%%GLOBAL_CdnAppPath%%/javascript/viewport.js??%%GLOBAL_JSCacheToken%%'
+	  	],
+	  	complete: function(){
 
-	<script src="%%ASSET_js/jquery.imagesloaded.js%%"></script>
+	  		$.holdReady(false);
 
-	<script src="%%ASSET_js/common.js%%"></script>
-	<script src="%%ASSET_js/init.js%%"></script>
-	<script src="%%ASSET_js/main.js%%"></script>
-	<script src="%%ASSET_js/cleanglobals.js%%"></script>
-	<script src="%%ASSET_js/quicksearch.js%%"></script>
-	<script src="%%ASSET_js/jquery.validate.1.13.1.js%%"></script>
-	<!-- <script src="%%ASSET_js/quickview.js%%"></script> -->
+			// Sharethis Code
+		    stLight.options({
 
-	<script src="%%ASSET_js/product.functions.js%%"></script>
-	<script src="%%ASSET_js/product.attributes.js%%"></script>
+		        publisher: "b93f5d16-0d14-4db5-880a-abb4267b34e7", 
+		        doNotHash: false, 
+		        doNotCopy: false, 
+		        hashAddressBar: false
+		    });
 
-	<script src="//ws.sharethis.com/button/buttons.js"></script>
-
-	<script src="%%GLOBAL_CdnAppPath%%/javascript/iselector.js?%%GLOBAL_JSCacheToken%%"></script>
-	<script src="%%GLOBAL_CdnAppPath%%/javascript/viewport.js??%%GLOBAL_JSCacheToken%%"></script>
-	<script>
-		// Sharethis Code
-	    stLight.options({
-
-	        publisher: "b93f5d16-0d14-4db5-880a-abb4267b34e7", 
-	        doNotHash: false, 
-	        doNotCopy: false, 
-	        hashAddressBar: false
-	    });
-
-	    $().ready( function(){
-
-	    	var test = $('#crappy_code').prop('outerHTML').replace('<!--', '').replace('-->', ''), // extract code from commented global
-	    		dummytag = $('<p />').append( test ), // append it to a temporary div to convert it to HTML
+	    	var test         = $('#crappy_code').prop('outerHTML').replace('<!--', '').replace('-->', ''), // As text, extract code from commented global
+	    		dummytag     = $('<p />').append( test ), // append it to a temporary div to convert it to HTML
 	    		crap_scripts = $(dummytag).find('script'); // Find script tags
 
 		    $(crap_scripts).each( function(){	
 		    	// if no source, load it, we want to load scripts ourselves
 		    	if(!$(this).is('[src]') && !($(this).is(':contains("ShowImageZoomer")'))){
 
-		    		$('head').append(this);
+		    		Modernizr.load(this);
+		    		//$('head').append(this);
 		    	}else{
 
 		    		console.log( 'Skipped loading ' + $(this).attr('src') );
 		    	}
 		    });
-		});
+
+		    $('#ThemeList').bootstrapThemeSwitcher();
+            $('#ThemeSelect').bootstrapThemeSwitcher(
+				{
+				  "themes":
+				  [
+				    {"name": "amelia", "cssCdn": "css/themes/amelia/bootstrap.min.css"},
+				    {"name": "cerulean", "cssCdn": "css/themes/cerulean/bootstrap.min.css"},
+				    {"name": "cosmo", "cssCdn": "css/themes/cosmo/bootstrap.min.css"},
+				    {"name": "cyborg", "cssCdn": "css/themes/cyborg/bootstrap.min.css"},
+				    {"name": "darkly", "cssCdn": "css/themes/darkly/bootstrap.min.css"},
+				    {"name": "flatly", "cssCdn": "css/themes/flatly/bootstrap.min.css"},
+				    {"name": "journal", "cssCdn": "css/themes/journal/bootstrap.min.css"},
+				    {"name": "lumen", "cssCdn": "css/themes/lumen/bootstrap.min.css"},
+				    {"name": "readable", "cssCdn": "css/themes/readable/bootstrap.min.css"},
+				    {"name": "shamrock", "cssCdn": "css/themes/shamrock/bootstrap.min.css"},
+				    {"name": "simplex", "cssCdn": "css/themes/simplex/bootstrap.min.css"},
+				    {"name": "slate", "cssCdn": "css/themes/slate/bootstrap.min.css"},
+				    {"name": "spacelab", "cssCdn": "css/themes/spacelab/bootstrap.min.css"},
+				    {"name": "superhero", "cssCdn": "css/themes/superhero/bootstrap.min.css"},
+				    {"name": "united", "cssCdn": "css/themes/united/bootstrap.min.css"},
+				    {"name": "yeti", "cssCdn": "css/themes/yeti/bootstrap.min.css"}
+				  ]
+				}
+            )
+	  	}
+	});
 	</script>
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+	%%GLOBAL_HeadRSSLinks%%
+	%%GLOBAL_TrackingCode%%
+	%%GLOBAL_DesignModeStyleSheet%%
+	%%GLOBAL_HeaderImageStyle%%
+	%%GLOBAL_RTLStyles%%
 </head>

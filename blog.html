@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 %%Panel.HTMLHead%%
-<body>
+<body class="page-blog">
 <div id="site">
 	
 	%%Panel.Header%%
@@ -16,36 +16,33 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				%%Panel.WrapperBanner%%
-			</div>
-			<main class="col-md-9">
-				
-				<h1>%%GLOBAL_BlogName%%</h1>
-				%%SNIPPET_RecentPostsContent%%
-				<div class="product-nav btm">
-					<div class="Block Moveable Panel PagingBottom" id="CategoryPagingBottom">
-						<div class="CategoryPagination BloggingPagination" style="display: %%GLOBAL_HideSectionPaging%%">
-							<div class="FloatLeft">
-								%%GLOBAL_SectionPagingPrevious%%
-							</div>
-							<div class="FloatRight">
-								%%GLOBAL_SectionPagingNext%%
-							</div>
-							<ul class="PagingList">
-								%%GLOBAL_SectionPaging%%
-							</ul>
-						</div>
+	%%Panel.WrapperBanner%%
+
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					
+					<h1 class="page-header">%%GLOBAL_BlogName%%</h1>
+
+					%%SNIPPET_RecentPostsContent%%
+
+					<div id="blog-pagination" style="display: %%GLOBAL_HideSectionPaging%%">
+						<ul class="pagination">
+							<li>%%GLOBAL_SectionPagingPrevious%%</li>
+							%%GLOBAL_SectionPaging%%
+							<li>%%GLOBAL_SectionPagingNext%%</li>
+						</ul>
 					</div>
 				</div>
-			</main>
-			<aside class="col-md-3">
-				%%Panel.BlogRecentPosts%%
-			</aside>
+				<aside class="col-md-3">
+
+					%%Panel.BlogRecentPosts%%
+				</aside>
+			</div>
 		</div>
-	</div>
+	</main>
+
 	%%Panel.Footer%%
 </div>
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 %%Panel.HTMLHead%%
-<body>
+<body class="page-blog-post">
 <div id="site">
 	
 	%%Panel.Header%%
@@ -16,22 +16,25 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				%%Panel.WrapperBanner%%
-			</div>
-			<main class="col-md-9">
+	%%Panel.WrapperBanner%%
+
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					
+					%%Panel.PostContent%%
+					%%Panel.PostComments%%
+					%%Panel.NewsComments%%
+				</div>
+				<aside class="col-md-3">
 				
-				%%Panel.PostContent%%
-				%%Panel.PostComments%%
-				%%Panel.NewsComments%%
-			</main>
-			<aside class="col-md-3">
-				%%Panel.BlogRecentPosts%%
-			</aside>
+					%%Panel.BlogRecentPosts%%
+				</aside>
+			</div>
 		</div>
-	</div>
+	</main>
+
 	%%Panel.Footer%%
 </div>
 </body>

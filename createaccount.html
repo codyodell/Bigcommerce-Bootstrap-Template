@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 %%Panel.HTMLHead%%
-<body>
+<body class="page-createaccount">
 <div id="site">
 	
 	%%Panel.Header%%
@@ -16,17 +16,22 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<header class="col-md-12">
-				<h1 class="title">%%GLOBAL_CreateAccountHeading%%</h1>
-				%%Panel.WrapperBanner%%
-			</header>
-			<main class="col-md-12">
-				%%Panel.CreateAccountForm%%
-			</main>
+	%%Panel.WrapperBanner%%
+
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-12">
+
+					<h1 class="page-header">%%GLOBAL_CreateAccountHeading%%</h1>
+				</header>
+				<div class="col-md-12">
+				
+					%%Panel.CreateAccountForm%%
+				</div>
+			</div>
 		</div>
-	</div>
+	</main>
 
 	%%Panel.Footer%%
 </div>
